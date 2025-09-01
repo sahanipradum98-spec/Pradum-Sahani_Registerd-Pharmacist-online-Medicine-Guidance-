@@ -1,0 +1,294 @@
+﻿2025-09-01T17:50:10.4792377Z Current runner version: '2.328.0'
+2025-09-01T17:50:10.4829824Z ##[group]Runner Image Provisioner
+2025-09-01T17:50:10.4831103Z Hosted Compute Agent
+2025-09-01T17:50:10.4832241Z Version: 20250829.383
+2025-09-01T17:50:10.4833285Z Commit: 27cb235aab5b0e52e153a26cd86b4742e89dac5d
+2025-09-01T17:50:10.4834653Z Build Date: 2025-08-29T13:48:48Z
+2025-09-01T17:50:10.4835808Z ##[endgroup]
+2025-09-01T17:50:10.4836702Z ##[group]Operating System
+2025-09-01T17:50:10.4837585Z Ubuntu
+2025-09-01T17:50:10.4838508Z 24.04.3
+2025-09-01T17:50:10.4839229Z LTS
+2025-09-01T17:50:10.4839984Z ##[endgroup]
+2025-09-01T17:50:10.4840956Z ##[group]Runner Image
+2025-09-01T17:50:10.4841857Z Image: ubuntu-24.04
+2025-09-01T17:50:10.4842838Z Version: 20250824.1.0
+2025-09-01T17:50:10.4844833Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250824.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-09-01T17:50:10.4847576Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250824.1
+2025-09-01T17:50:10.4849414Z ##[endgroup]
+2025-09-01T17:50:10.4851344Z ##[group]GITHUB_TOKEN Permissions
+2025-09-01T17:50:10.4854324Z Contents: read
+2025-09-01T17:50:10.4855099Z Metadata: read
+2025-09-01T17:50:10.4856046Z Pages: write
+2025-09-01T17:50:10.4856804Z ##[endgroup]
+2025-09-01T17:50:10.4859828Z Secret source: Actions
+2025-09-01T17:50:10.4860884Z Prepare workflow directory
+2025-09-01T17:50:10.5332728Z Prepare all required actions
+2025-09-01T17:50:10.5391865Z Getting action download info
+2025-09-01T17:50:10.7951675Z Download action repository 'actions/checkout@v4' (SHA:08eba0b27e820071cde6df949e0beb9ba4906955)
+2025-09-01T17:50:10.8641845Z Download action repository 'actions/jekyll-build-pages@v1' (SHA:44a6e6beabd48582f863aeeb6cb2151cc1716697)
+2025-09-01T17:50:11.0980272Z Download action repository 'actions/upload-pages-artifact@v3' (SHA:56afc609e74202658d3ffba0e8f6dda462b719fa)
+2025-09-01T17:50:11.3274234Z Getting action download info
+2025-09-01T17:50:11.4281986Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2025-09-01T17:50:11.5550902Z Complete job name: build
+2025-09-01T17:50:11.5985338Z ##[group]Pull down action image 'ghcr.io/actions/jekyll-build-pages:v1.0.13'
+2025-09-01T17:50:11.6035026Z ##[command]/usr/bin/docker pull ghcr.io/actions/jekyll-build-pages:v1.0.13
+2025-09-01T17:50:12.8639618Z v1.0.13: Pulling from actions/jekyll-build-pages
+2025-09-01T17:50:12.8640136Z efc2b5ad9eec: Pulling fs layer
+2025-09-01T17:50:12.8640517Z 165b60d1bb48: Pulling fs layer
+2025-09-01T17:50:12.8640810Z 2a328af1ca3a: Pulling fs layer
+2025-09-01T17:50:12.8641122Z 32b58fa44788: Pulling fs layer
+2025-09-01T17:50:12.8641415Z 590ab93c22d2: Pulling fs layer
+2025-09-01T17:50:12.8641790Z 26ea96c4c14c: Pulling fs layer
+2025-09-01T17:50:12.8642315Z bd7e451dfea1: Pulling fs layer
+2025-09-01T17:50:12.8642704Z c209e9dadc51: Pulling fs layer
+2025-09-01T17:50:12.8643001Z a4925b5c711a: Pulling fs layer
+2025-09-01T17:50:12.8643284Z cd9459784e3c: Pulling fs layer
+2025-09-01T17:50:12.8643818Z 32b58fa44788: Waiting
+2025-09-01T17:50:12.8644287Z 590ab93c22d2: Waiting
+2025-09-01T17:50:12.8644611Z 26ea96c4c14c: Waiting
+2025-09-01T17:50:12.8644891Z bd7e451dfea1: Waiting
+2025-09-01T17:50:12.8645161Z c209e9dadc51: Waiting
+2025-09-01T17:50:12.8645399Z a4925b5c711a: Waiting
+2025-09-01T17:50:12.8645631Z cd9459784e3c: Waiting
+2025-09-01T17:50:12.9250011Z 2a328af1ca3a: Verifying Checksum
+2025-09-01T17:50:12.9250772Z 2a328af1ca3a: Download complete
+2025-09-01T17:50:13.0006863Z 165b60d1bb48: Verifying Checksum
+2025-09-01T17:50:13.0007621Z 165b60d1bb48: Download complete
+2025-09-01T17:50:13.0487953Z efc2b5ad9eec: Verifying Checksum
+2025-09-01T17:50:13.0489384Z efc2b5ad9eec: Download complete
+2025-09-01T17:50:13.0703126Z 590ab93c22d2: Verifying Checksum
+2025-09-01T17:50:13.0704107Z 590ab93c22d2: Download complete
+2025-09-01T17:50:13.1303209Z 32b58fa44788: Verifying Checksum
+2025-09-01T17:50:13.1306260Z 32b58fa44788: Download complete
+2025-09-01T17:50:13.1461601Z bd7e451dfea1: Verifying Checksum
+2025-09-01T17:50:13.1467151Z bd7e451dfea1: Download complete
+2025-09-01T17:50:13.2525968Z a4925b5c711a: Verifying Checksum
+2025-09-01T17:50:13.2529052Z a4925b5c711a: Download complete
+2025-09-01T17:50:13.3587585Z cd9459784e3c: Verifying Checksum
+2025-09-01T17:50:13.3588215Z cd9459784e3c: Download complete
+2025-09-01T17:50:13.5082229Z c209e9dadc51: Verifying Checksum
+2025-09-01T17:50:13.5083812Z c209e9dadc51: Download complete
+2025-09-01T17:50:13.7937598Z 26ea96c4c14c: Verifying Checksum
+2025-09-01T17:50:13.7938399Z 26ea96c4c14c: Download complete
+2025-09-01T17:50:14.2940608Z efc2b5ad9eec: Pull complete
+2025-09-01T17:50:15.6661667Z 165b60d1bb48: Pull complete
+2025-09-01T17:50:15.6824937Z 2a328af1ca3a: Pull complete
+2025-09-01T17:50:16.6184520Z 32b58fa44788: Pull complete
+2025-09-01T17:50:16.6287889Z 590ab93c22d2: Pull complete
+2025-09-01T17:50:20.6173314Z 26ea96c4c14c: Pull complete
+2025-09-01T17:50:20.6301169Z bd7e451dfea1: Pull complete
+2025-09-01T17:50:22.5933732Z c209e9dadc51: Pull complete
+2025-09-01T17:50:22.6202029Z a4925b5c711a: Pull complete
+2025-09-01T17:50:22.6305937Z cd9459784e3c: Pull complete
+2025-09-01T17:50:22.6342711Z Digest: sha256:6791ebfd912185ed59bfb5fb102664fa872496b79f87ff8b9cfba292a7345041
+2025-09-01T17:50:22.6359291Z Status: Downloaded newer image for ghcr.io/actions/jekyll-build-pages:v1.0.13
+2025-09-01T17:50:22.6369734Z ghcr.io/actions/jekyll-build-pages:v1.0.13
+2025-09-01T17:50:22.6391660Z ##[endgroup]
+2025-09-01T17:50:22.6665984Z ##[group]Run actions/checkout@v4
+2025-09-01T17:50:22.6666559Z with:
+2025-09-01T17:50:22.6666736Z   ref: main
+2025-09-01T17:50:22.6666918Z   submodules: recursive
+2025-09-01T17:50:22.6667177Z   repository: sahanipradum98-spec/Pradum-Sahani
+2025-09-01T17:50:22.6667632Z   token: ***
+2025-09-01T17:50:22.6667816Z   ssh-strict: true
+2025-09-01T17:50:22.6667998Z   ssh-user: git
+2025-09-01T17:50:22.6668187Z   persist-credentials: true
+2025-09-01T17:50:22.6668401Z   clean: true
+2025-09-01T17:50:22.6668596Z   sparse-checkout-cone-mode: true
+2025-09-01T17:50:22.6668846Z   fetch-depth: 1
+2025-09-01T17:50:22.6669081Z   fetch-tags: false
+2025-09-01T17:50:22.6669262Z   show-progress: true
+2025-09-01T17:50:22.6669451Z   lfs: false
+2025-09-01T17:50:22.6669622Z   set-safe-directory: true
+2025-09-01T17:50:22.6670032Z ##[endgroup]
+2025-09-01T17:50:22.7747739Z Syncing repository: sahanipradum98-spec/Pradum-Sahani
+2025-09-01T17:50:22.7749180Z ##[group]Getting Git version info
+2025-09-01T17:50:22.7749685Z Working directory is '/home/runner/work/Pradum-Sahani/Pradum-Sahani'
+2025-09-01T17:50:22.7750270Z [command]/usr/bin/git version
+2025-09-01T17:50:22.7783732Z git version 2.51.0
+2025-09-01T17:50:22.7810361Z ##[endgroup]
+2025-09-01T17:50:22.7826331Z Temporarily overriding HOME='/home/runner/work/_temp/72760f06-ce21-40c6-bf03-799b05882dbb' before making global git config changes
+2025-09-01T17:50:22.7827683Z Adding repository directory to the temporary git global config as a safe directory
+2025-09-01T17:50:22.7840000Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Pradum-Sahani/Pradum-Sahani
+2025-09-01T17:50:22.7874815Z Deleting the contents of '/home/runner/work/Pradum-Sahani/Pradum-Sahani'
+2025-09-01T17:50:22.7878589Z ##[group]Initializing the repository
+2025-09-01T17:50:22.7883116Z [command]/usr/bin/git init /home/runner/work/Pradum-Sahani/Pradum-Sahani
+2025-09-01T17:50:22.7949367Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-09-01T17:50:22.7950348Z hint: is subject to change. To configure the initial branch name to use in all
+2025-09-01T17:50:22.7951230Z hint: of your new repositories, which will suppress this warning, call:
+2025-09-01T17:50:22.7951871Z hint:
+2025-09-01T17:50:22.7952307Z hint: 	git config --global init.defaultBranch <name>
+2025-09-01T17:50:22.7952612Z hint:
+2025-09-01T17:50:22.7952940Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-09-01T17:50:22.7953753Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-09-01T17:50:22.7954453Z hint:
+2025-09-01T17:50:22.7954794Z hint: 	git branch -m <name>
+2025-09-01T17:50:22.7955534Z hint:
+2025-09-01T17:50:22.7956094Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-09-01T17:50:22.7957237Z Initialized empty Git repository in /home/runner/work/Pradum-Sahani/Pradum-Sahani/.git/
+2025-09-01T17:50:22.7965216Z [command]/usr/bin/git remote add origin https://github.com/sahanipradum98-spec/Pradum-Sahani
+2025-09-01T17:50:22.7997553Z ##[endgroup]
+2025-09-01T17:50:22.7998155Z ##[group]Disabling automatic garbage collection
+2025-09-01T17:50:22.8002127Z [command]/usr/bin/git config --local gc.auto 0
+2025-09-01T17:50:22.8030457Z ##[endgroup]
+2025-09-01T17:50:22.8031312Z ##[group]Setting up auth
+2025-09-01T17:50:22.8038472Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-09-01T17:50:22.8068764Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-09-01T17:50:22.8337406Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-09-01T17:50:22.8367920Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-09-01T17:50:22.8587458Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-09-01T17:50:22.8621854Z ##[endgroup]
+2025-09-01T17:50:22.8630399Z ##[group]Fetching the repository
+2025-09-01T17:50:22.8631419Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/heads/main*:refs/remotes/origin/main* +refs/tags/main*:refs/tags/main*
+2025-09-01T17:50:23.0750356Z From https://github.com/sahanipradum98-spec/Pradum-Sahani
+2025-09-01T17:50:23.0751015Z  * [new branch]      main       -> origin/main
+2025-09-01T17:50:23.0778927Z ##[endgroup]
+2025-09-01T17:50:23.0779610Z ##[group]Determining the checkout info
+2025-09-01T17:50:23.0786892Z [command]/usr/bin/git branch --list --remote origin/main
+2025-09-01T17:50:23.0810121Z   origin/main
+2025-09-01T17:50:23.0815290Z ##[endgroup]
+2025-09-01T17:50:23.0819491Z [command]/usr/bin/git sparse-checkout disable
+2025-09-01T17:50:23.0856133Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-09-01T17:50:23.0881192Z ##[group]Checking out the ref
+2025-09-01T17:50:23.0885070Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-09-01T17:50:23.0921822Z Switched to a new branch 'main'
+2025-09-01T17:50:23.0924952Z branch 'main' set up to track 'origin/main'.
+2025-09-01T17:50:23.0929863Z ##[endgroup]
+2025-09-01T17:50:23.0930382Z ##[group]Setting up auth for fetching submodules
+2025-09-01T17:50:23.0934745Z [command]/usr/bin/git config --global http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-09-01T17:50:23.0968236Z [command]/usr/bin/git config --global --unset-all url.https://github.com/.insteadOf
+2025-09-01T17:50:23.0995466Z [command]/usr/bin/git config --global --add url.https://github.com/.insteadOf git@github.com:
+2025-09-01T17:50:23.1022351Z [command]/usr/bin/git config --global --add url.https://github.com/.insteadOf org-229545535@github.com:
+2025-09-01T17:50:23.1046630Z ##[endgroup]
+2025-09-01T17:50:23.1047073Z ##[group]Fetching submodules
+2025-09-01T17:50:23.1050722Z [command]/usr/bin/git submodule sync --recursive
+2025-09-01T17:50:23.1273437Z [command]/usr/bin/git -c protocol.version=2 submodule update --init --force --depth=1 --recursive
+2025-09-01T17:50:23.1495485Z [command]/usr/bin/git submodule foreach --recursive git config --local gc.auto 0
+2025-09-01T17:50:23.1724919Z ##[endgroup]
+2025-09-01T17:50:23.1725538Z ##[group]Persisting credentials for submodules
+2025-09-01T17:50:23.1734756Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'url\.https\:\/\/github\.com\/\.insteadOf' && git config --local --unset-all 'url.https://github.com/.insteadOf' || :"
+2025-09-01T17:50:23.1978934Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local 'http.https://github.com/.extraheader' 'AUTHORIZATION: basic ***' && git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2025-09-01T17:50:23.2219989Z [command]/usr/bin/git submodule foreach --recursive git config --local --add 'url.https://github.com/.insteadOf' 'git@github.com:'
+2025-09-01T17:50:23.2466318Z [command]/usr/bin/git submodule foreach --recursive git config --local --add 'url.https://github.com/.insteadOf' 'org-229545535@github.com:'
+2025-09-01T17:50:23.2706102Z ##[endgroup]
+2025-09-01T17:50:23.2750152Z [command]/usr/bin/git log -1 --format=%H
+2025-09-01T17:50:23.2773851Z 69b25f4ad1fd5e785e9b673c157538834a510c8e
+2025-09-01T17:50:23.2955399Z ##[group]Run actions/jekyll-build-pages@v1
+2025-09-01T17:50:23.2955698Z with:
+2025-09-01T17:50:23.2955865Z   source: .
+2025-09-01T17:50:23.2956060Z   destination: ./_site
+2025-09-01T17:50:23.2956255Z   future: false
+2025-09-01T17:50:23.2956500Z   build_revision: 69b25f4ad1fd5e785e9b673c157538834a510c8e
+2025-09-01T17:50:23.2956799Z   verbose: true
+2025-09-01T17:50:23.2957102Z   token: ***
+2025-09-01T17:50:23.2957284Z ##[endgroup]
+2025-09-01T17:50:23.3048399Z ##[command]/usr/bin/docker run --name ghcrioactionsjekyllbuildpagesv1013_2be828 --label 04aae4 --workdir /github/workspace --rm -e "INPUT_SOURCE" -e "INPUT_DESTINATION" -e "INPUT_FUTURE" -e "INPUT_BUILD_REVISION" -e "INPUT_VERBOSE" -e "INPUT_TOKEN" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_RUN_ID" -e "GITHUB_RUN_NUMBER" -e "GITHUB_RETENTION_DAYS" -e "GITHUB_RUN_ATTEMPT" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" -e "GITHUB_BASE_REF" -e "GITHUB_EVENT_NAME" -e "GITHUB_SERVER_URL" -e "GITHUB_API_URL" -e "GITHUB_GRAPHQL_URL" -e "GITHUB_REF_NAME" -e "GITHUB_REF_PROTECTED" -e "GITHUB_REF_TYPE" -e "GITHUB_WORKFLOW_REF" -e "GITHUB_WORKFLOW_SHA" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_TRIGGERING_ACTOR" -e "GITHUB_WORKSPACE" -e "GITHUB_ACTION" -e "GITHUB_EVENT_PATH" -e "GITHUB_ACTION_REPOSITORY" -e "GITHUB_ACTION_REF" -e "GITHUB_PATH" -e "GITHUB_ENV" -e "GITHUB_STEP_SUMMARY" -e "GITHUB_STATE" -e "GITHUB_OUTPUT" -e "RUNNER_OS" -e "RUNNER_ARCH" -e "RUNNER_NAME" -e "RUNNER_ENVIRONMENT" -e "RUNNER_TOOL_CACHE" -e "RUNNER_TEMP" -e "RUNNER_WORKSPACE" -e "ACTIONS_RUNTIME_URL" -e "ACTIONS_RUNTIME_TOKEN" -e "ACTIONS_CACHE_URL" -e "ACTIONS_ID_TOKEN_REQUEST_URL" -e "ACTIONS_ID_TOKEN_REQUEST_TOKEN" -e "ACTIONS_RESULTS_URL" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" -v "/home/runner/work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/runner/work/Pradum-Sahani/Pradum-Sahani":"/github/workspace" ghcr.io/actions/jekyll-build-pages:v1.0.13
+2025-09-01T17:50:24.5502086Z [33mConfiguration file: none[0m
+2025-09-01T17:50:24.6653776Z To use retry middleware with Faraday v2.0+, install `faraday-retry` gem
+2025-09-01T17:50:26.3881757Z   Logging at level: debug
+2025-09-01T17:50:26.3882167Z       GitHub Pages: github-pages v232
+2025-09-01T17:50:26.3882579Z       GitHub Pages: jekyll v3.10.0
+2025-09-01T17:50:26.3883027Z              Theme: jekyll-theme-primer
+2025-09-01T17:50:26.3883820Z       Theme source: /usr/local/bundle/gems/jekyll-theme-primer-0.6.0
+2025-09-01T17:50:26.3884523Z          Requiring: jekyll-github-metadata
+2025-09-01T17:50:26.3885019Z          Requiring: jekyll-seo-tag
+2025-09-01T17:50:26.3885451Z          Requiring: jekyll-coffeescript
+2025-09-01T17:50:26.3885916Z          Requiring: jekyll-commonmark-ghpages
+2025-09-01T17:50:26.3886382Z          Requiring: jekyll-gist
+2025-09-01T17:50:26.3886772Z          Requiring: jekyll-github-metadata
+2025-09-01T17:50:26.3887181Z          Requiring: jekyll-paginate
+2025-09-01T17:50:26.3888053Z          Requiring: jekyll-relative-links
+2025-09-01T17:50:26.3888524Z          Requiring: jekyll-optional-front-matter
+2025-09-01T17:50:26.3889007Z          Requiring: jekyll-readme-index
+2025-09-01T17:50:26.3889443Z          Requiring: jekyll-default-layout
+2025-09-01T17:50:26.3889925Z          Requiring: jekyll-titles-from-headings
+2025-09-01T17:50:26.3890392Z    GitHub Metadata: Initializing...
+2025-09-01T17:50:26.3890813Z             Source: /github/workspace/.
+2025-09-01T17:50:26.3891238Z        Destination: /github/workspace/./_site
+2025-09-01T17:50:26.3891778Z  Incremental build: disabled. Enable with --incremental
+2025-09-01T17:50:26.3892257Z       Generating... 
+2025-09-01T17:50:26.3896866Z         Generating: JekyllOptionalFrontMatter::Generator finished in 0.000141254 seconds.
+2025-09-01T17:50:26.3897918Z         Generating: JekyllReadmeIndex::Generator finished in 0.001686464 seconds.
+2025-09-01T17:50:26.3898824Z         Generating: Jekyll::Paginate::Pagination finished in 1.067e-05 seconds.
+2025-09-01T17:50:26.3899727Z         Generating: JekyllRelativeLinks::Generator finished in 7.2887e-05 seconds.
+2025-09-01T17:50:26.3900265Z         Generating: JekyllDefaultLayout::Generator finished in 0.000113753 seconds.
+2025-09-01T17:50:26.3901151Z          Requiring: kramdown-parser-gfm
+2025-09-01T17:50:26.3901790Z         Generating: JekyllTitlesFromHeadings::Generator finished in 0.007591008 seconds.
+2025-09-01T17:50:26.3902297Z          Rendering: assets/css/style.scss
+2025-09-01T17:50:26.3902575Z   Pre-Render Hooks: assets/css/style.scss
+2025-09-01T17:50:26.3902975Z   Rendering Markup: assets/css/style.scss
+2025-09-01T17:50:26.3903403Z          Rendering: README.md
+2025-09-01T17:50:26.3903923Z   Pre-Render Hooks: README.md
+2025-09-01T17:50:26.3904318Z   Rendering Markup: README.md
+2025-09-01T17:50:26.3904750Z   Rendering Layout: README.md
+2025-09-01T17:50:26.3905140Z      Layout source: theme
+2025-09-01T17:50:26.3905701Z    GitHub Metadata: Generating for sahanipradum98-spec/Pradum-Sahani
+2025-09-01T17:50:26.3906633Z    GitHub Metadata: Calling @client.repository("sahanipradum98-spec/Pradum-Sahani", {:accept=>"application/vnd.github.drax-preview+json"})
+2025-09-01T17:50:26.3907468Z    GitHub Metadata: Calling @client.pages("sahanipradum98-spec/Pradum-Sahani", {})
+2025-09-01T17:50:26.3908049Z            Writing: /github/workspace/_site/assets/css/style.css
+2025-09-01T17:50:26.3908481Z            Writing: /github/workspace/_site/index.html
+2025-09-01T17:50:26.3908763Z                     done in 1.429 seconds.
+2025-09-01T17:50:26.3909049Z  Auto-regeneration: disabled. Use --watch to enable.
+2025-09-01T17:50:26.4719709Z ##[group]Run actions/upload-pages-artifact@v3
+2025-09-01T17:50:26.4720010Z with:
+2025-09-01T17:50:26.4720183Z   path: ./_site
+2025-09-01T17:50:26.4720365Z   name: github-pages
+2025-09-01T17:50:26.4720555Z   retention-days: 1
+2025-09-01T17:50:26.4720738Z ##[endgroup]
+2025-09-01T17:50:26.4817185Z ##[group]Run echo ::group::Archive artifact
+2025-09-01T17:50:26.4817567Z [36;1mecho ::group::Archive artifact[0m
+2025-09-01T17:50:26.4817814Z [36;1mtar \[0m
+2025-09-01T17:50:26.4818046Z [36;1m  --dereference --hard-dereference \[0m
+2025-09-01T17:50:26.4818327Z [36;1m  --directory "$INPUT_PATH" \[0m
+2025-09-01T17:50:26.4818611Z [36;1m  -cvf "$RUNNER_TEMP/artifact.tar" \[0m
+2025-09-01T17:50:26.4818863Z [36;1m  --exclude=.git \[0m
+2025-09-01T17:50:26.4819082Z [36;1m  --exclude=.github \[0m
+2025-09-01T17:50:26.4819289Z [36;1m  .[0m
+2025-09-01T17:50:26.4819464Z [36;1mecho ::endgroup::[0m
+2025-09-01T17:50:26.4846732Z shell: /usr/bin/sh -e {0}
+2025-09-01T17:50:26.4846972Z env:
+2025-09-01T17:50:26.4847181Z   INPUT_PATH: ./_site
+2025-09-01T17:50:26.4847372Z ##[endgroup]
+2025-09-01T17:50:26.4905211Z ##[group]Archive artifact
+2025-09-01T17:50:26.4917534Z ./
+2025-09-01T17:50:26.4917811Z ./README.md
+2025-09-01T17:50:26.4918142Z ./assets/
+2025-09-01T17:50:26.4918415Z ./assets/css/
+2025-09-01T17:50:26.4918701Z ./assets/css/style.css
+2025-09-01T17:50:26.4919431Z ./index.html
+2025-09-01T17:50:26.4922268Z ##[endgroup]
+2025-09-01T17:50:26.4989488Z ##[group]Run actions/upload-artifact@v4
+2025-09-01T17:50:26.4989737Z with:
+2025-09-01T17:50:26.4989907Z   name: github-pages
+2025-09-01T17:50:26.4990135Z   path: /home/runner/work/_temp/artifact.tar
+2025-09-01T17:50:26.4990385Z   retention-days: 1
+2025-09-01T17:50:26.4990579Z   if-no-files-found: error
+2025-09-01T17:50:26.4990781Z   compression-level: 6
+2025-09-01T17:50:26.4990970Z   overwrite: false
+2025-09-01T17:50:26.4991159Z   include-hidden-files: false
+2025-09-01T17:50:26.4991374Z ##[endgroup]
+2025-09-01T17:50:26.7160594Z With the provided path, there will be 1 file uploaded
+2025-09-01T17:50:26.7165326Z Artifact name is valid!
+2025-09-01T17:50:26.7166875Z Root directory input is valid!
+2025-09-01T17:50:26.8296989Z Beginning upload of artifact content to blob storage
+2025-09-01T17:50:26.8969378Z Uploaded bytes 12918
+2025-09-01T17:50:26.9142067Z Finished uploading artifact content to blob storage!
+2025-09-01T17:50:26.9145532Z SHA256 digest of uploaded artifact zip is 9b128d79cc80068a6e7226fd58d84e436a34d7166e9c0600bdd86004d1061d14
+2025-09-01T17:50:26.9146898Z Finalizing artifact upload
+2025-09-01T17:50:26.9956226Z Artifact github-pages.zip successfully finalized. Artifact ID 3900315698
+2025-09-01T17:50:26.9957778Z Artifact github-pages has been successfully uploaded! Final size is 12918 bytes. Artifact ID is 3900315698
+2025-09-01T17:50:26.9966082Z Artifact download URL: https://github.com/sahanipradum98-spec/Pradum-Sahani/actions/runs/17384321599/artifacts/3900315698
+2025-09-01T17:50:27.0139798Z Post job cleanup.
+2025-09-01T17:50:27.1078892Z [command]/usr/bin/git version
+2025-09-01T17:50:27.1114708Z git version 2.51.0
+2025-09-01T17:50:27.1158442Z Temporarily overriding HOME='/home/runner/work/_temp/3d107b6a-e354-459a-86f2-cd39472322e4' before making global git config changes
+2025-09-01T17:50:27.1159721Z Adding repository directory to the temporary git global config as a safe directory
+2025-09-01T17:50:27.1165056Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Pradum-Sahani/Pradum-Sahani
+2025-09-01T17:50:27.1200877Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-09-01T17:50:27.1232940Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-09-01T17:50:27.1453450Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-09-01T17:50:27.1475145Z http.https://github.com/.extraheader
+2025-09-01T17:50:27.1487370Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-09-01T17:50:27.1517202Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-09-01T17:50:27.1833785Z Cleaning up orphan processes
