@@ -1,0 +1,31 @@
+var YourComponent = React.createClass({
+  render: function() {
+    return (
+      <div>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Online Pharmacy - Registered Pharmacist</title>
+        <link rel="stylesheet" href="style.css" />
+        <header>
+          <h1>Registered Pharmacist - Online Guidance</h1>
+          <p>Prescription Upload | Medicine Guidance | Subscription Service</p>
+        </header>
+        <section className="upload">
+          <h2>Upload Your Prescription</h2>
+          <form>
+            <input type="file" accept="image/*,.pdf" />
+            <button type="submit">Upload</button>
+          </form>
+        </section>
+        <section className="contact">
+          <h2>Contact</h2>
+          <p>📞 +91 9517360291</p>
+          <p>📧 sahanipradum98@gmail.com</p>
+        </section>
+        <footer>
+          <p>© 2025 Registered Pharmacist | All Rights Reserved</p>
+        </footer>
+      </div>
+    );
+  }
+});
