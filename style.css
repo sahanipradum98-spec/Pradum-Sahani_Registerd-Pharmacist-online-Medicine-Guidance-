@@ -34,3 +34,8 @@ footer {
     bottom: 0;
     width: 100%;
 }
+gbody {
+  background: linear-gradient(120deg, #89f7fe, #66a6ff);
+  min-height: 100vh;
+  margin: 0;
+}
