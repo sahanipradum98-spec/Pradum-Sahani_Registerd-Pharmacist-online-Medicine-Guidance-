@@ -38,4 +38,11 @@ gbody {
   background: linear-gradient(120deg, #89f7fe, #66a6ff);
   min-height: 100vh;
   margin: 0;
-}
+body {
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  font-family: Arial, sans-serif;
+} 
+body {
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  font-family: Arial, sans-serif;
+
