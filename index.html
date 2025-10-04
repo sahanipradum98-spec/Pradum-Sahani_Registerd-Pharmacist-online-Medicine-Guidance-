@@ -22,6 +22,14 @@
       object-fit: cover; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     }
     .card { border-radius: 15px; }
+    .service-card {
+      color: white; padding: 20px; border-radius: 15px;
+      text-align: center; font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .bg-blue { background: #007bff; }
+    .bg-green { background: #28a745; }
+    .bg-orange { background: #ff9800; }
     footer {
       background: #003366; color: white; text-align: center;
       padding: 20px; margin-top: 40px;
@@ -40,7 +48,7 @@
   </div>
 </nav>
 
-<!-- Hero Section with Photo + About -->
+<!-- Hero Section -->
 <section id="hero">
   <img src="Pradum.jpg" alt="Pradum Sahani">
   <h2 class="mt-3">Pradum Sahani</h2>
@@ -52,7 +60,7 @@
 <section id="about" class="container my-5">
   <div class="card shadow p-4">
     <h3>About</h3>
-    <p>D.Pharm, DHA Qualified. Available for online prescription review, medication guidance, and teleconsultation support.</p>
+    <p>D.Pharm, DHA Qualified. Helping patients with safe medicine usage, prescription review, and teleconsultation support.</p>
   </div>
 </section>
 
@@ -60,7 +68,7 @@
 <section id="search" class="container my-5">
   <div class="card shadow p-4">
     <h3>🔎 Free Medicine Search</h3>
-    <p class="text-muted">Enter a medicine name to get basic details (usage, side effects, etc).</p>
+    <p class="text-muted">Enter a medicine name to get basic details.</p>
     <input type="text" id="drugInput" class="form-control mb-3" placeholder="Type medicine name...">
     <button class="btn btn-primary" onclick="searchDrug()">Search</button>
     <div id="drugResult" class="mt-4"></div>
@@ -68,40 +76,50 @@
 </section>
 
 <!-- Services Section -->
-<section id="services" class="bg-light py-5">
+<section id="services" class="py-5">
   <div class="container">
     <h3 class="text-center mb-4">Our Services</h3>
     <div class="row g-4">
       <div class="col-md-4">
-        <div class="card p-3 shadow">
-          <h5>💊 Prescription Review</h5>
-          <p>Get your prescriptions checked & verified online.</p>
+        <div class="service-card bg-blue">
+          💊 Prescription Review
+          <p class="mt-2">Get your prescriptions checked & verified online.</p>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card p-3 shadow">
-          <h5>📦 OTC Medicine Advice</h5>
-          <p>Guidance for safe use of common over-the-counter medicines.</p>
+        <div class="service-card bg-green">
+          📦 OTC Medicine Advice
+          <p class="mt-2">Guidance for safe use of over-the-counter medicines.</p>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card p-3 shadow">
-          <h5>📞 Teleconsultation</h5>
-          <p>Contact for appointment & online guidance.</p>
+        <div class="service-card bg-orange">
+          📞 Teleconsultation
+          <p class="mt-2">Contact for appointment & online guidance.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Upload Prescription (only once) -->
+<!-- Upload Prescription -->
 <section id="upload" class="container my-5">
   <div class="card shadow p-4">
     <h4>Upload Prescription</h4>
-    <p class="text-muted">Please upload your prescription securely. All files will be saved directly in Google Drive.</p>
-    <!-- 👇 Replace with your own Google Form link -->
+    <p class="text-muted">Upload your prescription securely (Google Drive Form).</p>
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeDemoLink/viewform?embedded=true"
             width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  </div>
+</section>
+
+<!-- Payment Section -->
+<section id="payment" class="container my-5">
+  <div class="card shadow p-4 text-center">
+    <h3>💳 Make a Payment</h3>
+    <p class="text-muted">Pay securely via UPI for consultation or services.</p>
+    <a href="upi://pay?pa=sahanipradum98-2@okaxis&pn=Pradum%20Sahani&cu=INR"
+       class="btn btn-success btn-lg">Pay Now with UPI</a>
+    <p class="mt-2">UPI ID: <b>sahanipradum98-2@okaxis</b></p>
   </div>
 </section>
 
@@ -124,8 +142,42 @@
 </footer>
 
 <script>
-async function searchDrug() {
-  const query = document.getElementById("drugInput").value.trim();
+// ✅ Offline Medicine Database (100+ medicines can be added)
+const medicines = {
+  "paracetamol": "Used for fever & pain relief.",
+  "amoxicillin": "Antibiotic for bacterial infections.",
+  "cetirizine": "Used for allergy relief.",
+  "omeprazole": "Reduces acidity and gastric problems.",
+  "azithromycin": "Antibiotic for respiratory & skin infections.",
+  "ibuprofen": "Pain reliever and anti-inflammatory.",
+  "metformin": "Used for type 2 diabetes control.",
+  "atorvastatin": "Lowers cholesterol levels.",
+  "losartan": "Used for high blood pressure.",
+  "pantoprazole": "Treats acidity & gastric reflux.",
+  "levocetirizine": "Anti-allergy medicine.",
+  "doxycycline": "Antibiotic for bacterial infections.",
+  "prednisolone": "Steroid for inflammation.",
+  "ciprofloxacin": "Antibiotic for urinary & GI infections.",
+  "vitamin d3": "Supplement for bone strength.",
+  "iron supplements": "Used for anemia treatment.",
+  "multivitamin": "Boosts immunity & general health.",
+  "hydroxyzine": "Used for anxiety & allergies.",
+  "montelukast": "Used for asthma & allergies.",
+  "chloroquine": "Used for malaria treatment.",
+  "insulin": "Used to control diabetes.",
+  "clopidogrel": "Prevents blood clots.",
+  "enalapril": "Used for hypertension & heart failure.",
+  "furosemide": "Diuretic for swelling & high BP.",
+  "loperamide": "Used for diarrhea.",
+  "ondansetron": "Used for nausea & vomiting.",
+  "ranitidine": "Used for acidity (less common now).",
+  "salbutamol": "Relief from asthma & wheezing.",
+  "warfarin": "Blood thinner to prevent clots.",
+  "zinc supplements": "Boosts immunity & healing."
+};
+
+function searchDrug() {
+  const query = document.getElementById("drugInput").value.trim().toLowerCase();
   const resultDiv = document.getElementById("drugResult");
 
   if (!query) {
@@ -133,28 +185,13 @@ async function searchDrug() {
     return;
   }
 
-  resultDiv.innerHTML = "<p>Searching...</p>";
-
-  try {
-    const response = await fetch(`https://api.fda.gov/drug/label.json?search=openfda.brand_name:${query}&limit=1`);
-    const data = await response.json();
-
-    if (data.results && data.results.length > 0) {
-      const drug = data.results[0];
-      resultDiv.innerHTML = `
-        <h5>${query.toUpperCase()}</h5>
-        <p><b>Purpose:</b> ${drug.purpose ? drug.purpose.join(", ") : "N/A"}</p>
-        <p><b>Indications:</b> ${drug.indications_and_usage ? drug.indications_and_usage.join(" ") : "N/A"}</p>
-        <p><b>Warnings:</b> ${drug.warnings ? drug.warnings.join(" ") : "N/A"}</p>
-      `;
-    } else {
-      resultDiv.innerHTML = "<p class='text-warning'>No details found for this medicine.</p>";
-    }
-  } catch (err) {
-    resultDiv.innerHTML = "<p class='text-danger'>Error fetching medicine details. Try another name.</p>";
+  if (medicines[query]) {
+    resultDiv.innerHTML = `<h5>${query.toUpperCase()}</h5><p>${medicines[query]}</p>`;
+  } else {
+    resultDiv.innerHTML = "<p class='text-warning'>No details found for this medicine.</p>";
   }
 }
 </script>
 
 </body>
-</html>
+  </html>
