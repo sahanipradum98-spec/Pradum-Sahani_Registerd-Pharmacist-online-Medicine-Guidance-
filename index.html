@@ -144,7 +144,46 @@ const medicines = {
   "zyloric": { salt: "Allopurinol", uses: "Gout, uric acid control" },
   "hifenac": { salt: "Aceclofenac", uses: "Pain relief, arthritis" },
   "seroflo": { salt: "Salmeterol + Fluticasone", uses: "Asthma, COPD" }
+};<script>
+// ✅ Offline Medicine Database (100+ medicines can be added)
+const medicines = {
+  "paracetamol": "Used for fever & pain relief.",
+  "amoxicillin": "Antibiotic for bacterial infections.",
+  "cetirizine": "Used for allergy relief.",
+  "omeprazole": "Reduces acidity and gastric problems.",
+  "azithromycin": "Antibiotic for respiratory & skin infections.",
+  "ibuprofen": "Pain reliever and anti-inflammatory.",
+  "metformin": "Used for type 2 diabetes control.",
+  "atorvastatin": "Lowers cholesterol levels.",
+  "losartan": "Used for high blood pressure.",
+  "pantoprazole": "Treats acidity & gastric reflux.",
+  "levocetirizine": "Anti-allergy medicine.",
+  "doxycycline": "Antibiotic for bacterial infections.",
+  "prednisolone": "Steroid for inflammation.",
+  "ciprofloxacin": "Antibiotic for urinary & GI infections.",
+  "vitamin d3": "Supplement for bone strength.",
+  "iron supplements": "Used for anemia treatment.",
+  "multivitamin": "Boosts immunity & general health.",
+  "hydroxyzine": "Used for anxiety & allergies.",
+  "montelukast": "Used for asthma & allergies.",
+  "chloroquine": "Used for malaria treatment.",
+  "insulin": "Used to control diabetes.",
+  "clopidogrel": "Prevents blood clots.",
+  "enalapril": "Used for hypertension & heart failure.",
+  "furosemide": "Diuretic for swelling & high BP.",
+  "loperamide": "Used for diarrhea.",
+  "ondansetron": "Used for nausea & vomiting.",
+  "ranitidine": "Used for acidity (less common now).",
+  "salbutamol": "Relief from asthma & wheezing.",
+  "warfarin": "Blood thinner to prevent clots.",
+  "zinc supplements": "Boosts immunity & healing."
 };
+
+function searchDrug() {
+  const query = document.getElementById("drugInput").value.trim().toLowerCase();
+  const resultDiv = document.getElementById("drugResult");
+
+  
 
 function searchDrug() {
   const query = document.getElementById("drugInput").value.trim().toLowerCase();
