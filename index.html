@@ -1,10 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pradum Sahani - Registered Pharmacist</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background:#f9f9f9; font-family: Arial, sans-serif; }
+    .profile-img { width:150px; height:150px; object-fit:cover; border:5px solid #003366; }
+    .section-title { color:#003366; margin-bottom:15px; }
+    .services-card { background:#e3f2fd; border-radius:10px; padding:15px; }
+    .contact-info p { margin:5px 0; }
+    .social-icons a { font-size:20px; margin:0 8px; }
+    .social-icons .facebook { color:#1877F2; }
+    .social-icons .instagram { color:#E4405F; }
+    .social-icons .twitter { color:#1DA1F2; }
+  </style>
+</head>
+<body>
+
+<!-- Profile Section -->
+<section class="container text-center my-4">
+  <div class="card shadow-lg p-4">
+    <img src="https://via.placeholder.com/150" alt="Profile" class="rounded-circle profile-img mb-3">
+    <h2 class="section-title">Pradum Sahani</h2>
+    <h5 style="color:#007BFF;">Registered Pharmacist | DHA Qualified</h5>
+    <p>Available for online prescription review, medication guidance, and teleconsultation support.</p>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="container my-4">
+  <h3 class="section-title text-center">💊 Our Services</h3>
+  <div class="row g-3">
+    <div class="col-md-4">
+      <div class="services-card shadow-sm">
+        <h5>Prescription Review</h5>
+        <p>Get safe & accurate prescription verification.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="services-card shadow-sm">
+        <h5>Medicine Guidance</h5>
+        <p>Personalized medicine & dosage advice.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="services-card shadow-sm">
+        <h5>OTC Medicine Advice</h5>
+        <p>Guidance for safe use of over-the-counter medicines.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="container my-4">
+  <h3 class="section-title text-center">📞 Contact Me</h3>
+  <div class="card shadow p-3 text-center contact-info">
+    <p><strong>Email:</strong> <a href="mailto:sahanipradum98@gmail.com">sahanipradum98@gmail.com</a></p>
+    <p><strong>WhatsApp:</strong> <a href="https://wa.me/919517360291">+91-9517360291</a></p>
+    <p><strong>UPI:</strong> <code>sahanipradum98-2@okaxis</code></p>
+    <div class="social-icons mt-2">
+      <a href="https://www.facebook.com/share/16V3k7o6xE/" target="_blank" class="facebook"><i class="bi bi-facebook"></i> Facebook</a>
+      <a href="https://www.instagram.com/pradumsahani.019" target="_blank" class="instagram"><i class="bi bi-instagram"></i> Instagram</a>
+      <a href="https://twitter.com" target="_blank" class="twitter"><i class="bi bi-twitter"></i> Twitter</a>
+    </div>
+  </div>
+</section>
+
 <!-- Medicine Search Section -->
 <section class="container my-4">
   <div class="card shadow p-3">
-    <h4 style="color:#003366;">🔎 Medicine Search (by Brand or Salt)</h4>
+    <h3 class="section-title">🔎 Medicine Search (by Name, Brand or Salt)</h3>
     <div class="row g-2 align-items-center">
       <div class="col-md-8 col-sm-12">
-        <input id="drugInput" class="form-control" placeholder="Enter medicine name, salt or brand..." />
+        <input id="drugInput" class="form-control" placeholder="Enter medicine name, brand or salt..." />
       </div>
       <div class="col-md-4 col-sm-12 text-md-end">
         <button class="btn btn-primary" onclick="searchDrug()">Search</button>
@@ -15,13 +86,17 @@
   </div>
 </section>
 
+<!-- Medicine DB + Script -->
 <script>
 const medicinesDB = {
   "crocin": { displayName:"Crocin Advance 500mg", salt:"Paracetamol", dose:"500 mg", uses:"Fever, pain relief", company:"GSK", mrp:"₹40 (strip)", img:"https://www.netmeds.com/images/product-v1/600x600/835003/crocin_advance_500mg_tablet_15s_0.jpg" },
   "dolo": { displayName:"Dolo 650", salt:"Paracetamol", dose:"650 mg", uses:"Fever, headache, body pain", company:"Micro Labs", mrp:"₹30 (strip)", img:"https://www.netmeds.com/images/product-v1/600x600/821887/dolo_650mg_tablet_15s_0.jpg" },
   "augmentin": { displayName:"Augmentin 625", salt:"Amoxicillin + Clavulanic Acid", dose:"625 mg", uses:"Bacterial infections", company:"GSK", mrp:"₹180 (strip)", img:"https://www.netmeds.com/images/product-v1/600x600/104435/augmentin_625mg_tablet_10s_0.jpg" },
   "azithral": { displayName:"Azithral 500", salt:"Azithromycin", dose:"500 mg", uses:"Respiratory & skin infections", company:"Cipla", mrp:"₹120 (strip)", img:"https://www.netmeds.com/images/product-v1/600x600/359459/azithral_500mg_tablet_5s_0.jpg" },
-  "pantoprazole": { displayName:"Pantoprazole 40 mg", salt:"Pantoprazole", dose:"40 mg", uses:"Acidity, gastric reflux", company:"Sun Pharma", mrp:"₹45 (strip)", img:"https://via.placeholder.com/200x120?text=Pantoprazole" }
+  "pantoprazole": { displayName:"Pantoprazole 40 mg", salt:"Pantoprazole", dose:"40 mg", uses:"Acidity, gastric reflux", company:"Sun Pharma", mrp:"₹45 (strip)", img:"https://via.placeholder.com/200x120?text=Pantoprazole" },
+  "omeprazole": { displayName:"Omeprazole 20 mg", salt:"Omeprazole", dose:"20 mg", uses:"GERD, acidity", company:"Ranbaxy", mrp:"₹25 (strip)", img:"https://via.placeholder.com/200x120?text=Omeprazole" },
+  "metformin": { displayName:"Metformin 500 mg", salt:"Metformin HCl", dose:"500 mg", uses:"Type 2 Diabetes", company:"Lupin", mrp:"₹50 (strip)", img:"https://via.placeholder.com/200x120?text=Metformin" },
+  "atorvastatin": { displayName:"Atorvastatin 10 mg", salt:"Atorvastatin", dose:"10 mg", uses:"Cholesterol", company:"Pfizer", mrp:"₹60 (strip)", img:"https://via.placeholder.com/200x120?text=Atorvastatin" }
 };
 
 function searchDrug(){
@@ -29,19 +104,19 @@ function searchDrug(){
   const out = document.getElementById('drugResult');
   out.innerHTML = '';
   if (!q) {
-    out.innerHTML = "<p class='text-danger mt-3'>Please enter a medicine brand or salt.</p>";
+    out.innerHTML = "<p class='text-danger mt-3'>Please enter a medicine name, brand or salt.</p>";
     return;
   }
   let found = false;
   for (const key in medicinesDB) {
     const item = medicinesDB[key];
-    if (key.includes(q) || item.displayName.toLowerCase().includes(q) || (item.salt && item.salt.toLowerCase().includes(q))) {
+    if (key.includes(q) || item.displayName.toLowerCase().includes(q) || item.salt.toLowerCase().includes(q)) {
       renderMedicineCard(item);
       found = true;
     }
   }
   if (!found) {
-    out.innerHTML = "<p class='text-warning mt-3'>No medicine found. Try another name.</p>";
+    out.innerHTML = "<p class='text-warning mt-3'>No medicine found. Try another search.</p>";
   }
 }
 
@@ -54,11 +129,13 @@ function renderMedicineCard(data) {
       <img src="${data.img}" class="card-img-top" alt="${data.displayName}" onerror="this.src='https://via.placeholder.com/200x120?text=Image'">
       <div class="card-body">
         <h5>${data.displayName}</h5>
+        <p><strong>Brand:</strong> ${data.displayName.split(" ")[0]}</p>
         <p><strong>Salt:</strong> ${data.salt}</p>
         <p><strong>Dose:</strong> ${data.dose}</p>
         <p><strong>Uses:</strong> ${data.uses}</p>
         <p><strong>Company:</strong> ${data.company}</p>
-        <p><strong>MRP:</strong> ${data.mrp}</p>
+        <p class="mrp"><strong>MRP:</strong> ${data.mrp}</p>
+        <a href="https://wa.me/919517360291?text=I want to order ${encodeURIComponent(data.displayName)}" class="btn btn-success btn-sm">Order via WhatsApp</a>
       </div>
     </div>`;
   out.appendChild(col);
@@ -69,3 +146,9 @@ function clearResults(){
   document.getElementById('drugResult').innerHTML = '';
 }
 </script>
+
+<!-- Bootstrap icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+</body>
+</html>
