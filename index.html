@@ -1,78 +1,77 @@
-    <!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Pradum Sahani - Online Pharmacist</title>
+
+  <!-- Bootstrap + Font Awesome -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
-    body { font-family: Arial, sans-serif; background: #f4f7fb; }
+    body { font-family: Arial, sans-serif; background: #f4f7fb; color:#222; }
     nav.navbar { background: #003366; }
-    nav .navbar-brand { color: white !important; font-weight: bold; font-size: 22px; }
-    
-    /* Slider text styling */
-    .carousel-caption { 
-      background: rgba(0,0,0,0.6); 
-      border-radius: 10px; 
-      padding: 15px; 
+    nav .navbar-brand { color: #fff !important; font-weight:700; }
+    .carousel-caption { background: rgba(0,0,0,0.45); padding:12px; border-radius:8px; }
+    .carousel-caption h2 { color:#ffde59; font-weight:700; }
+    .profile { text-align:center; margin-top:20px; }
+    .profile img { width:170px; height:170px; object-fit:cover; border-radius:50%; border:4px solid #003366; }
+    .profile h2 { color:#003366; margin-top:12px; font-weight:700; }
+    .profile p.title { color:#ff6600; font-weight:600; }
+
+    .about-card { background: linear-gradient(135deg,#eaf6ff,#ffffff); border-left:6px solid #003366; }
+    .service-card { padding:18px; border-radius:12px; text-align:center; color:#fff; font-weight:700; box-shadow:0 6px 18px rgba(0,0,0,0.08); }
+    .bg-blue { background:#007bff; } .bg-green { background:#28a745; } .bg-orange { background:#ff9800; }
+
+    .contact-card { background: linear-gradient(135deg,#fff7e6,#fff1c2); }
+    .social-icons a { margin-right:12px; font-size:24px; }
+
+    /* medicine card */
+    .medicine-card img { height:120px; object-fit:contain; }
+    .medicine-card .card-body { text-align:left; }
+    .medicine-card h5 { color:#003366; font-weight:700; }
+    .mrp { color:#ff6600; font-weight:700; }
+
+    /* table */
+    table { width:100%; border-collapse:collapse; background:#fff; box-shadow:0 2px 10px rgba(0,0,0,0.06); }
+    th,td { border:1px solid #e6e6e6; padding:8px; text-align:left; }
+    th { background:#007bff; color:#fff; }
+
+    footer { background:#003366; color:#fff; padding:18px; text-align:center; margin-top:30px; }
+
+    /* responsive tweaks */
+    @media (max-width:576px){
+      .medicine-card img { height:90px; }
+      .profile img { width:130px; height:130px; }
     }
-    .carousel-caption h2 { color: #ffcc00; font-weight: bold; font-size: 28px; }
-    .carousel-caption p { color: #ffffff; }
-
-    /* Profile */
-    .profile img { width: 180px; height: 180px; border-radius: 50%; border: 4px solid #003366; }
-    .profile h2 { color: #003366; font-weight: bold; }
-
-    /* About */
-    .about-card { background: linear-gradient(135deg, #e3f2fd, #ffffff); border-left: 6px solid #003366; }
-
-    /* Services */
-    .service-card { padding: 20px; border-radius: 15px; text-align: center; font-weight: bold; color: white; }
-    .bg-blue { background: #007bff; }
-    .bg-green { background: #28a745; }
-    .bg-orange { background: #ff9800; }
-
-    /* Contact */
-    .contact-card { background: linear-gradient(135deg, #fceabb, #f8b500); }
-    .contact-card a { color: #003366; font-weight: bold; text-decoration: none; }
-    .social-icons i { font-size: 28px; margin-right: 12px; }
-    .fa-facebook { color: #1877f2; }
-    .fa-instagram { color: #e4405f; }
-    .fa-twitter { color: #1da1f2; }
-
-    /* Medicine card */
-    .medicine-card img { height: 120px; object-fit: contain; margin-bottom: 10px; }
-    .medicine-card h5 { color: #003366; font-weight: bold; }
-    .medicine-card p { margin-bottom: 5px; }
-
-    /* Footer */
-    footer { background: #003366; color: white; padding: 20px; text-align: center; }
   </style>
 </head>
 <body>
 
-<!-- Navbar -->
+<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg">
   <div class="container">
     <a class="navbar-brand" href="#">Pradum Sahani</a>
   </div>
 </nav>
 
-<!-- Hero Carousel -->
+<!-- SLIDER (banner) -->
 <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
+      <!-- replace banner1.jpg with your banner file or external url -->
       <img src="banner1.jpg" class="d-block w-100" alt="Banner 1">
-      <div class="carousel-caption">
-        <img src="Pradum.jpg" width="100" class="rounded-circle mb-2">
+      <div class="carousel-caption d-none d-md-block">
+        <!-- small circular photo inside slider -->
+        <img src="Pradum.jpg" width="80" height="80" style="border-radius:50%; object-fit:cover; border:2px solid #fff;">
         <h2>Pradum Sahani</h2>
         <p>Registered Pharmacist — DHA Qualified</p>
       </div>
     </div>
     <div class="carousel-item">
       <img src="banner2.jpg" class="d-block w-100" alt="Banner 2">
-      <div class="carousel-caption">
+      <div class="carousel-caption d-none d-md-block">
         <h2 style="color:#00ffcc;">Trusted Medicine Guidance</h2>
         <p>Prescription Review | Teleconsultation</p>
       </div>
@@ -80,26 +79,26 @@
   </div>
 </div>
 
-<!-- Permanent Profile -->
-<section class="profile text-center my-5">
+<!-- PROFILE (permanent) -->
+<section class="profile my-4 container">
   <img src="Pradum.jpg" alt="Pradum Sahani">
-  <h2 class="mt-3">Pradum Sahani</h2>
-  <p style="color:#ff6600;">Registered Pharmacist — D.Pharm, DHA Qualified</p>
+  <h2>Pradum Sahani</h2>
+  <p class="title">Registered Pharmacist — D.Pharm, DHA Qualified</p>
 </section>
 
-<!-- About -->
-<section class="container my-5">
+<!-- ABOUT -->
+<section class="container my-4">
   <div class="card about-card shadow p-4">
     <h3 style="color:#003366;">About</h3>
-    <p><b style="color:#ff0000;">Pradum Sahani</b> is a DHA Qualified Registered Pharmacist. He provides online prescription review, medication guidance, and teleconsultation support.</p>
+    <p><strong style="color:#d9534f;">Pradum Sahani</strong> DHA Qualified Registered Pharmacist. Online prescription review, medicine guidance, OTC advice and teleconsultation support.</p>
   </div>
 </section>
 
-<!-- Services -->
-<section class="py-5">
+<!-- SERVICES -->
+<section class="py-4">
   <div class="container">
-    <h3 class="text-center mb-4" style="color:#003366;">Our Services</h3>
-    <div class="row g-4">
+    <h3 class="text-center" style="color:#003366;">Our Services</h3>
+    <div class="row g-3 mt-3">
       <div class="col-md-4"><div class="service-card bg-blue">💊 Prescription Review</div></div>
       <div class="col-md-4"><div class="service-card bg-green">📦 OTC Medicine Advice</div></div>
       <div class="col-md-4"><div class="service-card bg-orange">📞 Teleconsultation</div></div>
@@ -107,125 +106,57 @@
   </div>
 </section>
 
-<!-- Medicine Search -->
-    <script>
-// ✅ Medicine Database (Brand + Salt + Uses)
-const medicines = {
-  "crocin": { salt: "Paracetamol", uses: "Fever, headache, pain relief" },
-  "dolo": { salt: "Paracetamol", uses: "Fever, pain relief" },
-  "calpol": { salt: "Paracetamol", uses: "Fever in children & adults" },
-  "augmentin": { salt: "Amoxicillin + Clavulanic Acid", uses: "Bacterial infections" },
-  "azithral": { salt: "Azithromycin", uses: "Respiratory & skin infections" },
-  "cetrizine": { salt: "Cetirizine", uses: "Allergy, cold, sneezing" },
-  "allegra": { salt: "Fexofenadine", uses: "Allergy relief" },
-  "pantocid": { salt: "Pantoprazole", uses: "Acidity, reflux" },
-  "metformin": { salt: "Metformin Hydrochloride", uses: "Type 2 diabetes" },
-  "atorva": { salt: "Atorvastatin", uses: "Cholesterol lowering" },
-  "losar": { salt: "Losartan", uses: "High blood pressure" },
-  "montek lc": { salt: "Montelukast + Levocetirizine", uses: "Asthma, allergy" },
-  "zincovit": { salt: "Multivitamin + Zinc", uses: "Immunity booster" },
-  "becosules": { salt: "Vitamin B-complex", uses: "Vitamin deficiency" },
-  "shelcal": { salt: "Calcium + Vitamin D3", uses: "Bone strength" },
-  "clopilet": { salt: "Clopidogrel", uses: "Blood thinner" },
-  "ecosprin": { salt: "Aspirin", uses: "Blood thinner, pain relief" },
-  "voveran": { salt: "Diclofenac", uses: "Pain relief, inflammation" },
-  "norflox": { salt: "Norfloxacin", uses: "UTI infections" },
-  "ciplox": { salt: "Ciprofloxacin", uses: "Bacterial infections" },
-  "combiflam": { salt: "Ibuprofen + Paracetamol", uses: "Pain, fever" },
-  "sinarest": { salt: "Paracetamol + Phenylephrine + Chlorpheniramine", uses: "Cold, allergy, fever" },
-  "eldoper": { salt: "Loperamide", uses: "Diarrhea control" },
-  "ondem": { salt: "Ondansetron", uses: "Nausea, vomiting" },
-  "limcee": { salt: "Vitamin C", uses: "Immunity, antioxidant" },
-  "asthalin": { salt: "Salbutamol", uses: "Asthma, wheezing" },
-  "thyronorm": { salt: "Levothyroxine", uses: "Thyroid hormone replacement" },
-  "glycomet": { salt: "Metformin", uses: "Type 2 diabetes" },
-  "lasix": { salt: "Furosemide", uses: "Diuretic for swelling, BP" },
-  "nicardia": { salt: "Nifedipine", uses: "High blood pressure, angina" },
-  "zyloric": { salt: "Allopurinol", uses: "Gout, uric acid control" },
-  "hifenac": { salt: "Aceclofenac", uses: "Pain relief, arthritis" },
-  "seroflo": { salt: "Salmeterol + Fluticasone", uses: "Asthma, COPD" }
-};<script>
-// ✅ Offline Medicine Database (100+ medicines can be added)
-const medicines = {
-  "paracetamol": "Used for fever & pain relief.",
-  "amoxicillin": "Antibiotic for bacterial infections.",
-  "cetirizine": "Used for allergy relief.",
-  "omeprazole": "Reduces acidity and gastric problems.",
-  "azithromycin": "Antibiotic for respiratory & skin infections.",
-  "ibuprofen": "Pain reliever and anti-inflammatory.",
-  "metformin": "Used for type 2 diabetes control.",
-  "atorvastatin": "Lowers cholesterol levels.",
-  "losartan": "Used for high blood pressure.",
-  "pantoprazole": "Treats acidity & gastric reflux.",
-  "levocetirizine": "Anti-allergy medicine.",
-  "doxycycline": "Antibiotic for bacterial infections.",
-  "prednisolone": "Steroid for inflammation.",
-  "ciprofloxacin": "Antibiotic for urinary & GI infections.",
-  "vitamin d3": "Supplement for bone strength.",
-  "iron supplements": "Used for anemia treatment.",
-  "multivitamin": "Boosts immunity & general health.",
-  "hydroxyzine": "Used for anxiety & allergies.",
-  "montelukast": "Used for asthma & allergies.",
-  "chloroquine": "Used for malaria treatment.",
-  "insulin": "Used to control diabetes.",
-  "clopidogrel": "Prevents blood clots.",
-  "enalapril": "Used for hypertension & heart failure.",
-  "furosemide": "Diuretic for swelling & high BP.",
-  "loperamide": "Used for diarrhea.",
-  "ondansetron": "Used for nausea & vomiting.",
-  "ranitidine": "Used for acidity (less common now).",
-  "salbutamol": "Relief from asthma & wheezing.",
-  "warfarin": "Blood thinner to prevent clots.",
-  "zinc supplements": "Boosts immunity & healing."
-    <!DOCTYPE html>
-<html lang="hi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>दवाओं की खोज</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 20px; background-color: #f9f9f9; }
-    h2 { color: #333; }
-    input { padding: 10px; width: 300px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px; }
-    table { width: 100%; border-collapse: collapse; background-color: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
-    th { background-color: #007BFF; color: #fff; }
-    tr:nth-child(even) { background-color: #f2f2f2; }
-  </style>
-</head>
+<!-- QUICK SEARCH (cards) -->
+<section class="container my-4">
+  <div class="card shadow p-3">
+    <h4 style="color:#003366;">🔎 दवा खोज (Brand या Salt से)</h4>
+    <div class="row g-2 align-items-center">
+      <div class="col-md-8 col-sm-12">
+        <input id="drugInput" class="form-control" placeholder="उदाहरण: crocin, paracetamol, dolo, augmentin..." />
+      </div>
+      <div class="col-md-4 col-sm-12 text-md-end">
+        <button class="btn btn-primary" onclick="searchDrug()">Search</button>
+        <button class="btn btn-outline-secondary" onclick="clearResults()">Clear</button>
+      </div>
+    </div>
 
-
-  if (medicines[query]) {
-    let data = medicines[query];
-    resultDiv.innerHTML = `
-      <h5>${query.toUpperCase()}</h5>
-      <p><b>Salt:</b> ${data.salt}</p>
-      <p><b>Uses:</b> ${data.uses}</p>
-    `;
-  } else {
-    resultDiv.innerHTML = "<p class='text-warning'>No details found for this medicine.</p>";
-  }
-}
-</script>
-
-</body>
-</html>
-<section class="container my-5">
-  <div class="card shadow p-4">
-    <h3 style="color:#003366;">🔎 Medicine Search</h3>
-    <input type="text" id="drugInput" class="form-control mb-3" placeholder="Type medicine brand or salt...">
-    <button class="btn btn-primary" onclick="searchDrug()">Search</button>
     <div id="drugResult" class="row mt-4"></div>
   </div>
 </section>
 
-<!-- Contact -->
-<section class="container my-5">
-  <div class="card contact-card shadow p-4">
-    <h3 style="color:#003366;">Contact</h3>
+<!-- DETAILED TABLE SEARCH -->
+<section class="container my-4">
+  <h4 style="color:#003366;">📋 विस्तृत दवा तालिका (नाम, उपयोग, salt, mg, कंपनी)</h4>
+  <input id="searchInput" class="form-control mb-3" placeholder="उपचार, दवा, सॉल्ट, कंपनी या मात्रा से खोजें..." onkeyup="searchMedicine()"/>
+
+  <div style="overflow-x:auto">
+    <table id="medTable">
+      <thead>
+        <tr><th>नाम</th><th>उपचार</th><th>उपयोग</th><th>मात्रा (mg)</th><th>कंपनी</th><th>सॉल्ट</th></tr>
+      </thead>
+      <tbody id="medBody"></tbody>
+    </table>
+  </div>
+</section>
+
+<!-- UPLOAD (Google Form embed) -->
+<section class="container my-4">
+  <div class="card shadow p-3">
+    <h4 style="color:#003366;">Upload Prescription</h4>
+    <p class="text-muted">कृपया अपनी prescription upload करें (Google Form से)।</p>
+    <!-- Replace YOUR_GOOGLE_FORM_ID with your real form id -->
+    <iframe src="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/viewform?embedded=true" width="100%" height="520" frameborder="0">Loading…</iframe>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="container my-4">
+  <div class="card contact-card shadow p-3">
+    <h4 style="color:#003366;">Contact</h4>
     <p><i class="fa fa-envelope"></i> Email: <a href="mailto:sahanipradum98@gmail.com">sahanipradum98@gmail.com</a></p>
     <p><i class="fa fa-phone"></i> WhatsApp: <a href="https://wa.me/919517360291">+91-9517360291</a></p>
-    <div class="social-icons mt-3">
+
+    <div class="social-icons mt-2">
       <a href="https://www.facebook.com/share/16V3k7o6xE/" target="_blank"><i class="fab fa-facebook"></i></a>
       <a href="https://www.instagram.com/pradumsahani.019?igsh=eHppbzZyNDk0NzFj" target="_blank"><i class="fab fa-instagram"></i></a>
       <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
@@ -233,13 +164,194 @@ const medicines = {
   </div>
 </section>
 
-<!-- Payment -->
-<section class="container my-5">
-  <div class="card shadow p-4 text-center">
-    <h3 style="color:#003366;">💳 Make Payment</h3>
-    <p>Pay securely via UPI: <b style="color:#ff6600;">sahanipradum98-2@okaxis</b></p>
-    <a href="upi://pay?pa=sahanipradum98-2@okaxis&pn=Pradum%20Sahani&cu=INR" class="btn btn-success">Pay Now</a>
+<!-- PAYMENT -->
+<section class="container my-4">
+  <div class="card shadow p-3 text-center">
+    <h4 style="color:#003366;">💳 Payment (UPI)</h4>
+    <p>UPI ID: <b style="color:#ff6600;">sahanipradum98-2@okaxis</b></p>
+    <a class="btn btn-success" href="upi://pay?pa=sahanipradum98-2@okaxis&pn=Pradum%20Sahani&cu=INR">Pay via UPI</a>
   </div>
 </section>
 
-<footer>© 2025 Pradum Sahani | Registered Pharmacist</footer>
+<footer>© 2025 Pradum Sahani — Registered Pharmacist</footer>
+
+<!-- SCRIPTS: medicine DB + search logic -->
+<script>
+/*
+  FINAL offline medicines DB:
+  - key: many brand names and common generics included
+  - Each entry: displayName, salt, dose, uses, company, mrp, img
+  NOTE: MRP values are approximate/sample. Update as needed.
+*/
+const medicinesDB = {
+  /* Analgesics / antipyretics */
+  "crocin": { displayName:"Crocin Advance 500mg", salt:"Paracetamol", dose:"500 mg", uses:"Fever, pain relief", company:"Glaxo", mrp:"₹40 (strip)", img:"https://www.netmeds.com/images/product-v1/600x600/835003/crocin_advance_500mg_tablet_15s_0.jpg" },
+  "dolo": { displayName:"Dolo 650", salt:"Paracetamol", dose:"650 mg", uses:"Fever, pain relief", company:"Micro Labs", mrp:"₹30 (strip)", img:"https://www.netmeds.com/images/product-v1/600x600/821887/dolo_650mg_tablet_15s_0.jpg" },
+  "calpol": { displayName:"Calpol Paracetamol Syrup", salt:"Paracetamol", dose:"125 mg/5ml", uses:"Paediatric fever & pain", company:"GSK", mrp:"₹45 (100 ml)", img:"https://www.netmeds.com/images/product-v1/600x600/892551/calpol_paracetamol_syrup_100_ml_0.jpg" },
+
+  /* Antibiotics */
+  "augmentin": { displayName:"Augmentin 625", salt:"Amoxicillin + Clavulanic Acid", dose:"625 mg", uses:"Bacterial infections", company:"GSK", mrp:"₹180 (strip)", img:"https://www.netmeds.com/images/product-v1/600x600/104435/augmentin_625mg_tablet_10s_0.jpg" },
+  "azithral": { displayName:"Azithral 500", salt:"Azithromycin", dose:"500 mg", uses:"Respiratory & skin infections", company:"Cipla", mrp:"₹120 (strip)", img:"https://www.netmeds.com/images/product-v1/600x600/359459/azithral_500mg_tablet_5s_0.jpg" },
+  "amoxicillin": { displayName:"Amoxicillin 500", salt:"Amoxicillin", dose:"500 mg", uses:"Bacterial infections", company:"Generic", mrp:"₹60 (strip)", img:"https://via.placeholder.com/200x120?text=Amoxicillin" },
+
+  /* Antacids / PPI */
+  "pantoprazole": { displayName:"Pantoprazole 40", salt:"Pantoprazole", dose:"40 mg", uses:"Acid reflux, GERD", company:"Generic", mrp:"₹40 (strip)", img:"https://via.placeholder.com/200x120?text=Pantoprazole" },
+  "pantocid": { displayName:"Pantocid 40", salt:"Pantoprazole", dose:"40 mg", uses:"GERD, acidity", company:"Cipla", mrp:"₹45 (strip)", img:"https://via.placeholder.com/200x120?text=Pantocid" },
+
+  /* Antiallergic */
+  "cetirizine": { displayName:"Cetirizine 10", salt:"Cetirizine", dose:"10 mg", uses:"Allergy relief", company:"Zydus", mrp:"₹25 (strip)", img:"https://via.placeholder.com/200x120?text=Cetirizine" },
+  "levocet": { displayName:"Levocet 5", salt:"Levocetirizine", dose:"5 mg", uses:"Allergy relief", company:"Torrent", mrp:"₹30 (strip)", img:"https://via.placeholder.com/200x120?text=Levocet" },
+
+  /* Diabetes / Cardio */
+  "metformin": { displayName:"Metformin 500", salt:"Metformin HCl", dose:"500 mg", uses:"Type 2 Diabetes", company:"Generic", mrp:"₹50 (strip)", img:"https://via.placeholder.com/200x120?text=Metformin" },
+  "glycomet": { displayName:"Glycomet 500", salt:"Metformin", dose:"500 mg", uses:"Type 2 Diabetes", company:"Glenmark", mrp:"₹55 (strip)", img:"https://via.placeholder.com/200x120?text=Glycomet" },
+  "atorva": { displayName:"Atorvastatin 10", salt:"Atorvastatin", dose:"10 mg", uses:"Cholesterol lowering", company:"Pfizer", mrp:"₹60 (strip)", img:"https://via.placeholder.com/200x120?text=Atorvastatin" },
+
+  /* Respiratory */
+  "asthalin": { displayName:"Asthalin Inhaler", salt:"Salbutamol", dose:"100 mcg", uses:"Relief of asthma/wheeze", company:"Cipla", mrp:"₹150 (inhaler)", img:"https://via.placeholder.com/200x120?text=Asthalin" },
+  "seroflo": { displayName:"Seroflo", salt:"Salmeterol + Fluticasone", dose:"(125/50 mcg)", uses:"Asthma/COPD", company:"GSK", mrp:"₹700 (inhaler)", img:"https://via.placeholder.com/200x120?text=Seroflo" },
+
+  /* GI / Others */
+  "loperamide": { displayName:"Loperamide 2mg", salt:"Loperamide", dose:"2 mg", uses:"Diarrhea control", company:"Generic", mrp:"₹30 (strip)", img:"https://via.placeholder.com/200x120?text=Loperamide" },
+  "domstal": { displayName:"Domstal 10mg", salt:"Domperidone", dose:"10 mg", uses:"Nausea, vomiting", company:"Torrent", mrp:"₹40 (strip)", img:"https://via.placeholder.com/200x120?text=Domperidone" },
+
+  /* Vitamins / Supplements */
+  "vitamin d3": { displayName:"Vitamin D3 60k", salt:"Cholecalciferol", dose:"60,000 IU", uses:"Vitamin D deficiency", company:"Zydus", mrp:"₹80 (1 syrup)", img:"https://via.placeholder.com/200x120?text=VitD3" },
+  "iron": { displayName:"Iron+Folic Acid", salt:"Ferrous sulphate", dose:"100 mg", uses:"Anaemia", company:"Generic", mrp:"₹50 (strip)", img:"https://via.placeholder.com/200x120?text=Iron" },
+
+  /* NSAID / Anti-inflammatories */
+  "voveran": { displayName:"Voveran (Diclofenac)", salt:"Diclofenac", dose:"50 mg", uses:"Pain, inflammation", company:"Novartis", mrp:"₹30 (strip)", img:"https://via.placeholder.com/200x120?text=Diclofenac" },
+  "ibuprofen": { displayName:"Ibuprofen 400", salt:"Ibuprofen", dose:"400 mg", uses:"Pain, inflammation", company:"Generic", mrp:"₹45 (strip)", img:"https://via.placeholder.com/200x120?text=Ibuprofen" },
+
+  /* Antibiotics other */
+  "ciplox": { displayName:"Ciplox 500", salt:"Ciprofloxacin", dose:"500 mg", uses:"Bacterial infections", company:"Cipla", mrp:"₹70 (strip)", img:"https://via.placeholder.com/200x120?text=Ciprofloxacin" },
+  "azithromycin": { displayName:"Azithromycin 250", salt:"Azithromycin", dose:"250 mg", uses:"Infections", company:"Generic", mrp:"₹90 (strip)", img:"https://via.placeholder.com/200x120?text=Azithromycin" },
+
+  /* cardiac / blood */
+  "ecosprin": { displayName:"Ecosprin 75", salt:"Aspirin", dose:"75 mg", uses:"Blood thinner, cardio", company:"Bayer", mrp:"₹20 (strip)", img:"https://via.placeholder.com/200x120?text=Ecosprin" },
+  "clopilet": { displayName:"Clopilet 75", salt:"Clopidogrel", dose:"75 mg", uses:"Prevent blood clots", company:"Cipla", mrp:"₹150 (strip)", img:"https://via.placeholder.com/200x120?text=Clopidogrel" },
+
+  /* more entries - expand as needed */
+  "montelukast": { displayName:"Montelukast 10", salt:"Montelukast", dose:"10 mg", uses:"Asthma, allergy", company:"Generic", mrp:"₹35 (strip)", img:"https://via.placeholder.com/200x120?text=Montelukast" },
+  "omeprazole": { displayName:"Omeprazole 20", salt:"Omeprazole", dose:"20 mg", uses:"Acidity", company:"Generic", mrp:"₹25 (strip)", img:"https://via.placeholder.com/200x120?text=Omeprazole" },
+  "paracetamol": { displayName:"Paracetamol 500", salt:"Paracetamol", dose:"500 mg", uses:"Fever, pain", company:"Generic", mrp:"₹20 (strip)", img:"https://via.placeholder.com/200x120?text=Paracetamol" }
+};
+
+/* --- TABLE DB (detailed list used by Hindi table) --- 
+   You can expand this array with many entries.
+*/
+const medicinesTable = [
+  {name:"Pantoprazole", treatment:"Acidity", uses:"Acid reflux, GERD", mg:"40mg", company:"Generic Pharma", salt:"Pantoprazole"},
+  {name:"Metformin", treatment:"Diabetes", uses:"Type 2 Diabetes", mg:"500mg", company:"Generic Pharma", salt:"Metformin"},
+  {name:"Amoxicillin", treatment:"Antibiotic", uses:"Bacterial infection", mg:"250mg", company:"Generic Pharma", salt:"Amoxicillin"},
+  {name:"Clotrimazole Cream", treatment:"Antifungal", uses:"Skin fungal infection", mg:"1%", company:"Generic Pharma", salt:"Clotrimazole"},
+  {name:"Paracetamol Syrup", treatment:"Paediatric", uses:"Fever, pain", mg:"125mg/5ml", company:"Generic Pharma", salt:"Paracetamol"},
+  {name:"Crocin Advance", treatment:"Analgesic", uses:"Fever & pain", mg:"500mg", company:"GSK", salt:"Paracetamol"},
+  {name:"Dolo 650", treatment:"Analgesic", uses:"Fever & pain", mg:"650mg", company:"Micro Labs", salt:"Paracetamol"},
+  {name:"Augmentin", treatment:"Antibiotic", uses:"Bacterial infections", mg:"625mg", company:"GSK", salt:"Amoxicillin + Clavulanic Acid"},
+  {name:"Azithral", treatment:"Antibiotic", uses:"Respiratory infections", mg:"500mg", company:"Cipla", salt:"Azithromycin"}
+];
+
+/* ---- functions for search and table display ---- */
+function displayMedicinesTable(list) {
+  const tableBody = document.getElementById('medBody');
+  tableBody.innerHTML = '';
+  list.forEach(med => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${med.name}</td>
+                    <td>${med.treatment}</td>
+                    <td>${med.uses}</td>
+                    <td>${med.mg}</td>
+                    <td>${med.company}</td>
+                    <td>${med.salt}</td>`;
+    tableBody.appendChild(tr);
+  });
+}
+
+/* initial table load */
+displayMedicinesTable(medicinesTable);
+
+/* table search */
+function searchMedicine(){
+  const q = document.getElementById('searchInput').value.trim().toLowerCase();
+  if (!q) { displayMedicinesTable(medicinesTable); return; }
+  const filtered = medicinesTable.filter(med => 
+    med.name.toLowerCase().includes(q) || med.treatment.toLowerCase().includes(q) ||
+    med.uses.toLowerCase().includes(q) || med.mg.toLowerCase().includes(q) ||
+    med.company.toLowerCase().includes(q) || med.salt.toLowerCase().includes(q)
+  );
+  displayMedicinesTable(filtered);
+}
+
+/* QUICK search by brand or salt in medicinesDB */
+function searchDrug(){
+  const q = document.getElementById('drugInput').value.trim().toLowerCase();
+  const out = document.getElementById('drugResult');
+  out.innerHTML = '';
+  if (!q) { out.innerHTML = "<p class='text-danger mt-3'>कृपया दवा का नाम या salt लिखें।</p>"; return; }
+
+  // Try exact key
+  if(medicinesDB[q]) {
+    renderMedicineCard(q, medicinesDB[q]);
+    return;
+  }
+
+  // else try partial match in keys and also in displayName, salt
+  const results = [];
+  for (const key in medicinesDB) {
+    const item = medicinesDB[key];
+    if (key.includes(q) || item.displayName.toLowerCase().includes(q) || (item.salt && item.salt.toLowerCase().includes(q))) {
+      results.push({key,item});
+    }
+  }
+
+  if (results.length === 0) {
+    out.innerHTML = "<p class='text-warning mt-3'>कोई दवा नहीं मिली। कृपया अलग नाम आज़माएँ (brand या salt)।</p>";
+    return;
+  }
+
+  // render all matches
+  results.forEach(r => renderMedicineCard(r.key, r.item));
+}
+
+function renderMedicineCard(key, data){
+  const out = document.getElementById('drugResult');
+  const col = document.createElement('div');
+  col.className = "col-md-4";
+  col.innerHTML = `
+    <div class="card medicine-card shadow mb-3">
+      <img src="${data.img}" class="card-img-top" alt="${data.displayName}" onerror="this.src='https://via.placeholder.com/200x120?text=Image'">
+      <div class="card-body">
+        <h5>${data.displayName}</h5>
+        <p><strong>Salt:</strong> ${data.salt}</p>
+        <p><strong>Dose:</strong> ${data.dose}</p>
+        <p><strong>Uses:</strong> ${data.uses}</p>
+        <p class="mrp"><strong>MRP:</strong> ${data.mrp}</p>
+        <div class="mt-2">
+          <a href="https://wa.me/919517360291?text=I want to order ${encodeURIComponent(data.displayName)}" class="btn btn-success btn-sm">Order via WhatsApp</a>
+          <button class="btn btn-outline-primary btn-sm" onclick="copyText('${key}')">Copy Name</button>
+        </div>
+      </div>
+    </div>
+  `;
+  out.appendChild(col);
+}
+
+/* clear results */
+function clearResults(){
+  document.getElementById('drugInput').value = '';
+  document.getElementById('drugResult').innerHTML = '';
+}
+
+/* copy to clipboard helper */
+function copyText(txt){
+  navigator.clipboard?.writeText(txt).then(()=> {
+    alert('Name copied: ' + txt);
+  }).catch(()=>{});
+}
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+      </html>
