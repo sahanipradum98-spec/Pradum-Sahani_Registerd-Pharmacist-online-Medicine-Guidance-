@@ -68,7 +68,7 @@
 <section id="search" class="container my-5">
   <div class="card shadow p-4">
     <h3>🔎 Free Medicine Search</h3>
-    <p class="text-muted">Enter a medicine name to get basic details.</p>
+    <p class="text-muted">Enter a medicine brand or salt name to get details.</p>
     <input type="text" id="drugInput" class="form-control mb-3" placeholder="Type medicine name...">
     <button class="btn btn-primary" onclick="searchDrug()">Search</button>
     <div id="drugResult" class="mt-4"></div>
@@ -106,9 +106,9 @@
 <section id="upload" class="container my-5">
   <div class="card shadow p-4">
     <h4>Upload Prescription</h4>
-    <p class="text-muted">Upload your prescription securely (Google Drive Form).</p>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeDemoLink/viewform?embedded=true"
-            width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    <p class="text-muted">Upload your prescription securely.</p>
+    <iframe src="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/viewform?embedded=true"
+            width="100%" height="600" frameborder="0">Loading…</iframe>
   </div>
 </section>
 
@@ -142,38 +142,41 @@
 </footer>
 
 <script>
-// ✅ Offline Medicine Database (100+ medicines can be added)
+// ✅ Medicine Database (Brand + Salt + Uses)
 const medicines = {
-  "paracetamol": "Used for fever & pain relief.",
-  "amoxicillin": "Antibiotic for bacterial infections.",
-  "cetirizine": "Used for allergy relief.",
-  "omeprazole": "Reduces acidity and gastric problems.",
-  "azithromycin": "Antibiotic for respiratory & skin infections.",
-  "ibuprofen": "Pain reliever and anti-inflammatory.",
-  "metformin": "Used for type 2 diabetes control.",
-  "atorvastatin": "Lowers cholesterol levels.",
-  "losartan": "Used for high blood pressure.",
-  "pantoprazole": "Treats acidity & gastric reflux.",
-  "levocetirizine": "Anti-allergy medicine.",
-  "doxycycline": "Antibiotic for bacterial infections.",
-  "prednisolone": "Steroid for inflammation.",
-  "ciprofloxacin": "Antibiotic for urinary & GI infections.",
-  "vitamin d3": "Supplement for bone strength.",
-  "iron supplements": "Used for anemia treatment.",
-  "multivitamin": "Boosts immunity & general health.",
-  "hydroxyzine": "Used for anxiety & allergies.",
-  "montelukast": "Used for asthma & allergies.",
-  "chloroquine": "Used for malaria treatment.",
-  "insulin": "Used to control diabetes.",
-  "clopidogrel": "Prevents blood clots.",
-  "enalapril": "Used for hypertension & heart failure.",
-  "furosemide": "Diuretic for swelling & high BP.",
-  "loperamide": "Used for diarrhea.",
-  "ondansetron": "Used for nausea & vomiting.",
-  "ranitidine": "Used for acidity (less common now).",
-  "salbutamol": "Relief from asthma & wheezing.",
-  "warfarin": "Blood thinner to prevent clots.",
-  "zinc supplements": "Boosts immunity & healing."
+  "crocin": { salt: "Paracetamol", uses: "Fever, headache, pain relief" },
+  "dolo": { salt: "Paracetamol", uses: "Fever, pain relief" },
+  "calpol": { salt: "Paracetamol", uses: "Fever in children & adults" },
+  "augmentin": { salt: "Amoxicillin + Clavulanic Acid", uses: "Bacterial infections" },
+  "azithral": { salt: "Azithromycin", uses: "Respiratory & skin infections" },
+  "cetrizine": { salt: "Cetirizine", uses: "Allergy, cold, sneezing" },
+  "allegra": { salt: "Fexofenadine", uses: "Allergy relief" },
+  "pantocid": { salt: "Pantoprazole", uses: "Acidity, reflux" },
+  "metformin": { salt: "Metformin Hydrochloride", uses: "Type 2 diabetes" },
+  "atorva": { salt: "Atorvastatin", uses: "Cholesterol lowering" },
+  "losar": { salt: "Losartan", uses: "High blood pressure" },
+  "montek lc": { salt: "Montelukast + Levocetirizine", uses: "Asthma, allergy" },
+  "zincovit": { salt: "Multivitamin + Zinc", uses: "Immunity booster" },
+  "becosules": { salt: "Vitamin B-complex", uses: "Vitamin deficiency" },
+  "shelcal": { salt: "Calcium + Vitamin D3", uses: "Bone strength" },
+  "clopilet": { salt: "Clopidogrel", uses: "Blood thinner" },
+  "ecosprin": { salt: "Aspirin", uses: "Blood thinner, pain relief" },
+  "voveran": { salt: "Diclofenac", uses: "Pain relief, inflammation" },
+  "norflox": { salt: "Norfloxacin", uses: "UTI infections" },
+  "ciplox": { salt: "Ciprofloxacin", uses: "Bacterial infections" },
+  "combiflam": { salt: "Ibuprofen + Paracetamol", uses: "Pain, fever" },
+  "sinarest": { salt: "Paracetamol + Phenylephrine + Chlorpheniramine", uses: "Cold, allergy, fever" },
+  "eldoper": { salt: "Loperamide", uses: "Diarrhea control" },
+  "ondem": { salt: "Ondansetron", uses: "Nausea, vomiting" },
+  "limcee": { salt: "Vitamin C", uses: "Immunity, antioxidant" },
+  "asthalin": { salt: "Salbutamol", uses: "Asthma, wheezing" },
+  "thyronorm": { salt: "Levothyroxine", uses: "Thyroid hormone replacement" },
+  "glycomet": { salt: "Metformin", uses: "Type 2 diabetes" },
+  "lasix": { salt: "Furosemide", uses: "Diuretic for swelling, BP" },
+  "nicardia": { salt: "Nifedipine", uses: "High blood pressure, angina" },
+  "zyloric": { salt: "Allopurinol", uses: "Gout, uric acid control" },
+  "hifenac": { salt: "Aceclofenac", uses: "Pain relief, arthritis" },
+  "seroflo": { salt: "Salmeterol + Fluticasone", uses: "Asthma, COPD" }
 };
 
 function searchDrug() {
@@ -186,7 +189,12 @@ function searchDrug() {
   }
 
   if (medicines[query]) {
-    resultDiv.innerHTML = `<h5>${query.toUpperCase()}</h5><p>${medicines[query]}</p>`;
+    let data = medicines[query];
+    resultDiv.innerHTML = `
+      <h5>${query.toUpperCase()}</h5>
+      <p><b>Salt:</b> ${data.salt}</p>
+      <p><b>Uses:</b> ${data.uses}</p>
+    `;
   } else {
     resultDiv.innerHTML = "<p class='text-warning'>No details found for this medicine.</p>";
   }
