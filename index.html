@@ -1,227 +1,123 @@
-<!doctype html>
-
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Pradum Sahani - Tele Pharmacy</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medicine Search | Pharmacist Pradum Sahani</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    :root{--accent:#0b6efd;--muted:#6b7280;--card:#fff;--bg:#f7f9fc}
-    *{box-sizing:border-box}
-    body{font-family:Inter,Segoe UI,Arial,sans-serif;margin:0;background:var(--bg);color:#111}
-    header{background:linear-gradient(90deg,#0b6efd22,transparent);padding:18px 20px;display:flex;gap:18px;align-items:center}
-    .profile{display:flex;gap:16px;align-items:center}
-    .avatar{width:90px;height:90px;border-radius:12px;object-fit:cover;border:3px solid white;background:#eee}
-    .who h1{margin:0;font-size:20px}
-    .who p{margin:4px 0;color:var(--muted);font-size:13px}
-    .contact{margin-left:auto;text-align:right}
-    .contact a{display:block;color:var(--accent);text-decoration:none;font-weight:600}.container{max-width:1100px;margin:22px auto;padding:0 18px}
-.top-row{display:flex;gap:18px;align-items:flex-start}
-.left{width:320px}
-.card{background:var(--card);border-radius:14px;padding:16px;box-shadow:0 6px 18px rgba(12,15,20,0.06)}
-.services ul{list-style:none;margin:0;padding:0}
-.services li{padding:8px 0;border-bottom:1px dashed #eee;font-size:14px}
-
-.search{display:flex;gap:8px;margin-bottom:12px}
-.search input{flex:1;padding:12px;border-radius:10px;border:1px solid #e6e9ef;font-size:14px}
-.search button{padding:10px 14px;border-radius:10px;border:0;background:var(--accent);color:white;font-weight:600}
-
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-top:12px}
-.med{background:var(--card);border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:8px}
-.med img{height:120px;object-fit:contain;border-radius:8px;background:#fafafa}
-.med .title{font-weight:700}
-.muted{color:var(--muted);font-size:13px}
-.mrp{font-weight:700;color:#111}
-.tag{display:inline-block;padding:6px 8px;border-radius:999px;background:#f1f5f9;font-size:12px}
-
-footer{max-width:1100px;margin:24px auto;padding:16px;color:var(--muted);font-size:14px}
-
-@media(max-width:900px){.top-row{flex-direction:column}.left{width:100%}}
-
+    body { 
+      font-family: Arial, sans-serif; 
+      background: linear-gradient(135deg, #f5f7fa, #e8f0ff);
+      margin:0; padding:0;
+    }
+    .profile-pic { width:150px; height:150px; border-radius:50%; border:3px solid #fff; box-shadow:0 6px 18px rgba(0,0,0,0.18); object-fit:cover; display:block; margin:auto; }
+    section { margin-top:30px; }
+    .card-section { padding:20px; background:#ffffff; border-radius:12px; margin-bottom:20px; box-shadow:0 3px 10px rgba(0,0,0,0.1); }
+    footer { background:#012a4a; color:white; padding:24px; text-align:center; margin-top:30px; }
+    footer a img { width:36px; margin:0 8px; transition:0.25s; }
+    footer a img:hover { transform:translateY(-4px); }
+    .medicine-card img { height:180px; object-fit:contain; background:#fff; }
+    .upi-box { background:#f7fbff; padding:12px; border-radius:8px; border:1px dashed #dbeafe }
   </style>
 </head>
-<body>
-  <header>
-    <div class="profile">
-      <!-- Replace profile.jpg with your real photo file (same folder) -->
-      <img src="profile.jpg" alt="Profile" class="avatar" id="avatar">
-      <div class="who">
-        <h1 id="owner-name">Pradum Sahani</h1>
-        <p id="owner-qual">Registered Pharmacist • DHA Qualified</p>
-        <p class="muted" id="owner-desc">Tele-Pharmacy | Prescription verification | Online consultation</p>
-      </div>
-    </div>
-    <div class="contact">
-      <a href="mailto:sahanipradum98@gmail.com" id="owner-email">sahanipradum98@gmail.com</a>
-      <div class="muted">Follow me on social</div>
-      <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:6px">
-        <a id="link-fb" href="#">Facebook</a>
-        <a id="link-ig" href="#">Instagram</a>
-        <a id="link-wh" href="#">WhatsApp</a>
-      </div>
-    </div>
-  </header>  <main class="container">
-    <div class="top-row">
-      <div class="left">
-        <div class="card">
-          <h3 style="margin-top:0">Services</h3>
-          <div class="services" id="services-list">
-            <ul>
-              <li>Tele-Pharmacy Consultation</li>
-              <li>Prescription Verification</li>
-              <li>Medicine Counselling (Diabetes/Cardiac/Paediatric)</li>
-              <li>Home Delivery Coordination</li>
-            </ul>
-          </div>
-          <hr style="margin:12px 0;border:none;border-top:1px solid #f0f2f6">
-          <h4>Payments</h4>
-          <p class="muted">UPI ID: <strong id="upi-id">replace_with_your_upi@bank</strong></p>
-          <p class="muted">Phone / WhatsApp: <strong id="phone">+91-XXXXXXXXXX</strong></p>
-        </div><div class="card" style="margin-top:12px">
-      <h4>About</h4>
-      <p class="muted" id="about-text">Pharmacist with experience in community and hospital pharmacy. DHA qualified and registered pharmacist providing telepharmacy services.</p>
-    </div>
-
-    <div class="card" style="margin-top:12px">
-      <h4>Contact & Social</h4>
-      <p class="muted">Email: <a href="mailto:sahanipradum98@gmail.com">sahanipradum98@gmail.com</a></p>
-      <p class="muted">Links:</p>
-      <ul class="muted">
-        <li><a id="soc-link-1" href="#">Facebook</a></li>
-        <li><a id="soc-link-2" href="#">Instagram</a></li>
-        <li><a id="soc-link-3" href="#">LinkedIn</a></li>
-      </ul>
-    </div>
+<body><!-- HEADER --><header class="text-center py-4" style="background: linear-gradient(90deg,#012a4a,#02577a); color:white;">
+  <img src="profile.jpg" alt="Profile" class="profile-pic">
+  <h1 class="mt-2">Pradum Sahani</h1>
+  <p>Registered Pharmacist | DHA Qualified</p>
+  <p style="opacity:0.9; margin-top:4px;">Tele-Pharmacy • Prescription Verification • Online Consultation</p>
+</header><!-- ABOUT --><section class="container card-section">
+  <h4>👨‍⚕️ About Me</h4>
+  <p>Hello! I am <strong>Pradum Sahani</strong>, a <strong>Registered Pharmacist (DHA Qualified)</strong>. I provide free medicine information, safe-usage guidance, and tele-pharmacy services to patients and pharmacies online.</p>
+</section><!-- SERVICES --><section class="container card-section">
+  <h4>🩺 Services</h4>
+  <ul>
+    <li>Medicine Information (Brand / Salt / Uses)</li>
+    <li>Prescription Review & Verification</li>
+    <li>Tele-Pharmacy Consultation (Diabetes, Cardiac, Paediatric, Skin)</li>
+    <li>Pharmacy Partnership & Online Order Support</li>
+  </ul>
+</section><!-- SEARCH --><section class="container card-section">
+  <h4>🔎 Medicine Search (by Brand or Salt)</h4>
+  <div class="input-group mb-3">
+    <input id="drugInput" class="form-control" placeholder="Enter medicine brand or salt..." />
+    <button class="btn btn-primary" onclick="searchDrug()">Search</button>
+    <button class="btn btn-outline-secondary" onclick="clearResults()">Clear</button>
   </div>
-
-  <div style="flex:1">
-    <div class="card">
-      <div style="display:flex;justify-content:space-between;align-items:center">
-        <div>
-          <h2 style="margin:0">Search Medicines</h2>
-          <p class="muted" style="margin:6px 0 0">Search by brand, salt, uses, company or MRP</p>
-        </div>
-        <div style="text-align:right">
-          <span class="tag">Total: <span id="total-count">0</span></span>
-        </div>
-      </div>
-
-      <div style="margin-top:12px">
-        <div class="search">
-          <input id="search-input" placeholder="Search e.g. Paracetamol / Crocin / Pain / Cipla" />
-          <button id="search-btn">Search</button>
-        </div>
-        <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">
-          <input id="filter-mrp-min" placeholder="Min MRP" style="width:110px;padding:8px;border-radius:8px;border:1px solid #eef;background:#fff" />
-          <input id="filter-mrp-max" placeholder="Max MRP" style="width:110px;padding:8px;border-radius:8px;border:1px solid #eef;background:#fff" />
-          <select id="filter-company" style="padding:8px;border-radius:8px;border:1px solid #eef">
-            <option value="">All Companies</option>
-          </select>
-        </div>
-
-        <div class="grid" id="results"></div>
-      </div>
-    </div>
-
-    <div class="card" style="margin-top:12px">
-      <h3 style="margin:0">How to use</h3>
-      <ol class="muted">
-        <li>Type brand name / salt / use and press Search.</li>
-        <li>Click a medicine to view details and image.</li>
-        <li>Contact via email or WhatsApp for consultation.</li>
-      </ol>
-    </div>
+  <div id="drugResult" class="row mt-4"></div>
+</section><!-- CONTACT --><section class="container card-section">
+  <h4>📞 Contact Me</h4>
+  <p><strong>Mobile / WhatsApp:</strong> <a href="tel:+919517360291">+91 95173 60291</a></p>
+  <p><strong>Email:</strong> <a href="mailto:sahanipradum98@gmail.com">sahanipradum98@gmail.com</a></p>
+  <h5>💳 Payments (UPI)</h5>
+  <div class="upi-box">
+    UPI ID: <strong>replace_with_your_upi@bank</strong>
+    <div style="margin-top:8px; font-size:13px;">(Place QR image <code>upi_qr.png</code> in the folder)</div>
   </div>
-</div>
+</section><!-- SOCIAL MEDIA --><section class="container card-section text-center">
+  <h4>🔗 Follow Me</h4>
+  <a href="https://facebook.com/your_profile" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+  <a href="https://instagram.com/your_profile" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+  <a href="https://wa.me/919517360291" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></a>
+  <a href="https://linkedin.com/in/your_profile" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn"></a>
+  <a href="https://youtube.com/your_channel" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"></a>
+</section><!-- FOOTER --><footer>
+  <p>&copy; 2025 <strong>Pradum Sahani</strong> | Registered Pharmacist • DHA Qualified</p>
+</footer><!-- SCRIPT --><script>
+const medicinesDB = {
+  "crocin": { displayName:"Crocin Advance 500mg", salt:"Paracetamol", dose:"500 mg", uses:"Fever, pain relief", company:"GSK", mrp:"₹40 (strip)", img:"https://www.netmeds.com/images/product-v1/600x600/835003/crocin_advance_500mg_tablet_15s_0.jpg" },
+  "dolo": { displayName:"Dolo 650", salt:"Paracetamol", dose:"650 mg", uses:"Fever, headache, body pain", company:"Micro Labs", mrp:"₹30 (strip)", img:"https://www.netmeds.com/images/product-v1/600x600/821887/dolo_650mg_tablet_15s_0.jpg" },
+  "augmentin": { displayName:"Augmentin 625", salt:"Amoxicillin + Clavulanic Acid", dose:"625 mg", uses:"Bacterial infections", company:"GSK", mrp:"₹180 (strip)", img:"https://www.netmeds.com/images/product-v1/600x600/104435/augmentin_625mg_tablet_10s_0.jpg" },
+  "azithral": { displayName:"Azithral 500", salt:"Azithromycin", dose:"500 mg", uses:"Respiratory & skin infections", company:"Cipla", mrp:"₹120 (strip)", img:"https://www.netmeds.com/images/product-v1/600x600/359459/azithral_500mg_tablet_5s_0.jpg" },
+  "pantoprazole": { displayName:"Pantoprazole 40 mg", salt:"Pantoprazole", dose:"40 mg", uses:"Acidity, gastric reflux", company:"Sun Pharma", mrp:"₹45 (strip)", img:"https://via.placeholder.com/200x120?text=Pantoprazole" },
+  "omeprazole": { displayName:"Omeprazole 20 mg", salt:"Omeprazole", dose:"20 mg", uses:"GERD, acidity", company:"Ranbaxy", mrp:"₹25 (strip)", img:"https://via.placeholder.com/200x120?text=Omeprazole" },
+  "metformin": { displayName:"Metformin 500 mg", salt:"Metformin HCl", dose:"500 mg", uses:"Type 2 Diabetes", company:"Lupin", mrp:"₹50 (strip)", img:"https://via.placeholder.com/200x120?text=Metformin" },
+  "atorvastatin": { displayName:"Atorvastatin 10 mg", salt:"Atorvastatin", dose:"10 mg", uses:"Cholesterol", company:"Pfizer", mrp:"₹60 (strip)", img:"https://via.placeholder.com/200x120?text=Atorvastatin" }
+};
 
-  </main>  <footer>
-    <div style="max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center">
-      <div>© <span id="ft-name">Pradum Sahani</span> - Registered Pharmacist • DHA Qualified</div>
-      <div class="muted">Designed for quick GitHub upload — single HTML file. Replace profile.jpg and medicine images in same folder.</div>
-    </div>
-  </footer>  <script>
-    // Sample medicine data - replace / extend with real data
-    const medicines = [
-      {id:1,brand:'Crocin 650',salt:'Paracetamol 650mg',mrp:45,company:'GSK',uses:'Fever, Pain',image:'med_crocin.jpg'},
-      {id:2,brand:'Zifi 200',salt:'Cefixime 200mg',mrp:85,company:'Cipla',uses:'Antibiotic - infections',image:'med_zifi.jpg'},
-      {id:3,brand:'Ecosprin 75',salt:'Aspirin 75mg',mrp:20,company:'Cipla',uses:'Cardiac - Antiplatelet',image:'med_ecosprin.jpg'},
-      {id:4,brand:'Glyciphage 500',salt:'Metformin 500mg',mrp:120,company:'Sun Pharma',uses:'Diabetes',image:'med_glyciphage.jpg'},
-      {id:5,brand:'Nizoral Cream',salt:'Ketoconazole 2%',mrp:95,company:'Johnson',uses:'Antifungal - skin',image:'med_nizoral.jpg'}
-    ];
-
-    const resultsEl = document.getElementById('results');
-    const totalCountEl = document.getElementById('total-count');
-    const companySel = document.getElementById('filter-company');
-
-    function populateCompanyFilter(){
-      const companies = [...new Set(medicines.map(m=>m.company))];
-      companies.forEach(c=>{
-        const opt=document.createElement('option');opt.value=c;opt.textContent=c;companySel.appendChild(opt);
-      })
+function searchDrug(){
+  const q = document.getElementById('drugInput').value.trim().toLowerCase();
+  const out = document.getElementById('drugResult');
+  out.innerHTML = '';
+  if (!q) {
+    out.innerHTML = "<p class='text-danger mt-3'>Please enter a medicine brand or salt.</p>";
+    return;
+  }
+  let found = false;
+  for (const key in medicinesDB) {
+    const item = medicinesDB[key];
+    if (key.includes(q) || item.displayName.toLowerCase().includes(q) || (item.salt && item.salt.toLowerCase().includes(q))) {
+      renderMedicineCard(item);
+      found = true;
     }
+  }
+  if (!found) {
+    out.innerHTML = "<p class='text-warning mt-3'>No medicine found. Try other name or salt.</p>";
+  }
+}
 
-    function render(list){
-      resultsEl.innerHTML='';
-      if(!list.length){ resultsEl.innerHTML='<div class="muted">Koi medicine nahi mila</div>'; totalCountEl.textContent=0; return }
-      totalCountEl.textContent=list.length;
-      list.forEach(m=>{
-        const d=document.createElement('div');d.className='med';
-        d.innerHTML=`
-          <img src="${m.image}" alt="${m.brand}" />
-          <div>
-            <div class="title">${m.brand}</div>
-            <div class="muted">${m.salt}</div>
-          </div>
-          <div style="display:flex;justify-content:space-between;align-items:center;gap:8px">
-            <div class="mrp">₹${m.mrp}</div>
-            <div class="tag">${m.company}</div>
-          </div>
-          <div class="muted" style="font-size:13px">${m.uses}</div>
-        `;
-        d.addEventListener('click',()=>showDetails(m));
-        resultsEl.appendChild(d);
-      })
-    }
+function renderMedicineCard(data) {
+  const out = document.getElementById('drugResult');
+  const col = document.createElement('div');
+  col.className = "col-md-4 mb-3";
+  col.innerHTML = `
+    <div class="card medicine-card shadow-sm">
+      <img src="${data.img}" class="card-img-top" alt="${data.displayName}" onerror="this.src='https://via.placeholder.com/200x120?text=Image'">
+      <div class="card-body">
+        <h5 class="card-title">${data.displayName}</h5>
+        <p class="mb-1"><strong>Salt:</strong> ${data.salt}</p>
+        <p class="mb-1"><strong>Dose:</strong> ${data.dose}</p>
+        <p class="mb-1"><strong>Uses:</strong> ${data.uses}</p>
+        <p class="mb-1"><strong>Company:</strong> ${data.company}</p>
+        <p class="mb-2"><strong>MRP:</strong> ${data.mrp}</p>
+        <a href="https://wa.me/919517360291?text=I want to order ${encodeURIComponent(data.displayName)}" class="btn btn-success btn-sm" target="_blank">Order via WhatsApp</a>
+      </div>
+    </div>`;
+  out.appendChild(col);
+}
 
-    function showDetails(m){
-      const html = `Brand: ${m.brand}\nSalt: ${m.salt}\nMRP: ₹${m.mrp}\nCompany: ${m.company}\nUses: ${m.uses}`;
-      alert(html);
-    }
-
-    function search(){
-      const q=document.getElementById('search-input').value.trim().toLowerCase();
-      const min = parseFloat(document.getElementById('filter-mrp-min').value)||0;
-      const max = parseFloat(document.getElementById('filter-mrp-max').value)||Infinity;
-      const company = document.getElementById('filter-company').value;
-
-      const filtered = medicines.filter(m=>{
-        const hay = `${m.brand} ${m.salt} ${m.uses} ${m.company} ${m.mrp}`.toLowerCase();
-        const matchesQ = q ? hay.includes(q) : true;
-        const matchesMRP = (m.mrp>=min && m.mrp<=max);
-        const matchesCompany = company? m.company===company:true;
-        return matchesQ && matchesMRP && matchesCompany;
-      });
-      render(filtered);
-    }
-
-    document.getElementById('search-btn').addEventListener('click',search);
-    document.getElementById('search-input').addEventListener('keydown',e=>{ if(e.key==='Enter') search() });
-
-    // initial
-    populateCompanyFilter();
-    render(medicines);
-
-    // Pre-fill owner details from existing info (you can change these strings directly)
-    document.getElementById('owner-name').textContent = 'Pradum Sahani';
-    document.getElementById('owner-qual').textContent = 'Registered Pharmacist • DHA Qualified';
-    document.getElementById('owner-email').textContent = 'sahanipradum98@gmail.com';
-    document.getElementById('owner-email').href = 'mailto:sahanipradum98@gmail.com';
-    document.getElementById('ft-name').textContent = 'Pradum Sahani';
-
-    // Replace placeholders if you want to programmatically set them:
-    // document.getElementById('upi-id').textContent = 'your_upi@bank';
-    // document.getElementById('phone').textContent = '+91-XXXXXXXXXX';
-    // document.getElementById('about-text').textContent = 'Your about text...';
-
-  </script></body>
-               </html>
+function clearResults(){
+  document.getElementById('drugInput').value = '';
+  document.getElementById('drugResult').innerHTML = '';
+}
+</script></body>
+    </html>          
