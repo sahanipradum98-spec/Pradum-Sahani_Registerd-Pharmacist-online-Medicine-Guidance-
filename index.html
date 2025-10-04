@@ -108,6 +108,68 @@
 </section>
 
 <!-- Medicine Search -->
+    <script>
+// ✅ Medicine Database (Brand + Salt + Uses)
+const medicines = {
+  "crocin": { salt: "Paracetamol", uses: "Fever, headache, pain relief" },
+  "dolo": { salt: "Paracetamol", uses: "Fever, pain relief" },
+  "calpol": { salt: "Paracetamol", uses: "Fever in children & adults" },
+  "augmentin": { salt: "Amoxicillin + Clavulanic Acid", uses: "Bacterial infections" },
+  "azithral": { salt: "Azithromycin", uses: "Respiratory & skin infections" },
+  "cetrizine": { salt: "Cetirizine", uses: "Allergy, cold, sneezing" },
+  "allegra": { salt: "Fexofenadine", uses: "Allergy relief" },
+  "pantocid": { salt: "Pantoprazole", uses: "Acidity, reflux" },
+  "metformin": { salt: "Metformin Hydrochloride", uses: "Type 2 diabetes" },
+  "atorva": { salt: "Atorvastatin", uses: "Cholesterol lowering" },
+  "losar": { salt: "Losartan", uses: "High blood pressure" },
+  "montek lc": { salt: "Montelukast + Levocetirizine", uses: "Asthma, allergy" },
+  "zincovit": { salt: "Multivitamin + Zinc", uses: "Immunity booster" },
+  "becosules": { salt: "Vitamin B-complex", uses: "Vitamin deficiency" },
+  "shelcal": { salt: "Calcium + Vitamin D3", uses: "Bone strength" },
+  "clopilet": { salt: "Clopidogrel", uses: "Blood thinner" },
+  "ecosprin": { salt: "Aspirin", uses: "Blood thinner, pain relief" },
+  "voveran": { salt: "Diclofenac", uses: "Pain relief, inflammation" },
+  "norflox": { salt: "Norfloxacin", uses: "UTI infections" },
+  "ciplox": { salt: "Ciprofloxacin", uses: "Bacterial infections" },
+  "combiflam": { salt: "Ibuprofen + Paracetamol", uses: "Pain, fever" },
+  "sinarest": { salt: "Paracetamol + Phenylephrine + Chlorpheniramine", uses: "Cold, allergy, fever" },
+  "eldoper": { salt: "Loperamide", uses: "Diarrhea control" },
+  "ondem": { salt: "Ondansetron", uses: "Nausea, vomiting" },
+  "limcee": { salt: "Vitamin C", uses: "Immunity, antioxidant" },
+  "asthalin": { salt: "Salbutamol", uses: "Asthma, wheezing" },
+  "thyronorm": { salt: "Levothyroxine", uses: "Thyroid hormone replacement" },
+  "glycomet": { salt: "Metformin", uses: "Type 2 diabetes" },
+  "lasix": { salt: "Furosemide", uses: "Diuretic for swelling, BP" },
+  "nicardia": { salt: "Nifedipine", uses: "High blood pressure, angina" },
+  "zyloric": { salt: "Allopurinol", uses: "Gout, uric acid control" },
+  "hifenac": { salt: "Aceclofenac", uses: "Pain relief, arthritis" },
+  "seroflo": { salt: "Salmeterol + Fluticasone", uses: "Asthma, COPD" }
+};
+
+function searchDrug() {
+  const query = document.getElementById("drugInput").value.trim().toLowerCase();
+  const resultDiv = document.getElementById("drugResult");
+
+  if (!query) {
+    resultDiv.innerHTML = "<p class='text-danger'>Please enter a medicine name.</p>";
+    return;
+  }
+
+  if (medicines[query]) {
+    let data = medicines[query];
+    resultDiv.innerHTML = `
+      <h5>${query.toUpperCase()}</h5>
+      <p><b>Salt:</b> ${data.salt}</p>
+      <p><b>Uses:</b> ${data.uses}</p>
+    `;
+  } else {
+    resultDiv.innerHTML = "<p class='text-warning'>No details found for this medicine.</p>";
+  }
+}
+</script>
+
+</body>
+</html>
 <section class="container my-5">
   <div class="card shadow p-4">
     <h3 style="color:#003366;">🔎 Medicine Search</h3>
