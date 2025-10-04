@@ -143,7 +143,45 @@
 <footer>© 2025 Pradum Sahani | Registered Pharmacist</footer>
 
 <script>
-// Medicine Database
+script>
+// Medicine Database (Brand + Salt + Uses + MRP + Image)
+const medicines = {
+  "crocin": { salt: "Paracetamol", dose: "500mg", uses: "Fever, pain relief", mrp: "₹20 (strip of 10)", img: "https://www.netmeds.com/images/product-v1/600x600/835003/crocin_advance_500mg_tablet_15s_0.jpg" },
+  "dolo": { salt: "Paracetamol", dose: "650mg", uses: "Fever, headache, body pain", mrp: "₹30 (strip of 15)", img: "https://www.netmeds.com/images/product-v1/600x600/821887/dolo_650mg_tablet_15s_0.jpg" },
+  "augmentin": { salt: "Amoxicillin + Clavulanic Acid", dose: "625mg", uses: "Bacterial infections", mrp: "₹180 (strip of 10)", img: "https://www.netmeds.com/images/product-v1/600x600/104435/augmentin_625mg_tablet_10s_0.jpg" },
+  "azithral": { salt: "Azithromycin", dose: "500mg", uses: "Respiratory & skin infections", mrp: "₹120 (strip of 5)", img: "https://www.netmeds.com/images/product-v1/600x600/359459/azithral_500mg_tablet_5s_0.jpg" }
+};
+
+function searchDrug() {
+  const query = document.getElementById("drugInput").value.trim().toLowerCase();
+  const resultDiv = document.getElementById("drugResult");
+  resultDiv.innerHTML = "";
+
+  if (!query) { resultDiv.innerHTML = "<p class='text-danger'>Enter medicine name.</p>"; return; }
+
+  if (medicines[query]) {
+    let data = medicines[query];
+    resultDiv.innerHTML = `
+      <div class="col-md-4">
+        <div class="card medicine-card shadow p-3">
+          <img src="${data.img}" class="card-img-top">
+          <div class="card-body">
+            <h5>${query.toUpperCase()}</h5>
+            <p><b>Salt:</b> ${data.salt}</p>
+            <p><b>Dose:</b> ${data.dose}</p>
+            <p><b>Uses:</b> ${data.uses}</p>
+            <p><b>MRP:</b> ${data.mrp}</p>
+            <a href="https://wa.me/919517360291?text=I want to order ${query}" class="btn btn-success">Order via WhatsApp</a>
+          </div>
+        </div>
+      </div>`;
+  } else {
+    resultDiv.innerHTML = "<p class='text-warning'>Medicine not found.</p>";
+  }
+}
+</script>
+    // Medicine Database
+
 const medicines = {
   "crocin": { salt: "Paracetamol", dose: "500mg", uses: "Fever, pain relief", mrp: "₹20 (strip of 10)", img: "https://www.netmeds.com/images/product-v1/600x600/835003/crocin_advance_500mg_tablet_15s_0.jpg" },
   "dolo": { salt: "Paracetamol", dose: "650mg", uses: "Fever, headache, body pain", mrp: "₹30 (strip of 15)", img: "https://www.netmeds.com/images/product-v1/600x600/821887/dolo_650mg_tablet_15s_0.jpg" },
