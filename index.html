@@ -3,79 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pradum Sahani - Registered Pharmacist</title>
+  <title>Medicine Search | Pharmacist Pradum Sahani</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    body { background:#f9f9f9; font-family: Arial, sans-serif; }
-    .profile-img { width:150px; height:150px; object-fit:cover; border:5px solid #003366; }
-    .section-title { color:#003366; margin-bottom:15px; }
-    .services-card { background:#e3f2fd; border-radius:10px; padding:15px; }
-    .contact-info p { margin:5px 0; }
-    .social-icons a { font-size:20px; margin:0 8px; }
-    .social-icons .facebook { color:#1877F2; }
-    .social-icons .instagram { color:#E4405F; }
-    .social-icons .twitter { color:#1DA1F2; }
+    body { font-family: Arial, sans-serif; }
+    .profile-pic { width:150px; height:150px; border-radius:50%; border:3px solid #003366; }
+    header { background:#003366; color:white; padding:20px; text-align:center; }
+    header h1 { font-size:26px; margin:0; }
+    header p { margin:5px 0; font-weight:bold; }
+    .services { background:#f0f8ff; padding:20px; border-radius:10px; }
+    .services h4 { color:#003366; }
+    .about, .contact { padding:20px; border-radius:10px; margin-top:20px; }
+    .about { background:#e6f2ff; }
+    .contact { background:#fff0f5; }
+    footer { background:#003366; color:white; padding:15px; text-align:center; margin-top:30px; }
+    footer a { margin:0 10px; color:white; font-size:20px; }
+    footer a:hover { color:yellow; }
+    .medicine-card { border-radius:12px; }
+    .medicine-card img { height:180px; object-fit:contain; padding:10px; }
   </style>
 </head>
 <body>
 
-<!-- Profile Section -->
-<section class="container text-center my-4">
-  <div class="card shadow-lg p-4">
-    <img src="https://via.placeholder.com/150" alt="Profile" class="rounded-circle profile-img mb-3">
-    <h2 class="section-title">Pradum Sahani</h2>
-    <h5 style="color:#007BFF;">Registered Pharmacist | DHA Qualified</h5>
-    <p>Available for online prescription review, medication guidance, and teleconsultation support.</p>
-  </div>
+<!-- HEADER -->
+<header>
+  <img src="https://via.placeholder.com/150?text=My+Photo" alt="Profile" class="profile-pic mb-2">
+  <h1>Pradum Sahani</h1>
+  <p>Registered Pharmacist | DHA Qualified</p>
+  <marquee behavior="scroll" direction="left">💊 Your trusted healthcare partner | Free Medicine Info | Order Easily 💊</marquee>
+</header>
+
+<!-- SERVICES -->
+<section class="container my-4 services shadow">
+  <h4>🩺 Services</h4>
+  <ul>
+    <li>Medicine Information (Brand / Salt / Uses)</li>
+    <li>Prescription Support</li>
+    <li>Pharmacy Partnership (Add your shop)</li>
+    <li>Online Order Support</li>
+  </ul>
 </section>
 
-<!-- Services Section -->
-<section class="container my-4">
-  <h3 class="section-title text-center">💊 Our Services</h3>
-  <div class="row g-3">
-    <div class="col-md-4">
-      <div class="services-card shadow-sm">
-        <h5>Prescription Review</h5>
-        <p>Get safe & accurate prescription verification.</p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="services-card shadow-sm">
-        <h5>Medicine Guidance</h5>
-        <p>Personalized medicine & dosage advice.</p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="services-card shadow-sm">
-        <h5>OTC Medicine Advice</h5>
-        <p>Guidance for safe use of over-the-counter medicines.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Contact Section -->
-<section class="container my-4">
-  <h3 class="section-title text-center">📞 Contact Me</h3>
-  <div class="card shadow p-3 text-center contact-info">
-    <p><strong>Email:</strong> <a href="mailto:sahanipradum98@gmail.com">sahanipradum98@gmail.com</a></p>
-    <p><strong>WhatsApp:</strong> <a href="https://wa.me/919517360291">+91-9517360291</a></p>
-    <p><strong>UPI:</strong> <code>sahanipradum98-2@okaxis</code></p>
-    <div class="social-icons mt-2">
-      <a href="https://www.facebook.com/share/16V3k7o6xE/" target="_blank" class="facebook"><i class="bi bi-facebook"></i> Facebook</a>
-      <a href="https://www.instagram.com/pradumsahani.019" target="_blank" class="instagram"><i class="bi bi-instagram"></i> Instagram</a>
-      <a href="https://twitter.com" target="_blank" class="twitter"><i class="bi bi-twitter"></i> Twitter</a>
-    </div>
-  </div>
-</section>
-
-<!-- Medicine Search Section -->
+<!-- SEARCH -->
 <section class="container my-4">
   <div class="card shadow p-3">
-    <h3 class="section-title">🔎 Medicine Search (by Name, Brand or Salt)</h3>
+    <h4 style="color:#003366;">🔎 Medicine Search (by Brand or Salt)</h4>
     <div class="row g-2 align-items-center">
       <div class="col-md-8 col-sm-12">
-        <input id="drugInput" class="form-control" placeholder="Enter medicine name, brand or salt..." />
+        <input id="drugInput" class="form-control" placeholder="Enter medicine brand or salt..." />
       </div>
       <div class="col-md-4 col-sm-12 text-md-end">
         <button class="btn btn-primary" onclick="searchDrug()">Search</button>
@@ -86,7 +61,30 @@
   </div>
 </section>
 
-<!-- Medicine DB + Script -->
+<!-- ABOUT -->
+<section class="container about shadow">
+  <h4 style="color:#003366;">👨‍⚕️ About Me</h4>
+  <p>Hello! I am <b>Pradum Sahani</b>, a <b>Registered Pharmacist (DHA Qualified)</b>.  
+  My mission is to provide free medicine information, guide patients for safe usage, and support pharmacies online.</p>
+</section>
+
+<!-- CONTACT -->
+<section class="container contact shadow">
+  <h4 style="color:#c71585;">📞 Contact Me</h4>
+  <p><b>Mobile/WhatsApp:</b> <a href="tel:+919517360291">+91 9517360291</a></p>
+  <p><b>Email:</b> <a href="mailto:pharmacistpradum@gmail.com">pharmacistpradum@gmail.com</a></p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Follow Me:</p>
+  <a href="https://facebook.com" target="_blank">📘</a>
+  <a href="https://instagram.com" target="_blank">📸</a>
+  <a href="https://twitter.com" target="_blank">🐦</a>
+  <p>&copy; 2025 Pradum Sahani | All Rights Reserved</p>
+</footer>
+
+<!-- SCRIPT -->
 <script>
 const medicinesDB = {
   "crocin": { displayName:"Crocin Advance 500mg", salt:"Paracetamol", dose:"500 mg", uses:"Fever, pain relief", company:"GSK", mrp:"₹40 (strip)", img:"https://www.netmeds.com/images/product-v1/600x600/835003/crocin_advance_500mg_tablet_15s_0.jpg" },
@@ -104,19 +102,19 @@ function searchDrug(){
   const out = document.getElementById('drugResult');
   out.innerHTML = '';
   if (!q) {
-    out.innerHTML = "<p class='text-danger mt-3'>Please enter a medicine name, brand or salt.</p>";
+    out.innerHTML = "<p class='text-danger mt-3'>Please enter a medicine brand or salt.</p>";
     return;
   }
   let found = false;
   for (const key in medicinesDB) {
     const item = medicinesDB[key];
-    if (key.includes(q) || item.displayName.toLowerCase().includes(q) || item.salt.toLowerCase().includes(q)) {
+    if (key.includes(q) || item.displayName.toLowerCase().includes(q) || (item.salt && item.salt.toLowerCase().includes(q))) {
       renderMedicineCard(item);
       found = true;
     }
   }
   if (!found) {
-    out.innerHTML = "<p class='text-warning mt-3'>No medicine found. Try another search.</p>";
+    out.innerHTML = "<p class='text-warning mt-3'>No medicine found. Try other name or salt.</p>";
   }
 }
 
@@ -125,11 +123,10 @@ function renderMedicineCard(data) {
   const col = document.createElement('div');
   col.className = "col-md-4";
   col.innerHTML = `
-    <div class="card shadow mb-3">
+    <div class="card medicine-card shadow mb-3">
       <img src="${data.img}" class="card-img-top" alt="${data.displayName}" onerror="this.src='https://via.placeholder.com/200x120?text=Image'">
       <div class="card-body">
         <h5>${data.displayName}</h5>
-        <p><strong>Brand:</strong> ${data.displayName.split(" ")[0]}</p>
         <p><strong>Salt:</strong> ${data.salt}</p>
         <p><strong>Dose:</strong> ${data.dose}</p>
         <p><strong>Uses:</strong> ${data.uses}</p>
@@ -146,9 +143,5 @@ function clearResults(){
   document.getElementById('drugResult').innerHTML = '';
 }
 </script>
-
-<!-- Bootstrap icons -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
 </body>
-</html>
+  </html>
