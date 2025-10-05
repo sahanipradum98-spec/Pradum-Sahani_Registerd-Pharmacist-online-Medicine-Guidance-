@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+        <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -30,9 +30,7 @@
       font-size: 28px;
       font-weight: 600;
     }
-    header p {
-      margin: 5px 0;
-    }
+    header p { margin: 5px 0; }
     marquee {
       color: #ffcc00;
       font-weight: bold;
@@ -50,10 +48,18 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       margin-top: 25px;
     }
-    .services { background: #e3f2fd; }
-    .about { background: #fff3cd; }
-    .contact { background: #f8d7da; }
-    .search-section { background: #f1f8e9; }
+    .services {
+      background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    }
+    .about {
+      background: linear-gradient(135deg, #fff3cd, #ffe082);
+    }
+    .contact {
+      background: linear-gradient(135deg, #f8d7da, #ffcdd2);
+    }
+    .search-section {
+      background: linear-gradient(135deg, #f1f8e9, #dcedc8);
+    }
     footer {
       background: #003366;
       color: white;
@@ -82,6 +88,17 @@
       object-fit: contain;
       padding: 10px;
     }
+    .upi-box {
+      background: #ffffff;
+      border-radius: 15px;
+      padding: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-top: 15px;
+    }
+    .upi-id {
+      font-weight: bold;
+      color: #004d99;
+    }
   </style>
 </head>
 <body>
@@ -103,12 +120,20 @@
     <li>Online Medicine Consultation</li>
     <li>Pharmacy Tie-up & Support</li>
   </ul>
+
+  <div class="upi-box mt-4">
+    <h5 class="text-primary mb-3">💰 Pay via UPI</h5>
+    <p>You can make payments directly using the UPI ID below:</p>
+    <p class="upi-id">🟢 UPI ID: <b>sahanipradum98-2@okaxis</b></p>
+    <p>Scan the QR Code below or use any UPI app like PhonePe / Google Pay / Paytm:</p>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?data=upi://pay?pa=sahanipradum98-2@okaxis&pn=Pradum%20Sahani&am=0&cu=INR&size=200x200" alt="UPI QR Code" width="200" height="200" />
+  </div>
 </section>
 
 <!-- ABOUT -->
 <section class="container about">
   <h4 class="section-title">👨‍⚕️ About Me</h4>
-  <p class="mt-3">I am <b>Pradum Sahani</b>, a <b>Registered Pharmacist (DHA Qualified)</b> dedicated to providing accurate medicine information, online pharmacy assistance, and helping patients understand the safe use of medications. My goal is to make healthcare simpler and accessible for everyone.</p>
+  <p class="mt-3">I am <b>Pradum Sahani</b>, a <b>Registered Pharmacist (DHA Qualified)</b> dedicated to providing accurate medicine information, online pharmacy assistance, and helping patients understand safe use of medications. My goal is to make healthcare simpler and accessible for everyone.</p>
 </section>
 
 <!-- SEARCH SECTION -->
@@ -206,4 +231,4 @@ function clearResults(){
 </script>
 
 </body>
-  </html>
+                                 </html>
