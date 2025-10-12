@@ -13,11 +13,14 @@
       background-color: #eaf3ff;
       color: #222;
     }
+
+    /* Header Section */
     header {
       background-color: #0056b3;
       color: #fff;
       text-align: center;
       padding: 20px;
+      position: relative;
     }
     header img {
       width: 130px;
@@ -35,10 +38,20 @@
       font-weight: normal;
       color: #cce0ff;
     }
+    .contact-info {
+      font-size: 14px;
+      color: #f0f8ff;
+      margin-top: 5px;
+    }
+    .contact-info a {
+      color: #ffeb3b;
+      text-decoration: none;
+      margin: 0 5px;
+    }
 
-    /* Sliding Hindi caution text */
+    /* Sliding Warning Text */
     .marquee {
-      background-color: #003d80;
+      background-color: #c60000;
       color: #fff;
       padding: 10px;
       font-size: 17px;
@@ -153,6 +166,7 @@
       margin: 0 8px;
       vertical-align: middle;
     }
+
     footer {
       background-color: #003366;
       color: #ccc;
@@ -169,6 +183,10 @@
     <img src="Pradum.jpg" alt="Pradum Sahani" />
     <h1>Pradum Sahani</h1>
     <h3>Registered Pharmacist | DHA Qualified</h3>
+    <div class="contact-info">
+      📧 <a href="mailto:sahanipradum98@gmail.com">sahanipradum98@gmail.com</a> |
+      📱 <a href="tel:9517360291">9517360291</a>
+    </div>
   </header>
 
   <div class="marquee">
@@ -193,66 +211,4 @@
       <div class="service"><h3>Prescription Upload</h3><p>Upload your valid prescription directly.</p><a href="https://docs.google.com/forms/d/1IVGHaIRKJHU1ytrMt_dAcHlEd5RE94n5XtC0shW-PGQ/viewform" target="_blank">Upload Prescription</a></div>
       <div class="service"><h3>Free Medicine Info</h3><p>Search any medicine by brand, salt or uses for free.</p></div>
       <div class="service"><h3>UPI Payment</h3><p>Click below to pay securely via UPI.</p><a href="upi://pay?pa=sahanipradum98-2@okaxis&pn=Pradum%20Sahani&cu=INR" style="color:#0056b3;font-weight:bold;">Pay via UPI</a></div>
-      <div class="service"><h3>24/7 Consultation</h3><p>Online pharmacist support available anytime.</p></div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="contact">
-    <h2>📞 Contact Me</h2>
-    <p>📧 Email: <a href="mailto:sahanipradum98@gmail.com">sahanipradum98@gmail.com</a></p>
-    <p>📱 Phone: <a href="tel:9517360291">9517360291</a></p>
-    <div class="social-icons">
-      <a href="https://facebook.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" /></a>
-      <a href="https://twitter.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" /></a>
-      <a href="https://instagram.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" /></a>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2025 Pradum Sahani | Registered Pharmacist | All Rights Reserved</p>
-  </footer>
-
-  <script>
-    const medicines = {
-      "dolo": { name:"Dolo 650", salt:"Paracetamol", dose:"650 mg", uses:"Fever, pain relief", company:"Micro Labs", mrp:"₹30", img:"https://www.netmeds.com/images/product-v1/600x600/821887/dolo_650mg_tablet_15s_0.jpg" },
-      "metformin": { name:"Metformin 500", salt:"Metformin HCl", dose:"500 mg", uses:"Type 2 Diabetes", company:"Lupin", mrp:"₹50", img:"https://www.netmeds.com/images/product-v1/600x600/804221/metformin_500mg_tablet.jpg" },
-      "thyronorm": { name:"Thyronorm 50 mcg", salt:"Thyroxine", dose:"50 mcg", uses:"Hypothyroidism", company:"Abbott", mrp:"₹110", img:"https://www.netmeds.com/images/product-v1/600x600/803141/thyronorm_50mcg_tablet_120s_0.jpg" },
-      "amlodipine": { name:"Amlodipine 5mg", salt:"Amlodipine", dose:"5 mg", uses:"Blood Pressure", company:"Pfizer", mrp:"₹45", img:"https://www.netmeds.com/images/product-v1/600x600/360570/amlodipine_5mg_tablet_10s_0.jpg" },
-      "pantoprazole": { name:"Pantoprazole 40mg", salt:"Pantoprazole", dose:"40 mg", uses:"Acidity, GERD", company:"Sun Pharma", mrp:"₹45", img:"https://www.netmeds.com/images/product-v1/600x600/821854/pantoprazole_40mg_tablet_10s_0.jpg" }
-      // More medicines can be added here (structure ready for 1200+)
-    };
-
-    function searchMedicine() {
-      const query = document.getElementById("searchBox").value.toLowerCase();
-      const resultBox = document.getElementById("resultBox");
-      resultBox.innerHTML = "";
-      for (let key in medicines) {
-        const m = medicines[key];
-        if (key.includes(query) || m.name.toLowerCase().includes(query) || m.salt.toLowerCase().includes(query)) {
-          const card = `
-          <div class="medicine-card">
-            <img src="${m.img}" alt="${m.name}" />
-            <div>
-              <h4>${m.name}</h4>
-              <p><b>Salt:</b> ${m.salt}</p>
-              <p><b>Uses:</b> ${m.uses}</p>
-              <p><b>Company:</b> ${m.company}</p>
-              <p><b>MRP:</b> ${m.mrp}</p>
-            </div>
-          </div>`;
-          resultBox.innerHTML += card;
-        }
-      }
-      if (!resultBox.innerHTML) {
-        resultBox.innerHTML = "<p style='color:red;text-align:center;'>No medicine found. Try another name.</p>";
-      }
-    }
-
-    function clearResults() {
-      document.getElementById("searchBox").value = "";
-      document.getElementById("resultBox").innerHTML = "";
-    }
-  </script>
-</body>
-</html>
+      <div class="service"><h3>
