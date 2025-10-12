@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -16,20 +16,17 @@
     background: linear-gradient(90deg, #0057b7, #0099ff);
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 25px;
   }
   header img {
     width: 100px;
     border-radius: 50%;
     border: 3px solid white;
   }
-  header h1 {
-    margin: 10px 0 5px 0;
-  }
-  header p {
-    margin: 0;
-    font-weight: bold;
-  }
+  header h1 { margin: 10px 0 5px 0; }
+  header p { margin: 0; font-weight: bold; }
+
+  /* Hindi Safety Slider */
   .slider {
     background-color: #cce6ff;
     padding: 10px;
@@ -65,7 +62,7 @@
   .search-box {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   .search-box input {
     width: 80%;
@@ -74,36 +71,59 @@
     border-radius: 5px;
     font-size: 16px;
   }
+
+  /* Medicine result cards */
+  .medicine-card {
+    border: 1px solid #0073e6;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0;
+    background: #f5f9ff;
+  }
+
+  /* Services section */
+  h2 {
+    text-align: center;
+    color: #004d99;
+    margin-top: 40px;
+  }
   .services {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
+    margin-top: 20px;
   }
   .service-box {
-    background-color: #f0f8ff;
-    border: 2px solid #0073e6;
-    padding: 15px;
-    border-radius: 10px;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
     text-align: center;
     font-weight: bold;
-    transition: 0.3s;
+    transition: transform 0.3s;
   }
   .service-box:hover {
-    background-color: #d1e7ff;
+    transform: scale(1.05);
   }
+  .s1 { background: #007bff; }
+  .s2 { background: #28a745; }
+  .s3 { background: #ff9800; }
+  .s4 { background: #9c27b0; }
+
+  /* UPI section */
   .upi {
     background-color: #0073e6;
     color: white;
     text-align: center;
     padding: 15px;
     border-radius: 10px;
-    margin-top: 20px;
+    margin-top: 30px;
   }
   .upi a {
     color: yellow;
     font-weight: bold;
     text-decoration: none;
   }
+
   footer {
     background-color: #0057b7;
     color: white;
@@ -129,6 +149,7 @@
   <p>Registered Pharmacist | DHA Qualified</p>
 </header>
 
+<!-- Hindi Awareness Slider -->
 <div class="slider">
   <div class="slide-text">
     ⚠️ स्वयं दवा लेना नुकसानदायक हो सकता है।  
@@ -139,20 +160,24 @@
 </div>
 
 <div class="container">
+  <!-- Search Bar -->
   <div class="search-box">
     <input type="text" id="searchInput" placeholder="Search by brand, salt, or use...">
   </div>
 
+  <!-- Medicine Results -->
   <div id="medicineList"></div>
 
+  <!-- Services Section -->
   <h2>Our Services</h2>
   <div class="services">
-    <div class="service-box">Online Medicine Info</div>
-    <div class="service-box">Doctor Consultation</div>
-    <div class="service-box">Pharmacist Guidance</div>
-    <div class="service-box">Health Awareness</div>
+    <div class="service-box s1">💊 Online Medicine Info</div>
+    <div class="service-box s2">👨‍⚕️ Doctor Consultation</div>
+    <div class="service-box s3">🧾 Pharmacist Guidance</div>
+    <div class="service-box s4">💡 Health Awareness</div>
   </div>
 
+  <!-- UPI Payment -->
   <div class="upi">
     <p>💰 Pay using UPI:</p>
     <a href="upi://pay?pa=sahanipradum98-2@okaxis&pn=Pradum%20Sahani&cu=INR">
@@ -184,7 +209,7 @@ const medicines = [
 function showMedicines(data) {
   const list = document.getElementById('medicineList');
   list.innerHTML = data.map(m => `
-    <div style="border:1px solid #0073e6; border-radius:10px; padding:10px; margin:10px 0; background:#f5f9ff">
+    <div class="medicine-card">
       <h3>${m.name}</h3>
       <p><b>Salt:</b> ${m.salt}</p>
       <p><b>Uses:</b> ${m.uses}</p>
@@ -193,10 +218,13 @@ function showMedicines(data) {
     </div>
   `).join('');
 }
-showMedicines(medicines);
 
 document.getElementById('searchInput').addEventListener('keyup', function() {
-  const val = this.value.toLowerCase();
+  const val = this.value.toLowerCase().trim();
+  if (!val) {
+    document.getElementById('medicineList').innerHTML = ""; // hide default
+    return;
+  }
   const filtered = medicines.filter(m => 
     m.name.toLowerCase().includes(val) || 
     m.salt.toLowerCase().includes(val) || 
