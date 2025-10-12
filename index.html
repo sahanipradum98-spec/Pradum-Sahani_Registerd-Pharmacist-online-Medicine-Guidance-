@@ -1,153 +1,310 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pradum Sahani - Registered Pharmacist | DHA Qualified</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pradum Sahani | Registered Pharmacist — DHA Qualified</title>
 
-  <!-- ✅ Google Site Verification Tag -->
+  <!-- Google verification (you provided) -->
   <meta name="google-site-verification" content="wWLL4QkQeb19ZtuXXabzbiKQpRdlE3tLaGnk5rjXLpM" />
 
-  <!-- SEO Tags -->
-  <meta name="description" content="Official website of Pradum Sahani, Registered Pharmacist (DHA Qualified). Providing verified medical information and services online." />
+  <!-- SEO meta tags -->
+  <meta name="description" content="Pradum Sahani — Registered Pharmacist (D.Pharm, DHA Qualified). Online prescription review, medicine guidance, teleconsultation and health awareness." />
+  <meta name="keywords" content="Pradum Sahani, Pharmacist, DHA Qualified, Online Pharmacy Guidance, Prescription Review, Medicine Information, Noida Pharmacist" />
   <meta name="author" content="Pradum Sahani" />
+  <link rel="icon" href="Pradum.jpg" type="image/jpeg" />
 
-  <!-- Favicon -->
-  <link rel="icon" href="pradum.jpg" type="image/jpeg" />
+  <!-- Structured data (helps Google show rich info) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Pradum Sahani",
+    "jobTitle":"Registered Pharmacist",
+    "description":"Registered Pharmacist (D.Pharm) — DHA Qualified. Online prescription review and medicine guidance.",
+    "email":"sahanipradum98@gmail.com",
+    "telephone":"+919517360291",
+    "image":"https://sahanipradum98-spec.github.io/Pradum-Sahani_Registerd-Pharmacist-online-Medicine-Guidance-/Pradum.jpg"
+  }
+  </script>
 
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #e8f1ff;
-      color: #222;
-      margin: 0;
-      padding: 0;
+    :root{
+      --accent:#0073e6;
+      --accent-dark:#0057b7;
+      --muted:#f5f9ff;
+      --card:#ffffff;
+      --text:#0d2540;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(135deg,#e8f6ff 0%, #ffffff 100%);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
     }
 
-    header {
-      background: linear-gradient(90deg, #0052cc, #007bff);
-      color: white;
-      padding: 20px;
-      text-align: center;
+    /* HEADER */
+    header{
+      background: linear-gradient(90deg,var(--accent-dark),var(--accent));
+      color:white; text-align:center; padding:28px 16px;
+      box-shadow:0 6px 18px rgba(3,64,145,0.12);
+    }
+    header .wrap{max-width:1100px;margin:auto;display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:center}
+    header img{
+      width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,0.9);
+      box-shadow:0 6px 20px rgba(0,0,0,0.15);
+    }
+    header h1{margin:4px 0;font-size:24px;letter-spacing:0.2px}
+    header p{margin:0;font-size:14px;opacity:0.95}
+
+    /* Animated small marquee (subtle) */
+    .marquee{
+      margin-top:10px;color:#ffef9e;font-weight:700;
+      font-size:13px;
     }
 
-    header img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      border: 3px solid white;
-      margin-bottom: 10px;
+    /* MAIN container */
+    .container{max-width:1100px;margin:20px auto;padding:0 16px}
+
+    /* Hindi awareness slider - slow & readable */
+    .slider-wrap{
+      background:#fff6f6;border-radius:10px;padding:8px;margin-bottom:16px;
+      overflow:hidden;border:1px solid #ffe6e6;
+    }
+    .slider{
+      position:relative;height:56px;
+    }
+    .slide{
+      position:absolute;left:0;right:0;text-align:center;font-weight:700;color:#b91c1c;
+      padding:12px 10px;font-size:16px;
+      animation: slideSlow 32s linear infinite;
+    }
+    @keyframes slideSlow{
+      0%   { transform:translateY(0); }
+      20%  { transform:translateY(0); }
+      25%  { transform:translateY(-56px); }
+      45%  { transform:translateY(-56px); }
+      50%  { transform:translateY(-112px); }
+      70%  { transform:translateY(-112px); }
+      75%  { transform:translateY(-168px); }
+      95%  { transform:translateY(-168px); }
+      100% { transform:translateY(0); }
     }
 
-    header h1 {
-      margin: 10px 0;
-      font-size: 1.8em;
+    /* Search */
+    .search-box{display:flex;justify-content:center;margin:10px 0 22px}
+    .search-input{
+      width:86%;max-width:900px;padding:12px 14px;border-radius:10px;border:2px solid rgba(3,64,145,0.13);
+      font-size:16px;outline:none;background:#fff;
+      box-shadow:0 4px 12px rgba(3,64,145,0.03)
     }
+    .result-grid{margin-top:16px}
 
-    header p {
-      margin: 0;
-      font-size: 1.1em;
-    }
+    /* medicine card */
+    .med-card{display:flex;gap:12px;align-items:flex-start;padding:12px;border-radius:10px;background:var(--card);box-shadow:0 6px 18px rgba(3,64,145,0.04);border:1px solid #eef6ff;margin-bottom:12px}
+    .med-img{width:120px;height:80px;border-radius:8px;object-fit:contain;background:#fafafa;border:1px solid #eee;padding:6px}
+    .med-info h3{margin:0 0 6px 0;font-size:18px;color:var(--accent-dark)}
+    .med-info p{margin:3px 0;font-size:14px;color:#21456c}
 
-    .container {
-      max-width: 1000px;
-      margin: 20px auto;
-      padding: 20px;
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
+    /* Services colorful grid */
+    .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:22px}
+    .svc{padding:18px;border-radius:12px;color:white;font-weight:700;min-height:110px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+    .svc.s1{background:linear-gradient(135deg,#0073e6,#0057b7)}
+    .svc.s2{background:linear-gradient(135deg,#28a745,#1e7e34)}
+    .svc.s3{background:linear-gradient(135deg,#ff9800,#ff6f00)}
+    .svc.s4{background:linear-gradient(135deg,#8e2de2,#4a00e0)}
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-    }
+    /* Prescription / UPI */
+    .row{display:flex;gap:14px;flex-wrap:wrap;margin-top:18px}
+    .card{flex:1 1 300px;background:var(--muted);padding:14px;border-radius:12px;border:1px solid #e6f0ff}
+    .card h4{margin:0 0 8px 0;color:var(--accent-dark)}
+    .btn{display:inline-block;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700}
+    .btn-primary{background:var(--accent-dark);color:white}
+    .btn-qr{background:#fff;border:1px solid #ddd;padding:8px;border-radius:8px}
 
-    .service-box {
-      background: linear-gradient(135deg, #ffffff, #e0ebff);
-      border: 1px solid #cfd9ff;
-      padding: 15px;
-      border-radius: 10px;
-      text-align: center;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    }
+    /* footer */
+    footer{margin-top:28px;padding:18px 16px;background:var(--accent-dark);color:white;text-align:center;border-top-left-radius:12px;border-top-right-radius:12px}
+    .socials img{width:28px;margin:0 8px;vertical-align:middle}
 
-    .service-box:hover {
-      transform: scale(1.03);
-      transition: 0.3s;
-    }
-
-    footer {
-      background: #0052cc;
-      color: white;
-      text-align: center;
-      padding: 20px 10px;
-      margin-top: 30px;
-    }
-
-    footer a {
-      color: #ffdf00;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    footer img {
-      width: 30px;
-      margin: 5px;
-    }
-
-    .upi-button {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #00c853;
-      color: white;
-      border-radius: 8px;
-      font-weight: bold;
-      text-decoration: none;
-      margin-top: 15px;
-    }
-
-    .upi-button:hover {
-      background-color: #009624;
+    /* responsive */
+    @media (max-width:720px){
+      header .wrap{flex-direction:column}
+      .med-card{flex-direction:column;align-items:center}
+      .med-img{width:80%;height:140px}
+      .search-input{width:95%}
     }
   </style>
 </head>
-
 <body>
-  <header>
-    <img src="pradum.jpg" alt="Pradum Sahani" />
-    <h1>Pradum Sahani</h1>
-    <p>Registered Pharmacist | DHA Qualified</p>
-    <p>📞 9517360291 | ✉️ sahanipradum98@gmail.com</p>
-  </header>
 
-  <div class="container">
-    <h2 style="text-align:center; color:#0052cc;">Our Professional Services</h2>
-    <div class="services">
-      <div class="service-box">
-        <h3>Medicine Information</h3>
-        <p>Search latest medicines, salts, brands, uses and company details — updated regularly with verified data.</p>
-      </div>
-      <div class="service-box">
-        <h3>Prescription Upload</h3>
-        <p>Upload your doctor’s prescription securely for verification and quick response.</p>
-        <a href="https://docs.google.com/forms/d/1IVGHaIRKJHU1ytrMt_dAcHlEd5RE94n5XtC0shW-PGQ/viewform" target="_blank" class="upi-button">Upload Prescription</a>
-      </div>
-      <div class="service-box">
-        <h3>UPI Payment</h3>
-        <p>Make secure payments directly through UPI for online consultation and services.</p>
-        <a href="upi://pay?pa=sahanipradum98-2@okaxis&pn=Pradum%20Sahani&cu=INR" class="upi-button">Pay via UPI</a>
+  <!-- HEADER -->
+  <header>
+    <div class="wrap">
+      <!-- Make sure the image file in repo is exactly 'Pradum.jpg' -->
+      <img src="Pradum.jpg" alt="Pradum Sahani photo" />
+      <div style="text-align:center">
+        <h1>Pradum Sahani</h1>
+        <p>Registered Pharmacist — D.Pharm, DHA Qualified</p>
+        <p style="margin-top:6px;font-weight:600">📞 +91-9517360291 &nbsp; | &nbsp; ✉️ sahanipradum98@gmail.com</p>
+        <div class="marquee" aria-hidden="true">💊 Online Prescription Review • Medicine Guidance • Teleconsultation</div>
       </div>
     </div>
-  </div>
+  </header>
 
-  <footer>
-    <p>Follow Me:</p>
-    <a href="https://facebook.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" /></a>
-    <a href="https://instagram.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram" /></a>
-    <a href="https://linkedin.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733561.png" alt="LinkedIn" /></a>
-    <p>© 2025 Pradum Sahani | All Rights Reserved</p>
-  </footer>
+  <main class="container">
+    <!-- Hindi Awareness slider: slow & readable (multiple lines rotate) -->
+    <div class="slider-wrap" aria-hidden="false">
+      <div class="slider" role="status" aria-live="polite">
+        <div class="slide">
+          ⚠️ स्वयं दवा लेना नुकसानदायक हो सकता है। &nbsp; &nbsp; 
+          💊 हमेशा डॉक्टर / पंजीकृत फार्मासिस्ट की सलाह लें। &nbsp; &nbsp; 
+          ❗ दवा की गलत खुराक से साइड-इफेक्ट और एलर्जी हो सकती है। &nbsp; &nbsp;
+          🕒 दवा समय पर और निर्देशानुसार लें।
+        </div>
+      </div>
+    </div>
+
+    <!-- SEARCH -->
+    <div>
+      <div class="search-box" role="search">
+        <input id="searchInput" class="search-input" placeholder="Search medicine by brand or salt (e.g. crocin, paracetamol, metformin) and press Enter" aria-label="Search medicines" />
+      </div>
+
+      <div id="resultArea" class="result-grid" aria-live="polite"></div>
+    </div>
+
+    <!-- Services -->
+    <h2 style="margin-top:28px;text-align:center;color:var(--accent-dark)">Our Services</h2>
+    <div class="services" role="list">
+      <div class="svc s1" role="listitem">💊 Medicine Information<br><small style="font-weight:600">Brand, salt, uses, dose</small></div>
+      <div class="svc s2" role="listitem">🩺 Prescription Review<br><small style="font-weight:600">Upload & get pharmacist review</small></div>
+      <div class="svc s3" role="listitem">📦 Medicine Help & Reminders<br><small style="font-weight:600">Refill reminders</small></div>
+      <div class="svc s4" role="listitem">💡 Health Awareness<br><small style="font-weight:600">Safe medicine use tips</small></div>
+    </div>
+
+    <!-- Prescription Upload + UPI -->
+    <div class="row" style="margin-bottom:28px">
+      <div class="card">
+        <h4>Upload Prescription</h4>
+        <p>Use the secure Google Form to upload your prescription. (Google account sign-in may be required for file upload.)</p>
+        <p style="margin:8px 0">
+          <a class="btn btn-primary" href="https://docs.google.com/forms/d/1IVGHaIRKJHU1ytrMt_dAcHlEd5RE94n5XtC0shW-PGQ/viewform" target="_blank" rel="noopener">Open Upload Form</a>
+        </p>
+        <small style="color:#21456c;display:block">After upload, we will review and contact you via WhatsApp/Email.</small>
+      </div>
+
+      <div class="card" aria-label="UPI Payment">
+        <h4>Pay via UPI</h4>
+        <p>Click the button to open your UPI app (PhonePe / Google Pay / Paytm etc.) and pay.</p>
+
+        <!-- clickable UPI intent (mobile) -->
+        <p style="margin:10px 0">
+          <a class="btn btn-primary" href="upi://pay?pa=sahanipradum98-2@okaxis&pn=Pradum%20Sahani&cu=INR">Pay with UPI app</a>
+        </p>
+        <p style="margin-top:8px">Or scan QR:</p>
+        <div style="margin-top:8px">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?data=upi://pay?pa=sahanipradum98-2@okaxis&pn=Pradum%20Sahani&cu=INR&size=200x200" alt="UPI QR" style="width:160px;height:160px;border-radius:8px;border:1px solid #e6f2ff" />
+        </div>
+        <p style="margin-top:8px;font-size:13px;color:#16406a">UPI ID: <strong>sahanipradum98-2@okaxis</strong></p>
+      </div>
+    </div>
+
+    <!-- NOTE: medicines array below is sample. You can expand it to 1200+ items by adding more entries in the same shape:
+         { id: "key", displayName:"...", salt:"...", dose:"...", uses:"...", company:"...", mrp:"₹...", img:"https://..." }
+         For performance with 1200+ items consider moving data to an external file (medicines.js) and lazy-loading it. -->
+
+    <!-- Footer -->
+    <footer>
+      <div style="max-width:1100px;margin:auto">
+        <p style="margin:0 0 8px 0;font-weight:700">Follow & Contact</p>
+        <div style="margin-bottom:8px">
+          <a href="https://www.facebook.com/share/16V3k7o6xE/" target="_blank" rel="noopener"><img class="socials" src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" /></a>
+          <a href="https://www.instagram.com/pradumsahani.019?igsh=eHppbzZyNDk0NzFj" target="_blank" rel="noopener"><img class="socials" src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" /></a>
+          <a href="mailto:sahanipradum98@gmail.com"><img class="socials" src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" /></a>
+        </div>
+        <div style="color:#fff;opacity:0.95">© 2025 Pradum Sahani — Registered Pharmacist</div>
+      </div>
+    </footer>
+  </main>
+
+<script>
+/* ===========================
+   MEDICINES DATA (SAMPLE)
+   Expand this array as needed.
+   For 1200+ items, move to external file medicines.js to keep index.html small.
+   Each item: { id, displayName, salt, dose, uses, company, mrp, img }
+   =========================== */
+
+const medicines = [
+  { id:"dolo", displayName:"Dolo 650", salt:"Paracetamol", dose:"650 mg", uses:"Fever, pain relief", company:"Micro Labs", mrp:"₹30", img:"https://www.netmeds.com/images/product-v1/600x600/821887/dolo_650mg_tablet_15s_0.jpg" },
+  { id:"crocin", displayName:"Crocin Advance 500mg", salt:"Paracetamol", dose:"500 mg", uses:"Fever, pain", company:"GSK", mrp:"₹40", img:"https://www.netmeds.com/images/product-v1/600x600/835003/crocin_advance_500mg_tablet_15s_0.jpg" },
+  { id:"metformin", displayName:"Metformin 500mg", salt:"Metformin", dose:"500 mg", uses:"Type 2 Diabetes", company:"Lupin", mrp:"₹50", img:"https://via.placeholder.com/200x120?text=Metformin" },
+  { id:"glimepiride", displayName:"Glimepiride 2 mg", salt:"Glimepiride", dose:"2 mg", uses:"Type 2 Diabetes", company:"Sun Pharma", mrp:"₹40", img:"https://via.placeholder.com/200x120?text=Glimepiride" },
+  { id:"amlodipine", displayName:"Amlodipine 5 mg", salt:"Amlodipine", dose:"5 mg", uses:"Hypertension", company:"Cipla", mrp:"₹35", img:"https://via.placeholder.com/200x120?text=Amlodipine" },
+  { id:"losartan", displayName:"Losartan 50 mg", salt:"Losartan", dose:"50 mg", uses:"Hypertension", company:"Torrent", mrp:"₹70", img:"https://via.placeholder.com/200x120?text=Losartan" },
+  { id:"pantoprazole", displayName:"Pantoprazole 40 mg", salt:"Pantoprazole", dose:"40 mg", uses:"Acidity/GERD", company:"Sun Pharma", mrp:"₹45", img:"https://via.placeholder.com/200x120?text=Pantoprazole" },
+  { id:"azithral", displayName:"Azithral 500", salt:"Azithromycin", dose:"500 mg", uses:"Bacterial infections", company:"Cipla", mrp:"₹120", img:"https://www.netmeds.com/images/product-v1/600x600/359459/azithral_500mg_tablet_5s_0.jpg" },
+  { id:"atorva", displayName:"Atorvastatin 10 mg", salt:"Atorvastatin", dose:"10 mg", uses:"Cholesterol", company:"Pfizer", mrp:"₹60", img:"https://via.placeholder.com/200x120?text=Atorvastatin" },
+  { id:"levothyroxine", displayName:"Levothyroxine 50 mcg", salt:"Levothyroxine", dose:"50 mcg", uses:"Hypothyroidism", company:"Abbott", mrp:"₹95", img:"https://via.placeholder.com/200x120?text=Levothyroxine" }
+  // → add more entries here or move to a separate medicines.js for 1200+ items
+];
+
+/* RENDERING & SEARCH LOGIC
+   Only show results when user types (no default list)
+*/
+const searchInput = document.getElementById('searchInput');
+const resultArea = document.getElementById('resultArea');
+
+function renderResults(list){
+  if(!list || list.length===0){
+    resultArea.innerHTML = '<p style="color:#16406a;font-weight:700">No matching medicines found.</p>';
+    return;
+  }
+  resultArea.innerHTML = list.map(m => `
+    <article class="med-card" aria-label="${m.displayName}">
+      <img src="${m.img}" alt="${m.displayName}" class="med-img" />
+      <div class="med-info">
+        <h3>${m.displayName}</h3>
+        <p><strong>Salt:</strong> ${m.salt} &nbsp; | &nbsp; <strong>Dose:</strong> ${m.dose}</p>
+        <p><strong>Uses:</strong> ${m.uses}</p>
+        <p><strong>Company:</strong> ${m.company} &nbsp; | &nbsp; <strong>MRP:</strong> ${m.mrp}</p>
+        <p style="margin-top:8px"><a class="btn btn-primary" href="https://wa.me/919517360291?text=I%20want%20to%20order%20${encodeURIComponent(m.displayName)}" target="_blank" style="background:var(--accent-dark);color:white;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:700">Order via WhatsApp</a></p>
+      </div>
+    </article>
+  `).join('');
+}
+
+function searchMedicines(q){
+  if(!q || q.trim()===""){ resultArea.innerHTML = ''; return; }
+  q = q.trim().toLowerCase();
+  // search in id, displayName, salt, uses, company
+  const found = medicines.filter(m => 
+    (m.id && m.id.toLowerCase().includes(q)) ||
+    (m.displayName && m.displayName.toLowerCase().includes(q)) ||
+    (m.salt && m.salt.toLowerCase().includes(q)) ||
+    (m.uses && m.uses.toLowerCase().includes(q)) ||
+    (m.company && m.company.toLowerCase().includes(q))
+  );
+  renderResults(found);
+}
+
+/* Listen for input (Enter key or typing) */
+let typingTimer = null;
+searchInput.addEventListener('keyup', (e) => {
+  const val = e.target.value;
+  clearTimeout(typingTimer);
+  // small debounce to reduce instant filtering
+  typingTimer = setTimeout(()=> searchMedicines(val), 250);
+  // optional: allow Enter to immediately search
+  if(e.key === 'Enter') searchMedicines(val);
+});
+
+/* Accessibility: press Escape to clear */
+searchInput.addEventListener('keydown', (e) => {
+  if(e.key === 'Escape'){ searchInput.value=''; resultArea.innerHTML=''; }
+});
+</script>
 </body>
 </html>
