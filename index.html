@@ -1,284 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pradum Pharmacy Portal</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #e8f1ff;
-    color: #222;
-    margin: 0;
-    padding: 0;
-  }
-  header
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pradum Sahani - Registered Pharmacist</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pradum Sahani - Registered Pharmacist | DHA Qualified</title>
 
-  <!-- 👇 Google Verification Tag डालो यहाँ -->
-  <meta name="google-site-verification" content="ABCDEFG1234567890xyz" />
+  <!-- ✅ Google Site Verification Tag -->
+  <meta name="google-site-verification" content="wWLL4QkQeb19ZtuXXabzbiKQpRdlE3tLaGnk5rjXLpM" />
 
-  <!-- बाकी meta tags -->
-  <meta name="title" content="Pradum Sahani - Registered Pharmacist | DHA Qualified">
-  <meta name="description" content="Pradum Sahani, Registered Pharmacist (DHA Qualified). Online medicine info and consultation.">
-</head>{
-    background: linear-gradient(90deg, #0057b7, #0099ff);
-    color: white;
-    text-align: center;
-    padding: 25px;
-  }
-  header img {
-    width: 100px;
-    border-radius: 50%;
-    border: 3px solid white;
-  }
-  header h1 { margin: 10px 0 5px 0; }
-  header p { margin: 0; font-weight: bold; }
+  <!-- SEO Tags -->
+  <meta name="description" content="Official website of Pradum Sahani, Registered Pharmacist (DHA Qualified). Providing verified medical information and services online." />
+  <meta name="author" content="Pradum Sahani" />
 
-  /* Hindi Slider */
-  .slider {
-    background-color: #cce6ff;
-    padding: 10px;
-    overflow: hidden;
-    height: 40px;
-    position: relative;
-  }
-  .slide-text {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    animation: slide 40s infinite;
-    font-size: 18px;
-    font-weight: bold;
-    color: #003366;
-  }
-  @keyframes slide {
-    0% { top: 0; opacity: 1; }
-    20% { top: 0; opacity: 1; }
-    25% { top: -40px; opacity: 0; }
-    45% { top: -40px; opacity: 1; }
-    50% { top: -80px; opacity: 0; }
-    70% { top: -80px; opacity: 1; }
-    75% { top: -120px; opacity: 0; }
-    100% { top: -120px; opacity: 1; }
-  }
+  <!-- Favicon -->
+  <link rel="icon" href="pradum.jpg" type="image/jpeg" />
 
-  .container {
-    padding: 20px;
-    max-width: 1000px;
-    margin: auto;
-  }
-  .search-box {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-  }
-  .search-box input {
-    width: 80%;
-    padding: 10px;
-    border: 2px solid #0073e6;
-    border-radius: 5px;
-    font-size: 16px;
-  }
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #e8f1ff;
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
 
-  /* Medicine result cards */
-  .medicine-card {
-    border: 1px solid #0073e6;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 10px 0;
-    background: #f5f9ff;
-  }
+    header {
+      background: linear-gradient(90deg, #0052cc, #007bff);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
 
-  /* Services section */
-  h2 {
-    text-align: center;
-    color: #004d99;
-    margin-top: 40px;
-  }
-  .services {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
-  }
-  .service-box {
-    color: white;
-    padding: 20px;
-    border-radius: 15px;
-    text-align: center;
-    font-weight: bold;
-    transition: transform 0.3s;
-  }
-  .service-box:hover {
-    transform: scale(1.05);
-  }
-  .s1 { background: #007bff; }
-  .s2 { background: #28a745; }
-  .s3 { background: #ff9800; }
-  .s4 { background: #9c27b0; }
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid white;
+      margin-bottom: 10px;
+    }
 
-  /* UPI section */
-  .upi {
-    background-color: #0073e6;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    border-radius: 10px;
-    margin-top: 30px;
-  }
-  .upi a {
-    color: yellow;
-    font-weight: bold;
-    text-decoration: none;
-  }
+    header h1 {
+      margin: 10px 0;
+      font-size: 1.8em;
+    }
 
-  /* Prescription Upload Section */
-  .prescription {
-    background-color: #e0f7fa;
-    padding: 25px;
-    border-radius: 15px;
-    text-align: center;
-    margin-top: 30px;
-  }
-  .prescription a {
-    background-color: #007bff;
-    color: white;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: 0.3s;
-  }
-  .prescription a:hover {
-    background-color: #0056b3;
-  }
+    header p {
+      margin: 0;
+      font-size: 1.1em;
+    }
 
-  footer {
-    background-color: #0057b7;
-    color: white;
-    text-align: center;
-    padding: 20px;
-  }
-  footer a {
-    margin: 0 10px;
-    color: white;
-    text-decoration: none;
-  }
-  footer img {
-    width: 25px;
-    vertical-align: middle;
-  }
-</style>
+    .container {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+
+    .service-box {
+      background: linear-gradient(135deg, #ffffff, #e0ebff);
+      border: 1px solid #cfd9ff;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-box:hover {
+      transform: scale(1.03);
+      transition: 0.3s;
+    }
+
+    footer {
+      background: #0052cc;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 30px;
+    }
+
+    footer a {
+      color: #ffdf00;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer img {
+      width: 30px;
+      margin: 5px;
+    }
+
+    .upi-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #00c853;
+      color: white;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      margin-top: 15px;
+    }
+
+    .upi-button:hover {
+      background-color: #009624;
+    }
+  </style>
 </head>
+
 <body>
+  <header>
+    <img src="pradum.jpg" alt="Pradum Sahani" />
+    <h1>Pradum Sahani</h1>
+    <p>Registered Pharmacist | DHA Qualified</p>
+    <p>📞 9517360291 | ✉️ sahanipradum98@gmail.com</p>
+  </header>
 
-<header>
-  <img src="Pradum.jpg" alt="Pradum Sahani">
-  <h1>Pradum Sahani</h1>
-  <p>Registered Pharmacist | DHA Qualified</p>
-  <p>📞 9517360291 | ✉️ sahanipradum98@gmail.com</p>
-</header>
-
-<!-- Hindi Awareness Slider -->
-<div class="slider">
-  <div class="slide-text">
-    ⚠️ स्वयं दवा लेना नुकसानदायक हो सकता है।  
-    💊 हमेशा डॉक्टर या फार्मासिस्ट की सलाह लें।  
-    ❗ गलत दवा से साइड इफेक्ट या एलर्जी हो सकती है।  
-    🕒 समय पर दवा लेना ज़रूरी है।  
-  </div>
-</div>
-
-<div class="container">
-  <!-- Search Bar -->
-  <div class="search-box">
-    <input type="text" id="searchInput" placeholder="Search by brand, salt, or use...">
-  </div>
-
-  <!-- Medicine Results -->
-  <div id="medicineList"></div>
-
-  <!-- Services Section -->
-  <h2>Our Services</h2>
-  <div class="services">
-    <div class="service-box s1">💊 Online Medicine Info</div>
-    <div class="service-box s2">👨‍⚕️ Doctor Consultation</div>
-    <div class="service-box s3">🧾 Pharmacist Guidance</div>
-    <div class="service-box s4">💡 Health Awareness</div>
-  </div>
-
-  <!-- Prescription Upload Section -->
-  <div class="prescription">
-    <h2>🩺 Upload Your Prescription</h2>
-    <p>Upload your prescription securely through our form for verification.</p>
-    <a href="https://docs.google.com/forms/d/1IVGHaIRKJHU1ytrMt_dAcHlEd5RE94n5XtC0shW-PGQ/viewform" target="_blank">Upload Prescription</a>
-  </div>
-
-  <!-- UPI Payment -->
-  <div class="upi">
-    <p>💰 Pay using UPI:</p>
-    <a href="upi://pay?pa=sahanipradum98-2@okaxis&pn=Pradum%20Sahani&cu=INR">
-      Click here to Pay via UPI
-    </a>
-  </div>
-</div>
-
-<footer>
-  <p>Follow me:</p>
-  <a href="https://instagram.com/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png"> Instagram</a>
-  <a href="https://facebook.com/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"> Facebook</a>
-  <a href="https://twitter.com/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png"> Twitter</a>
-  <a href="mailto:sahanipradum98@gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png"> Gmail</a>
-</footer>
-
-<script>
-const medicines = [
-  {name:"Paracetamol", salt:"Acetaminophen", uses:"Fever, Pain relief", company:"GSK", mrp:"₹25"},
-  {name:"Amoxicillin", salt:"Amoxicillin Trihydrate", uses:"Bacterial infection", company:"Cipla", mrp:"₹80"},
-  {name:"Metformin", salt:"Metformin HCL", uses:"Diabetes", company:"Sun Pharma", mrp:"₹45"},
-  {name:"Amlodipine", salt:"Amlodipine Besylate", uses:"Blood pressure", company:"Lupin", mrp:"₹60"},
-  {name:"Levothyroxine", salt:"Thyroxine Sodium", uses:"Thyroid disorder", company:"Abbott", mrp:"₹55"},
-  {name:"Azithromycin", salt:"Azithromycin Dihydrate", uses:"Infection", company:"Zydus", mrp:"₹90"},
-  {name:"Cetirizine", salt:"Cetirizine Hydrochloride", uses:"Allergy relief", company:"Dr. Reddy’s", mrp:"₹35"},
-  {name:"Atorvastatin", salt:"Atorvastatin Calcium", uses:"Cholesterol", company:"Cipla", mrp:"₹120"},
-  {name:"Losartan", salt:"Losartan Potassium", uses:"Hypertension", company:"Torrent", mrp:"₹70"},
-  {name:"Glimepiride", salt:"Glimepiride", uses:"Type 2 Diabetes", company:"Sun Pharma", mrp:"₹80"},
-  {name:"Pantoprazole", salt:"Pantoprazole Sodium", uses:"Acidity, GERD", company:"Zydus", mrp:"₹65"}
-];
-
-function showMedicines(data) {
-  const list = document.getElementById('medicineList');
-  list.innerHTML = data.map(m => `
-    <div class="medicine-card">
-      <h3>${m.name}</h3>
-      <p><b>Salt:</b> ${m.salt}</p>
-      <p><b>Uses:</b> ${m.uses}</p>
-      <p><b>Company:</b> ${m.company}</p>
-      <p><b>MRP:</b> ${m.mrp}</p>
+  <div class="container">
+    <h2 style="text-align:center; color:#0052cc;">Our Professional Services</h2>
+    <div class="services">
+      <div class="service-box">
+        <h3>Medicine Information</h3>
+        <p>Search latest medicines, salts, brands, uses and company details — updated regularly with verified data.</p>
+      </div>
+      <div class="service-box">
+        <h3>Prescription Upload</h3>
+        <p>Upload your doctor’s prescription securely for verification and quick response.</p>
+        <a href="https://docs.google.com/forms/d/1IVGHaIRKJHU1ytrMt_dAcHlEd5RE94n5XtC0shW-PGQ/viewform" target="_blank" class="upi-button">Upload Prescription</a>
+      </div>
+      <div class="service-box">
+        <h3>UPI Payment</h3>
+        <p>Make secure payments directly through UPI for online consultation and services.</p>
+        <a href="upi://pay?pa=sahanipradum98-2@okaxis&pn=Pradum%20Sahani&cu=INR" class="upi-button">Pay via UPI</a>
+      </div>
     </div>
-  `).join('');
-}
+  </div>
 
-document.getElementById('searchInput').addEventListener('keyup', function() {
-  const val = this.value.toLowerCase().trim();
-  if (!val) {
-    document.getElementById('medicineList').innerHTML = "";
-    return;
-  }
-  const filtered = medicines.filter(m => 
-    m.name.toLowerCase().includes(val) || 
-    m.salt.toLowerCase().includes(val) || 
-    m.uses.toLowerCase().includes(val)
-  );
-  showMedicines(filtered);
-});
-</script>
-
+  <footer>
+    <p>Follow Me:</p>
+    <a href="https://facebook.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" /></a>
+    <a href="https://instagram.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram" /></a>
+    <a href="https://linkedin.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733561.png" alt="LinkedIn" /></a>
+    <p>© 2025 Pradum Sahani | All Rights Reserved</p>
+  </footer>
 </body>
 </html>
