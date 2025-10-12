@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -38,7 +38,7 @@
     position: absolute;
     width: 100%;
     text-align: center;
-    animation: slide 30s infinite;
+    animation: slide 40s infinite;
     font-size: 18px;
     font-weight: bold;
     color: #003366;
@@ -147,6 +147,7 @@
   <img src="Pradum.jpg" alt="Pradum Sahani">
   <h1>Pradum Sahani</h1>
   <p>Registered Pharmacist | DHA Qualified</p>
+  <p>📞 9517360291 | ✉️ sahanipradum98@gmail.com</p>
 </header>
 
 <!-- Hindi Awareness Slider -->
@@ -203,7 +204,10 @@ const medicines = [
   {name:"Levothyroxine", salt:"Thyroxine Sodium", uses:"Thyroid disorder", company:"Abbott", mrp:"₹55"},
   {name:"Azithromycin", salt:"Azithromycin Dihydrate", uses:"Infection", company:"Zydus", mrp:"₹90"},
   {name:"Cetirizine", salt:"Cetirizine Hydrochloride", uses:"Allergy relief", company:"Dr. Reddy’s", mrp:"₹35"},
-  {name:"Atorvastatin", salt:"Atorvastatin Calcium", uses:"Cholesterol", company:"Cipla", mrp:"₹120"}
+  {name:"Atorvastatin", salt:"Atorvastatin Calcium", uses:"Cholesterol", company:"Cipla", mrp:"₹120"},
+  {name:"Losartan", salt:"Losartan Potassium", uses:"Hypertension", company:"Torrent", mrp:"₹70"},
+  {name:"Glimepiride", salt:"Glimepiride", uses:"Type 2 Diabetes", company:"Sun Pharma", mrp:"₹80"},
+  {name:"Pantoprazole", salt:"Pantoprazole Sodium", uses:"Acidity, GERD", company:"Zydus", mrp:"₹65"}
 ];
 
 function showMedicines(data) {
@@ -222,7 +226,7 @@ function showMedicines(data) {
 document.getElementById('searchInput').addEventListener('keyup', function() {
   const val = this.value.toLowerCase().trim();
   if (!val) {
-    document.getElementById('medicineList').innerHTML = ""; // hide default
+    document.getElementById('medicineList').innerHTML = "";
     return;
   }
   const filtered = medicines.filter(m => 
