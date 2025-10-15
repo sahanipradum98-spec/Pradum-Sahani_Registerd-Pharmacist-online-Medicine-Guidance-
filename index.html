@@ -1,202 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Registered Pharmacist | Online Medicine Guidance</title>
-  <meta name="description" content="Consultation, Prescription Review & Medicine Information by Registered Pharmacist Pradum Sahani.">
-  <meta name="keywords" content="Pharmacist, Medicine, Online Consultation, Drug Info, DHA Qualified, Prescription Review">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pradum Sahani | Registered Pharmacist</title>
+
+  <!-- Google Verification & Analytics -->
   <meta name="google-site-verification" content="wWLL4QkQeb19ZtuXXabzbiKQpRdlE3tLaGnk5rjXLpM" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8W91YX4SLQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8W91YX4SLQ');
+  </script>
 
   <style>
-    body {font-family: 'Segoe UI', sans-serif; margin:0; padding:0; background:#f6f9fc; color:#333;}
-    header {background:#003366; color:white; padding:15px 10px; text-align:center;}
-    header h1 {margin:5px 0;}
-    header p {font-size:14px;}
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(120deg, #e3f2fd, #ffffff);
+      color: #222;
+      margin: 0;
+    }
+    header {
+      background-color: #0077cc;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid white;
+    }
+    h1 { margin: 10px 0 5px; }
+    h3 { margin: 0; font-weight: 400; }
+    section { padding: 25px; text-align: center; }
+    .services { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+    .box {
+      background-color: #eaf4fc;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 280px;
+      padding: 15px;
+      transition: 0.3s;
+    }
+    .box:hover { background-color: #cce5ff; transform: translateY(-5px); }
+    .fees { background-color: #f9f9f9; border-top: 3px solid #0077cc; }
+    .contact, footer { background-color: #0077cc; color: white; }
+    footer { padding: 20px; text-align: center; }
+    a { text-decoration: none; color: #0077cc; }
+    .social img { width: 35px; margin: 0 8px; vertical-align: middle; border-radius: 50%; }
     .slider {
-      background:#ffcccc; color:#000; padding:8px 0; text-align:center; font-weight:bold;
-      animation: slideText 20s linear infinite;
+      background: #ffdddd;
+      color: #b30000;
+      padding: 10px;
+      font-weight: 600;
+      overflow: hidden;
+      white-space: nowrap;
+      animation: slide 20s linear infinite;
     }
-    @keyframes slideText {
-      0% {background:#ffcccc;}
-      50% {background:#ffd6d6;}
-      100% {background:#ffcccc;}
+    @keyframes slide {
+      0% { text-indent: 100%; }
+      100% { text-indent: -100%; }
     }
-    .container {width:90%; margin:auto; max-width:1200px;}
-    .profile {display:flex; flex-wrap:wrap; align-items:center; justify-content:center; padding:20px 0; background:white; border-radius:10px; margin-top:20px;}
-    .profile img {width:150px; border-radius:50%; margin-right:20px; border:3px solid #003366;}
-    .profile-info h2 {color:#003366;}
-    .profile-info p {margin:5px 0;}
-    .services {background:linear-gradient(135deg,#e8f1fa,#ffffff); padding:40px 10px;}
-    .services h2 {text-align:center; color:#003366; margin-bottom:30px;}
-    .service-box {background:#d6e8ff; border-radius:10px; padding:20px; margin:10px; flex:1; box-shadow:0 0 8px rgba(0,0,0,0.1);}
-    .service-box h4 {color:#003366;}
-    .service-container {display:flex; flex-wrap:wrap; justify-content:center;}
-    input.form-control {padding:10px; border-radius:5px; width:100%; border:1px solid #ccc;}
-    .btn {padding:10px 18px; border:none; border-radius:5px; cursor:pointer;}
-    .btn-primary {background:#007bff; color:white;}
-    .btn-outline-secondary {background:transparent; border:1px solid #007bff; color:#007bff;}
-    .card {border-radius:10px; overflow:hidden; background:white;}
-    .card img {width:100%; height:160px; object-fit:cover;}
-    footer {background:#003366; color:white; text-align:center; padding:15px; margin-top:30px;}
-    .social-icons img {width:35px; margin:5px; vertical-align:middle;}
-    @media(max-width:600px){.profile{flex-direction:column; text-align:center;}.profile img{margin-bottom:10px;}}
+    .btn {
+      display: inline-block;
+      background-color: #0077cc;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+    .btn:hover { background-color: #005fa3; }
+    #searchSection input {
+      padding: 10px; width: 60%;
+      border: 1px solid #ccc; border-radius: 8px;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 10px;
+      margin: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      display: inline-block;
+      width: 250px;
+      vertical-align: top;
+    }
+    .card img { width: 100%; border-radius: 8px; height: 140px; object-fit: cover; }
   </style>
 </head>
-
 <body>
 
 <header>
-  <h1>Registered Pharmacist</h1>
-  <p><strong>Pradum Sahani</strong> | DHA Qualified | Contact: <a href="tel:9517360291" style="color:white;">9517360291</a> | Email: <a href="mailto:sahanipradum98@gmail.com" style="color:white;">sahanipradum98@gmail.com</a></p>
+  <img src="Pradum.jpg" alt="Pradum Sahani">
+  <h1>Pradum Sahani</h1>
+  <h3>Registered Pharmacist | DHA Qualified</h3>
+  <p>📞 +91-9517360291 | ✉️ sahanipradum98@gmail.com</p>
 </header>
 
-<div class="slider">⚕️ सावधान: बिना डॉक्टर सलाह के दवा लेना खतरनाक हो सकता है। Self-medication से बचें। | Always follow Registered Pharmacist & Doctor Guidance. ⚕️</div>
+<div class="slider">
+  ⚠️ स्वयं दवा न लें! डॉक्टर या फार्मासिस्ट से सलाह ज़रूर लें। गलत दवा के दुष्प्रभाव गंभीर हो सकते हैं।  
+  रक्तचाप, मधुमेह, थायरॉइड जैसी बीमारियों में नियमित जांच ज़रूरी है।
+</div>
 
-<!-- PROFILE SECTION -->
-<section class="container profile">
-  <img src="Pradum.jpg" alt="Pradum Sahani">
-  <div class="profile-info">
-    <h2>Pradum Sahani</h2>
-    <p>Registered Pharmacist (DHA Qualified)</p>
-    <p>Providing reliable online medicine & health guidance.</p>
-  </div>
+<section id="about">
+  <h2>About</h2>
+  <p>I am a Registered Pharmacist and DHA Qualified professional offering online consultation, prescription review, and medicine guidance.</p>
 </section>
 
-<!-- MEDICINE SEARCH -->
-<section class="container my-4">
-  <div class="card shadow p-3" style="margin-top:20px;">
-    <h4 style="color:#003366;">🔎 Medicine Search (by Brand or Salt)</h4>
-    <div class="row g-2 align-items-center">
-      <input id="drugInput" class="form-control" placeholder="Enter medicine brand or salt..." />
-      <div style="margin-top:10px;">
-        <button class="btn btn-primary" onclick="searchDrug()">Search</button>
-        <button class="btn btn-outline-secondary" onclick="clearResults()">Clear</button>
-      </div>
-    </div>
-    <div id="drugResult" class="row mt-4"></div>
-  </div>
-</section>
-
-<!-- SERVICES SECTION -->
-<section class="services">
+<section id="services">
   <h2>Our Services</h2>
-  <div class="service-container">
-    <div class="service-box">
-      <h4>💊 Medicine Guidance</h4>
-      <p>Understand your prescribed medicines, salts, and uses.</p>
-    </div>
-    <div class="service-box">
-      <h4>📜 Prescription Upload</h4>
-      <p>Upload your prescription for review by a licensed pharmacist.</p>
-      <a href="https://forms.gle/1hMr6qi3SryqRSpw6" class="btn btn-primary" target="_blank">Upload Now</a>
-    </div>
-    <div class="service-box">
-      <h4>💳 UPI Payment</h4>
-      <p>Quick UPI Payment for Online Consultation.</p>
-      <a href="upi://pay?pa=sahanipradum98-2@okaxis&pn=Pradum%20Sahani&am=199&cu=INR" class="btn btn-primary">Pay via UPI</a>
+  <div class="services">
+    <div class="box"><h3>💊 Medicine Guidance</h3><p>Get expert advice on prescribed medicines & dosage.</p></div>
+    <div class="box"><h3>📋 Prescription Review</h3><p>Upload your prescription and get safe guidance instantly.</p></div>
+    <div class="box"><h3>📦 Order Assistance</h3><p>Get help finding affordable medicine brands and alternatives.</p></div>
+    <div class="box"><h3>💰 Pay via UPI</h3>
+      <a href="upi://pay?pa=sahanipradum98-2@okaxis&pn=Pradum%20Sahani" class="btn">Pay Now</a>
     </div>
   </div>
 </section>
 
-<!-- CONSULTATION FEES SECTION -->
-<section id="consultation-fees" class="py-5" style="background:linear-gradient(135deg,#e8f1fa,#ffffff); padding:30px 10px;">
-  <div class="container">
-    <h2 class="text-center mb-4" style="color:#003366; font-weight:bold;">💼 Consultation & Service Charges</h2>
-    <div class="service-container">
-      <div class="service-box" style="background:#d6e8ff;">
-        <h4>2️⃣ Basic Consultation / Prescription Review</h4>
-        <h5 class="text-success">₹99 – ₹199 per session</h5>
-        <ul>
-          <li>Upload prescription → verify → explain medicine & precautions.</li>
-          <li>Suggest better alternatives (same salt, cheaper options).</li>
-          <li>Check for drug interactions.</li>
-          <li><b>Only guidance — no medicine prescribing.</b></li>
-        </ul>
-      </div>
+<section class="fees">
+  <h2>💼 Consultation Fees</h2>
+  <p><b>Basic Consultation / Prescription Review:</b> ₹99 – ₹199 (10–15 min)</p>
+  <p><b>Chronic Disease Guidance (Diabetes, BP, Thyroid):</b> ₹199 – ₹399 per follow-up</p>
+  <p><b>Clinic / Pharmacy Tie-up Consultation:</b> ₹500 – ₹1500 per month</p>
+</section>
 
-      <div class="service-box" style="background:#fff3cd;">
-        <h4>3️⃣ Follow-up / Chronic Disease Guidance</h4>
-        <h5 class="text-success">₹199 – ₹399 per follow-up</h5>
-        <ul>
-          <li>Monitor medication adherence, side effects, refills.</li>
-          <li>Guidance for Diabetes, BP, Thyroid etc.</li>
-          <li>Nutrition & dosage guidance.</li>
-        </ul>
-      </div>
+<section id="upload">
+  <h2>📤 Prescription Upload</h2>
+  <p>Upload your prescription securely using the link below.</p>
+  <a href="https://forms.gle/1hMr6qi3SryqRSpw6" class="btn">Upload Prescription</a>
+</section>
 
-      <div class="service-box" style="background:#e0ffe0;">
-        <h4>4️⃣ Clinic / Hospital / Pharmacy Tie-up</h4>
-        <h5 class="text-success">₹500 – ₹1500 per month</h5>
-        <ul>
-          <li>Provide regular patient counselling.</li>
-          <li>Manage prescription database.</li>
-          <li>Medication Therapy Management (MTM).</li>
-        </ul>
-      </div>
-    </div>
+<section id="searchSection">
+  <h2>🔎 Medicine Search</h2>
+  <input id="drugInput" placeholder="Enter brand or salt..." />
+  <button class="btn" onclick="searchDrug()">Search</button>
+  <div id="drugResult"></div>
+</section>
+
+<section class="contact">
+  <h2>Follow Me</h2>
+  <div class="social">
+    <a href="https://www.facebook.com/share/16V3k7o6xE/"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+    <a href="https://www.instagram.com/pradumsahani.019?igsh=eHppbzZyNDk0NzFj"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+    <a href="https://www.linkedin.com/in/pradum-s-3a3791126"><img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" alt="LinkedIn"></a>
+    <a href="https://youtube.com/@pradumsahani019?si=yWanU6WfFOTV97P8"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"></a>
+    <a href="https://wa.me/919517360291"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></a>
   </div>
 </section>
 
-<!-- SOCIAL MEDIA SECTION -->
 <footer>
-  <p>Follow Me:</p>
-  <div class="social-icons">
-    <a href="https://facebook.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
-    <a href="https://instagram.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
-    <a href="https://wa.me/919517360291" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></a>
-    <a href="https://youtube.com/@pradumsahani019" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"></a>
-    <a href="https://www.linkedin.com/in/pradum-s-3a3791126" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn"></a>
-  </div>
-  <p style="margin-top:10px;">© 2025 Pradum Sahani | Registered Pharmacist</p>
+  <p>© 2025 Pradum Sahani — Registered Pharmacist | All Rights Reserved</p>
 </footer>
 
-<!-- JS MEDICINE SEARCH SCRIPT -->
 <script>
 const medicinesDB = {
-  "crocin": { displayName:"Crocin Advance 500mg", salt:"Paracetamol", dose:"500 mg", uses:"Fever, pain relief", company:"GSK", mrp:"₹40", img:"https://www.netmeds.com/images/product-v1/600x600/835003/crocin_advance_500mg_tablet_15s_0.jpg" },
-  "dolo": { displayName:"Dolo 650", salt:"Paracetamol", dose:"650 mg", uses:"Fever, headache, body pain", company:"Micro Labs", mrp:"₹30", img:"https://www.netmeds.com/images/product-v1/600x600/821887/dolo_650mg_tablet_15s_0.jpg" },
-  "metformin": { displayName:"Metformin 500 mg", salt:"Metformin HCl", dose:"500 mg", uses:"Type 2 Diabetes", company:"Lupin", mrp:"₹50", img:"https://via.placeholder.com/200x120?text=Metformin" },
-  "amlodipine": { displayName:"Amlodipine 5mg", salt:"Amlodipine", dose:"5 mg", uses:"High Blood Pressure", company:"Pfizer", mrp:"₹45", img:"https://via.placeholder.com/200x120?text=Amlodipine" },
-  "thyronorm": { displayName:"Thyronorm 50 mcg", salt:"Thyroxine Sodium", dose:"50 mcg", uses:"Thyroid Hormone Replacement", company:"Abbott", mrp:"₹120", img:"https://via.placeholder.com/200x120?text=Thyronorm" },
+  "dolo": { name:"Dolo 650", salt:"Paracetamol", uses:"Fever, pain relief", company:"Micro Labs", img:"https://www.netmeds.com/images/product-v1/600x600/821887/dolo_650mg_tablet_15s_0.jpg" },
+  "metformin": { name:"Metformin 500mg", salt:"Metformin", uses:"Type 2 Diabetes", company:"Lupin", img:"https://via.placeholder.com/200x120?text=Metformin" },
+  "telma": { name:"Telma 40", salt:"Telmisartan", uses:"Blood pressure", company:"Glenmark", img:"https://via.placeholder.com/200x120?text=Telmisartan" },
+  "eltroxin": { name:"Eltroxin 100", salt:"Thyroxine Sodium", uses:"Thyroid", company:"Abbott", img:"https://via.placeholder.com/200x120?text=Thyroxine" },
 };
 
 function searchDrug(){
-  const q = document.getElementById('drugInput').value.trim().toLowerCase();
-  const out = document.getElementById('drugResult');
-  out.innerHTML = '';
-  if (!q) return;
-  let found = false;
-  for (const key in medicinesDB) {
-    const item = medicinesDB[key];
-    if (key.includes(q) || item.displayName.toLowerCase().includes(q) || (item.salt && item.salt.toLowerCase().includes(q))) {
-      renderMedicineCard(key, item);
-      found = true;
+  const q = document.getElementById("drugInput").value.toLowerCase();
+  const out = document.getElementById("drugResult");
+  out.innerHTML = "";
+  for (let key in medicinesDB) {
+    let m = medicinesDB[key];
+    if (m.name.toLowerCase().includes(q) || m.salt.toLowerCase().includes(q)) {
+      out.innerHTML += `<div class="card"><img src="${m.img}"><h4>${m.name}</h4><p><b>Salt:</b> ${m.salt}</p><p><b>Uses:</b> ${m.uses}</p><p><b>Company:</b> ${m.company}</p></div>`;
     }
   }
-  if (!found) out.innerHTML = "<p style='color:red;'>No medicine found. Try another name or salt.</p>";
-}
-function renderMedicineCard(key, data) {
-  const out = document.getElementById('drugResult');
-  const div = document.createElement('div');
-  div.className = "col-md-4";
-  div.innerHTML = `
-    <div class='card shadow mb-3'>
-      <img src='${data.img}' alt='${data.displayName}' onerror="this.src='https://via.placeholder.com/200x120?text=Image'">
-      <div class='card-body' style='padding:15px;'>
-        <h5>${data.displayName}</h5>
-        <p><b>Salt:</b> ${data.salt}</p>
-        <p><b>Uses:</b> ${data.uses}</p>
-        <p><b>Dose:</b> ${data.dose}</p>
-        <p><b>Company:</b> ${data.company}</p>
-        <p><b>MRP:</b> ${data.mrp}</p>
-      </div>
-    </div>`;
-  out.appendChild(div);
-}
-function clearResults(){
-  document.getElementById('drugInput').value = '';
-  document.getElementById('drugResult').innerHTML = '';
+  if(out.innerHTML=="") out.innerHTML="<p>No result found.</p>";
 }
 </script>
 
