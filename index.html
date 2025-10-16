@@ -1,294 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registered Pharmacist | Pradum Sahani</title>
-  <meta name="description" content="Registered Pharmacist Pradum Sahani | Online Medicine Consultation, Prescription Review, and Health Awareness.">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pradum Sahani — Registered Pharmacist</title>
+  <meta name="description" content="Registered Pharmacist Pradum Sahani — Online prescription review, medicine guidance & consultation." />
   <link rel="icon" href="Pradum.jpg">
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXX'); // Replace G-XXXXXXX with your real Analytics ID
-  </script>
+  <!-- Google Analytics (your ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8W91YX4SLQ"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8W91YX4SLQ');</script>
 
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      background: #f4f8fb;
-      color: #222;
-    }
-    header {
-      background: linear-gradient(135deg, #007bff, #00bfa5);
-      color: white;
-      text-align: center;
-      padding: 40px 10px 80px;
-      position: relative;
-    }
-    header img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      border: 3px solid white;
-      object-fit: cover;
-      position: absolute;
-      left: 25px;
-      top: 20px;
-    }
-    marquee {
-      background: #ffd5d5;
-      color: #b30000;
-      font-weight: 600;
-      padding: 8px;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 10px;
-      font-weight: 500;
-    }
-    nav a:hover { text-decoration: underline; }
-    section { padding: 40px 20px; text-align: center; }
-    .about {
-      background: #e3f2fd;
-      border-left: 6px solid #007bff;
-      border-radius: 10px;
-      padding: 25px;
-      max-width: 850px;
-      margin: auto;
-    }
-    .services {
-      background: linear-gradient(135deg, #f6d365, #fda085);
-      border-radius: 15px;
-      padding: 30px;
-      color: #222;
-    }
-    .service-box {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      margin: 15px;
-      padding: 20px;
-    }
-    .consult-box {
-      background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
-      border-radius: 15px;
-      padding: 20px;
-      margin: 15px auto;
-      max-width: 800px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      color: #003366;
-    }
-    .btn {
-      background: #007bff;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 25px;
-      cursor: pointer;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    .btn:hover { background: #0056b3; }
-    footer {
-      background: #004d40;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 30px;
-    }
-    .social-icons {
-      background: #e3f2fd;
-      text-align: center;
-      padding: 30px 10px;
-      border-top: 3px solid #007bff;
-    }
-    .social-icons img {
-      width: 35px;
-      height: 35px;
-      margin: 10px;
-      vertical-align: middle;
-      border-radius: 50%;
-      transition: 0.3s;
-    }
-    .social-icons img:hover { transform: scale(1.1); }
-    .upi-box {
-      background: #e0f7fa;
-      border: 2px dashed #00796b;
-      border-radius: 10px;
-      padding: 15px;
-      max-width: 500px;
-      margin: 20px auto;
-      color: #004d40;
-    }
-    #diet-section {
-      display: none;
-      background: #fff;
-      border-radius: 10px;
-      padding: 20px;
-      max-width: 950px;
-      margin: 30px auto;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    .diet-box {
-      background: #f9f9f9;
-      border-left: 4px solid #007bff;
-      border-radius: 6px;
-      margin: 10px 0;
-      padding: 15px;
-      text-align: left;
-    }
-    .precaution {
-      color: #d32f2f;
-      font-weight: 500;
-    }
-    #login-box {
-      text-align: center;
-      margin: 30px auto;
-      background: #e3f2fd;
-      border-radius: 10px;
-      max-width: 400px;
-      padding: 20px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    input[type="password"], input[type="email"], textarea {
-      padding: 10px;
-      width: 80%;
-      margin: 10px;
-      border-radius: 8px;
-      border: 1px solid #aaa;
-    }
+    /* --- Simple responsive style (keeps prior look) --- */
+    :root{--blue:#0077cc;--dark:#003345;--muted:#f4f8fb;}
+    body{font-family:Inter, system-ui, Arial, sans-serif;margin:0;background:linear-gradient(180deg,#f8fbff,#ffffff);color:#222}
+    header{background:linear-gradient(120deg,var(--blue),#00bfa5);color:#fff;padding:28px 16px 80px;position:relative;text-align:center}
+    header img{width:120px;height:120px;border-radius:50%;border:4px solid #fff;object-fit:cover;position:absolute;left:20px;top:18px}
+    header h1{margin:6px 0 0;font-size:26px}
+    header p{margin:6px 0 0;font-size:14px}
+    marquee{background:#ffdede;color:#b30000;padding:8px;font-weight:600}
+    nav{margin-top:12px}
+    nav a{color:#fff;margin:0 10px;text-decoration:none;font-weight:600}
+    section{padding:36px 16px;text-align:center}
+    .card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(20,40,80,0.06);max-width:1100px;margin:14px auto;text-align:left}
+    .grid{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+    .box{background:#eaf4ff;border-radius:10px;padding:14px;min-width:220px;flex:1}
+    .btn{display:inline-block;background:var(--blue);color:#fff;padding:10px 16px;border-radius:8px;text-decoration:none}
+    .upi{background:#e8fffb;border:1px dashed #00a68a;padding:12px;border-radius:10px;max-width:520px;margin:12px auto}
+    footer{background:var(--dark);color:#fff;padding:18px;text-align:center}
+    .socials{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;padding:18px 0}
+    .socials img{width:34px;height:34px;border-radius:6px}
+    /* Medicine search styles */
+    #med-search {background:linear-gradient(90deg,#eef8ff,#ffffff);border-radius:12px;padding:18px}
+    #medResult {margin-top:18px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+    .med-card{width:260px;background:#fff;border-radius:10px;padding:12px;box-shadow:0 6px 18px rgba(20,40,80,0.06);text-align:left}
+    .med-card h4{margin:4px 0 6px;font-size:16px;color:var(--blue)}
+    .meta{font-size:13px;color:#444;margin:4px 0}
+    input.search{padding:10px 12px;border-radius:8px;border:1px solid #ccc;width:60%;max-width:520px}
+    @media(max-width:720px){header img{left:50%;transform:translateX(-50%);top:-30px} input.search{width:92%}}
   </style>
 </head>
-
 <body>
 
 <header>
   <img src="Pradum.jpg" alt="Pradum Sahani">
-  <h1>👨‍⚕️ Pradum Sahani</h1>
-  <p><strong>Registered Pharmacist | DHA Qualified</strong></p>
-  <p>📞 9517360291 | 📧 sahanipradum98@gmail.com</p>
-
-  <marquee scrollamount="3">
-    ⚠️ सावधान: दवाओं का सेवन केवल डॉक्टर या फार्मासिस्ट की सलाह से करें। Self-medication खतरनाक हो सकता है।
-  </marquee>
+  <h1>Pradum Sahani</h1>
+  <p><strong>Registered Pharmacist — DHA Qualified</strong></p>
+  <p>📞 9517360291 &nbsp; | &nbsp; ✉️ sahanipradum98@gmail.com</p>
 
   <nav>
     <a href="#about">About</a>
     <a href="#services">Services</a>
+    <a href="#med-search">Medicine Search</a>
     <a href="#consult">Consultation</a>
-    <a href="#login-box">Diet Login</a>
-    <a href="#social">Social</a>
+    <a href="#contact">Contact</a>
   </nav>
 </header>
 
+<marquee scrollamount="3">⚠️ सावधान: दवाओं को डॉक्टर या फार्मासिस्ट की सलाह के बिना न लें — self-medication खतरनाक हो सकता है।</marquee>
+
 <section id="about">
-  <div class="about">
-    <h2>About Me</h2>
-    <p>I’m <b>Pradum Sahani</b>, a <b>Registered Pharmacist (DHA Qualified)</b> providing safe online consultation, prescription review and public medicine awareness.</p>
-    <p><a href="https://www.youtube.com/@pharmacistpradum" target="_blank" class="btn">🎥 Visit My YouTube Channel</a></p>
+  <div class="card">
+    <h2>About</h2>
+    <p>I'm <strong>Pradum Sahani</strong>, Registered Pharmacist (DHA Qualified). I provide prescription review, medicine guidance, and tele consultation support. Upload your prescription and get safe, professional advice.</p>
   </div>
 </section>
 
-<section id="services" class="services">
-  <h2>💊 Our Services</h2>
-
-  <div class="service-box">
-    <h3>Prescription Upload</h3>
-    <p>Upload your prescription for pharmacist verification.</p>
-    <a href="https://forms.gle/1hMr6qi3SryqRSpw6" target="_blank" class="btn">Upload Prescription</a>
+<section id="services">
+  <div class="card">
+    <h3>Services</h3>
+    <div class="grid">
+      <div class="box"><strong>Prescription review</strong><p>Upload prescription — pharmacist verifies medicine, doses & interactions.</p></div>
+      <div class="box"><strong>Medicine guidance</strong><p>Salt, dose, uses — OTC advice & safer alternatives guidance.</p></div>
+      <div class="box"><strong>Paid Consultation</strong><p>Book paid sessions — UPI pay available.</p></div>
+    </div>
+    <div style="text-align:center;margin-top:12px">
+      <a class="btn" href="https://forms.gle/1hMr6qi3SryqRSpw6" target="_blank">Upload Prescription (Google Form)</a>
+    </div>
+    <div class="upi" style="margin-top:12px;text-align:center">
+      <strong>UPI:</strong> sahanipradum98-1@oksbi &nbsp; <a class="btn" href="upi://pay?pa=sahanipradum98-1@oksbi&pn=Pradum%20Sahani&cu=INR">Pay Now</a>
+    </div>
   </div>
+</section>
 
-  <div class="service-box">
-    <h3>Online Consultation</h3>
-    <p>Discuss medicine use, side effects & precautions safely.</p>
-  </div>
+<!-- MEDICINE SEARCH SECTION -->
+<section id="med-search">
+  <div class="card">
+    <h3>🔎 Medicine Search (Brand / Salt / Company / mg / Uses)</h3>
+    <p style="color:#555;margin-top:6px">Type brand name or salt (example: paracetamol, crocin, amoxicillin) — database loads from <code>medicines.json</code> if present. No prices shown.</p>
 
-  <div class="upi-box">
-    <h3>💰 Pay Consultation Fee</h3>
-    <p>Pay securely via UPI:</p>
-    <a href="upi://pay?pa=sahanipradum98-1@oksbi&pn=Pradum%20Sahani&cu=INR" class="btn">Pay via UPI</a>
+    <div style="text-align:center;margin-top:8px">
+      <input id="medInput" class="search" placeholder="Enter brand or salt name..." onkeypress="if(event.key==='Enter'){doSearch()}">
+      <button class="btn" onclick="doSearch()">Search</button>
+      <button class="btn" style="background:#666;margin-left:8px" onclick="clearSearch()">Clear</button>
+    </div>
+
+    <div id="medResult" aria-live="polite"></div>
+    <p id="medNote" style="text-align:center;color:#777;margin-top:10px;font-size:13px"></p>
   </div>
 </section>
 
 <section id="consult">
-  <h2>🩺 Consultation Charges</h2>
-
-  <div class="consult-box">
-    <h3>Basic Consultation / Prescription Review</h3>
-    <p>₹99 – ₹199 per session (10–15 min)</p>
-  </div>
-
-  <div class="consult-box" style="background:linear-gradient(135deg,#fbc2eb,#a6c1ee);">
-    <h3>Follow-up / Chronic Disease Guidance</h3>
-    <p>₹199 – ₹399 | Diabetes, BP, Thyroid etc.</p>
-  </div>
-
-  <div class="consult-box" style="background:linear-gradient(135deg,#fdfbfb,#ebedee);">
-    <h3>Clinic / Hospital / Pharmacy Tie-up</h3>
-    <p>₹500 – ₹1500 per month | Regular Counselling</p>
+  <div class="card">
+    <h3>Consultation Fees & Services</h3>
+    <div class="grid">
+      <div class="box"><strong>Basic Consultation</strong><p>₹99–₹199 per session — prescription review, interactions check, guidance (no prescribing).</p></div>
+      <div class="box"><strong>Follow-up (Chronic)</strong><p>₹199–₹399 per follow-up — diabetes, BP, thyroid management & nutrition tips.</p></div>
+      <div class="box"><strong>Clinic Tie-up</strong><p>₹500–₹1500 monthly — MTM, patient counselling & prescription database management.</p></div>
+    </div>
   </div>
 </section>
 
-<!-- Diet Login Section -->
-<div id="login-box">
-  <h3>🔐 Diet & Precaution Access (For Pharmacist Only)</h3>
-  <input type="password" id="dietPass" placeholder="Enter Password">
-  <button class="btn" onclick="showDiet()">Login</button>
-  <p style="font-size:12px;color:#666;">(Private Section - only visible to authorized user)</p>
-</div>
-
-<!-- Diet Chart Section -->
-<section id="diet-section">
-  <h2>🍎 Diet & Precaution Plans</h2>
-  <div class="diet-box"><h3>Dengue</h3><p><b>Diet:</b> Papaya leaf extract, Kiwi, Coconut water<br><span class="precaution">❌ Avoid:</span> Fried foods, Painkillers (NSAIDs)</p></div>
-  <div class="diet-box"><h3>Diabetes</h3><p><b>Diet:</b> Papaya, Guava, Oats<br><span class="precaution">❌ Avoid:</span> Sugar, Cold drinks</p></div>
-  <div class="diet-box"><h3>BP</h3><p><b>Diet:</b> Pomegranate, Garlic, Oats<br><span class="precaution">❌ Avoid:</span> High salt, Caffeine</p></div>
-  <div class="diet-box"><h3>Kidney</h3><p><b>Diet:</b> Apple, Pineapple<br><span class="precaution">❌ Avoid:</span> Banana, High protein</p></div>
-  <div class="diet-box"><h3>Diarrhea</h3><p><b>Diet:</b> Rice, Banana, ORS<br><span class="precaution">❌ Avoid:</span> Milk, Fried food</p></div>
+<!-- Private Diet Section (login) -->
+<section id="login-diet" class="card" style="max-width:700px;margin:18px auto;text-align:center">
+  <h3>🔐 Diet & Precaution (Pharmacist only)</h3>
+  <p style="color:#666">This section is private — enter password to view diet plans & precautions.</p>
+  <input id="dietPass" type="password" placeholder="Enter admin password" style="padding:10px;border-radius:8px;border:1px solid #ccc;width:70%">
+  <div style="margin-top:10px"><a class="btn" href="#" onclick="openDiet()">Open Diet Plans</a></div>
+  <div id="dietArea" style="display:none;margin-top:14px;text-align:left"></div>
 </section>
 
-<!-- Social Media Section -->
-<section id="social" class="social-icons">
-  <h2>🌐 Connect With Me</h2>
-  <a href="https://facebook.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"></a>
-  <a href="https://instagram.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"></a>
-  <a href="https://wa.me/919517360291" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"></a>
-  <a href="https://www.linkedin.com/in/pradum-s-3a3791126" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/145/145807.png"></a>
-  <a href="https://www.youtube.com/@pharmacistpradum" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174883.png"></a>
+<!-- Social -->
+<section id="social" class="card">
+  <h3>Connect / Follow</h3>
+  <div class="socials">
+    <a href="https://www.facebook.com/share/16V3k7o6xE/" target="_blank"><img alt="Facebook" src="https://cdn-icons-png.flaticon.com/512/733/733547.png"></a>
+    <a href="https://www.instagram.com/pradumsahani.019?igsh=eHppbzZyNDk0NzFj" target="_blank"><img alt="Instagram" src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"></a>
+    <a href="https://wa.me/919517360291" target="_blank"><img alt="WhatsApp" src="https://cdn-icons-png.flaticon.com/512/733/733585.png"></a>
+    <a href="https://www.linkedin.com/in/pradum-s-3a3791126" target="_blank"><img alt="LinkedIn" src="https://cdn-icons-png.flaticon.com/512/145/145807.png"></a>
+    <a href="https://youtube.com/@pradumsahani019?si=yWanU6WfFOTV97P8" target="_blank"><img alt="YouTube" src="https://cdn-icons-png.flaticon.com/512/174/174883.png"></a>
+  </div>
 </section>
 
-<!-- Contact Form -->
+<!-- Contact / Footer -->
 <section id="contact">
-  <h2>📩 Contact Me</h2>
-  <form action="https://formspree.io/f/your_form_id" method="POST">
-    <input type="email" name="email" placeholder="Your Email" required><br>
-    <textarea name="message" rows="4" placeholder="Your Message..." required></textarea><br>
-    <button class="btn" type="submit">Send Message</button>
-  </form>
+  <div class="card" style="text-align:center">
+    <h3>Contact</h3>
+    <p>📞 9517360291 &nbsp; | &nbsp; ✉️ sahanipradum98@gmail.com</p>
+    <p style="font-size:13px;color:#666">Prescription upload via Google Form. Payments via UPI ID shown above.</p>
+  </div>
 </section>
 
 <footer>
-  <p>📞 9517360291 | 📧 sahanipradum98@gmail.com</p>
-  <p>© 2025 Pradum Sahani | Registered Pharmacist | Online Medicine Guidance</p>
+  <small>© 2025 Pradum Sahani — Registered Pharmacist. All Rights Reserved.</small>
 </footer>
 
+<!-- --- SCRIPT: loads medicines.json if present, otherwise uses small sample --- -->
 <script>
-function showDiet() {
-  const pass = document.getElementById("dietPass").value;
-  if (pass === "Pradum@123") {
-    document.getElementById("diet-section").style.display = "block";
-    document.getElementById("login-box").style.display = "none";
-  } else {
-    alert("❌ Incorrect Password!");
+/*
+  Behavior:
+  - Try to fetch ./medicines.json (same repo). If found, uses that array (expected: array of objects).
+  - If not found, uses embedded SAMPLE_DB (small ~20 items).
+  - Search is case-insensitive and matches brand, salt or company or mg.
+  - RESULTS show: brand (displayName), salt, mg/dose, company, uses. No price.
+  - To use full 4k DB: create medicines.json (see format below) and commit to same folder as index.html.
+*/
+
+/* ---------- small embedded sample DB (will be used if medicines.json not found) ---------- */
+const SAMPLE_DB = [
+  {"brand":"Crocin Advance","salt":"Paracetamol","mg":"500 mg","company":"GSK","uses":"Fever, pain relief"},
+  {"brand":"Dolo 650","salt":"Paracetamol","mg":"650 mg","company":"Micro Labs","uses":"Fever, headache, body pain"},
+  {"brand":"Metformin 500","salt":"Metformin HCl","mg":"500 mg","company":"Lupin","uses":"Type 2 Diabetes"},
+  {"brand":"Amlodipine 5","salt":"Amlodipine","mg":"5 mg","company":"Cipla","uses":"Hypertension"},
+  {"brand":"Ciplox 500","salt":"Ciprofloxacin","mg":"500 mg","company":"Cipla","uses":"Bacterial infections"},
+  {"brand":"Pantoprazole 40","salt":"Pantoprazole","mg":"40 mg","company":"Sun Pharma","uses":"Acidity, GERD"},
+  {"brand":"Amoxil 500","salt":"Amoxicillin","mg":"500 mg","company":"GSK","uses":"Bacterial infections"},
+  {"brand":"Azithral 500","salt":"Azithromycin","mg":"500 mg","company":"Cipla","uses":"Respiratory infections"},
+  {"brand":"Atorva 10","salt":"Atorvastatin","mg":"10 mg","company":"Pfizer","uses":"Cholesterol control"},
+  {"brand":"Levothyrox 50","salt":"Levothyroxine Sodium","mg":"50 mcg","company":"Abbott","uses":"Hypothyroidism"},
+  {"brand":"Ibuprofen 400","salt":"Ibuprofen","mg":"400 mg","company":"Abbott","uses":"Pain, inflammation"},
+  {"brand":"Clotrimazole Cream","salt":"Clotrimazole","mg":"1%","company":"Glenmark","uses":"Topical fungal infections"},
+  {"brand":"Paracetamol Syrup","salt":"Paracetamol","mg":"125 mg/5ml","company":"Cadila","uses":"Fever in children"},
+  {"brand":"Losartan 50","salt":"Losartan","mg":"50 mg","company":"Torrent","uses":"Hypertension"},
+  {"brand":"Glimepiride 2","salt":"Glimepiride","mg":"2 mg","company":"Glenmark","uses":"Type 2 Diabetes"},
+  {"brand":"Ranitidine 150","salt":"Ranitidine","mg":"150 mg","company":"Sun Pharma","uses":"Acidity"},
+  {"brand":"Cetirizine 10","salt":"Cetirizine","mg":"10 mg","company":"Zydus","uses":"Allergic rhinitis"},
+  {"brand":"Domperidone 10","salt":"Domperidone","mg":"10 mg","company":"Sanofi","uses":"Nausea, vomiting"},
+  {"brand":"Drotaverine 80","salt":"Drotaverine","mg":"80 mg","company":"Ipca","uses":"Antispasmodic"},
+  {"brand":"Multivitamin Syrup","salt":"Multivitamins","mg":"—","company":"Various","uses":"Nutritional supplement"}
+];
+
+/* ---------- main runtime ---------- */
+let MEDICINES = []; // loaded DB
+
+async function loadMedicines(){
+  try{
+    const res = await fetch('./medicines.json', {cache: "no-store"});
+    if(!res.ok) throw new Error('no json file');
+    const data = await res.json();
+    if(Array.isArray(data) && data.length>0){
+      MEDICINES = data;
+      document.getElementById('medNote').innerText = `Loaded ${data.length.toLocaleString()} medicines from medicines.json`;
+      return;
+    } else throw new Error('invalid json');
+  }catch(err){
+    // fallback to embedded sample
+    MEDICINES = SAMPLE_DB;
+    document.getElementById('medNote').innerText = 'Using embedded sample medicine data (to use full DB, add medicines.json to repo).';
   }
 }
+
+/* call load on start */
+loadMedicines();
+
+/* helper: sanitize */
+function s(x){ return (x||'').toString(); }
+
+function highlight(text, q){
+  if(!q) return text;
+  const rx = new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','ig');
+  return text.replace(rx, '<mark>$1</mark>');
+}
+
+function doSearch(){
+  const q = (document.getElementById('medInput').value||'').trim().toLowerCase();
+  const out = document.getElementById('medResult');
+  out.innerHTML = '';
+  if(!q){ document.getElementById('medNote').innerText = 'Please enter a brand name or salt to search.'; return; }
+  document.getElementById('medNote').innerText = 'Searching...';
+  // simple filter - matches brand, salt, company or mg
+  const results = MEDICINES.filter(item=>{
+    return s(item.brand).toLowerCase().includes(q) ||
+           s(item.salt).toLowerCase().includes(q) ||
+           s(item.company).toLowerCase().includes(q) ||
+           s(item.mg).toLowerCase().includes(q);
+  });
+  if(results.length===0){
+    out.innerHTML = '<p style="color:#b45309">No results found. Try different brand or salt name.</p>';
+    document.getElementById('medNote').innerText = `0 results`;
+    return;
+  }
+  // render top 200 results max
+  const top = results.slice(0,200);
+  document.getElementById('medNote').innerText = `${results.length.toLocaleString()} result(s) — showing ${top.length}`;
+  top.forEach(m=>{
+    const html = `<div class="med-card">
+      <h4>${highlight(escapeHtml(m.brand||'–'), q)}</h4>
+      <div class="meta"><strong>Salt:</strong> ${highlight(escapeHtml(m.salt||'–'), q)}</div>
+      <div class="meta"><strong>Dose:</strong> ${escapeHtml(m.mg||'–')}</div>
+      <div class="meta"><strong>Company:</strong> ${highlight(escapeHtml(m.company||'–'), q)}</div>
+      <div style="margin-top:8px;font-size:13px;color:#333"><strong>Uses:</strong> ${escapeHtml(m.uses||'–')}</div>
+    </div>`;
+    out.insertAdjacentHTML('beforeend', html);
+  });
+}
+
+/* clear */
+function clearSearch(){ document.getElementById('medInput').value=''; document.getElementById('medResult').innerHTML=''; document.getElementById('medNote').innerText=''; }
+
+/* escape helper to avoid HTML injection via data */
+function escapeHtml(s){ return s.replace && s.replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }) ; }
+
+/* ----------------- Diet admin ----------------- */
+function openDiet(){
+  const pass = document.getElementById('dietPass').value || prompt('Enter admin password');
+  if(pass === 'Pradum@123'){
+    // build detailed diet content
+    const html = buildDietHtml();
+    const area = document.getElementById('dietArea');
+    area.innerHTML = html;
+    area.style.display = 'block';
+    // optionally scroll
+    area.scrollIntoView({behavior:'smooth'});
+    // hide login box
+    const lb = document.getElementById('login-diet');
+    if(lb) lb.style.display = 'none';
+  } else {
+    alert('Incorrect password');
+  }
+}
+
+function buildDietHtml(){
+  // Comprehensive diet + precautions for requested conditions (concise; you can expand)
+  const data = [
+    {title:'Dengue', eat:'Papaya leaf extract (if advised), Coconut water, ORS, Soft fluids, Boiled rice, Poha', avoid:'NSAIDs (ibuprofen/aspirin), Alcohol, Oily food', note:'Monitor hydration & platelets; refer to doctor if bleeding or high fever.'},
+    {title:'Malaria', eat:'Oral fluids, Light soups, ORS, Fruits (orange/apple)', avoid:'Heavy fried foods, alcohol', note:'Complete anti-malarial course as prescribed; rest.'},
+    {title:'Fatty Liver', eat:'Leafy vegetables, Whole grains, Lemon water, Nuts (moderation), Fish (if allowed)', avoid:'Alcohol, Fried & Sugary foods, Excess oil', note:'Weight loss & exercise help; avoid hepatotoxic drugs.'},
+    {title:'Diabetes', eat:'Whole grains, Oats, Guava, Apple, Legumes', avoid:'Sugary drinks, Sweets, Refined carbs', note:'Monitor blood glucose; prefer low-GI foods.'},
+    {title:'High Blood Pressure', eat:'Pomegranate, Oats, Garlic, Green leafy veg', avoid:'High salt, Pickles, Excess processed food', note:'Reduce sodium intake; exercise.'},
+    {title:'Thyroid', eat:'Iodized salt in normal amount, Fresh fruits, Proteins', avoid:'Large amounts of soy, raw cruciferous vegetables in excess', note:'Take levothyroxine empty stomach as advised.'},
+    {title:'Kidney disease', eat:'Controlled protein, Apples, Berries, Cucumber (depends on stage)', avoid:'High potassium foods (banana, tomato) if advised, excess salt', note:'Follow renal diet based on stage; consult nephrologist.'},
+    {title:'Diarrhea', eat:'ORS, Boiled rice, Banana, Toast, Clear soups', avoid:'Milk, Milk products (in some), Spicy & greasy food', note:'Hydration is key; seek help if severe or bloody stools.'},
+    {title:'Vomiting', eat:'Small sips of water, ORS, Ginger tea (if tolerated)', avoid:'Solid heavy foods, Fried items, Alcohol', note:'If persistent, evaluate for dehydration.'},
+    {title:'Child nutrition (general)', eat:'Breastmilk/formula for infants; soft fruits, boiled eggs, khichdi for toddlers', avoid:'Cold drinks, chips, excessive sweets', note:'Ensure balanced meals and immunizations.'}
+  ];
+  let out = '<div style="padding:10px">';
+  data.forEach(d=>{
+    out += `<div style="margin-bottom:14px;padding:12px;border-radius:8px;background:#fff;border-left:4px solid #0077cc">
+      <h4 style="margin:0 0 6px">${d.title}</h4>
+      <p style="margin:4px 0"><strong>Recommended Diet:</strong> ${d.eat}</p>
+      <p style="margin:4px 0"><strong style="color:#c62828">Avoid / Precautions:</strong> ${d.avoid}</p>
+      <p style="margin:4px 0;color:#555"><em>${d.note}</em></p>
+    </div>`;
+  });
+  out += '</div>';
+  return out;
+}
+
+/* helpful: allow pressing Enter to search in input */
+document.getElementById('medInput').addEventListener('keydown', function(e){ if(e.key==='Enter'){ doSearch(); } });
 </script>
 
 </body>
-</html>
+</html>    
