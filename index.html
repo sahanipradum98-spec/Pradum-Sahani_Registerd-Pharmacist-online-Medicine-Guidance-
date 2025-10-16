@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pradum Sahani | Registered Pharmacist</title>
 
   <!-- Google Verification & Analytics -->
@@ -18,7 +18,7 @@
   <style>
     body {
       font-family: "Segoe UI", sans-serif;
-      background: linear-gradient(120deg, #e3f2fd, #ffffff);
+      background: linear-gradient(120deg, #f6f9fc, #ffffff);
       color: #222;
       margin: 0;
     }
@@ -36,22 +36,77 @@
     }
     h1 { margin: 10px 0 5px; }
     h3 { margin: 0; font-weight: 400; }
+
     section { padding: 25px; text-align: center; }
-    .services { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+
+    /* About Section */
+    #about {
+      background: linear-gradient(90deg, #e3f2fd, #bbdefb);
+      border-top: 4px solid #0077cc;
+      border-bottom: 4px solid #0077cc;
+      color: #003366;
+      padding: 30px;
+    }
+
+    /* Service Boxes */
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
     .box {
-      background-color: #eaf4fc;
       border-radius: 12px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       width: 280px;
       padding: 15px;
+      color: white;
       transition: 0.3s;
     }
-    .box:hover { background-color: #cce5ff; transform: translateY(-5px); }
-    .fees { background-color: #f9f9f9; border-top: 3px solid #0077cc; }
-    .contact, footer { background-color: #0077cc; color: white; }
-    footer { padding: 20px; text-align: center; }
-    a { text-decoration: none; color: #0077cc; }
-    .social img { width: 35px; margin: 0 8px; vertical-align: middle; border-radius: 50%; }
+    .box:hover { transform: translateY(-5px); }
+    .blue { background-color: #0077cc; }
+    .green { background-color: #28a745; }
+    .orange { background-color: #ff9800; }
+    .purple { background-color: #9c27b0; }
+
+    /* Fees Section Boxes */
+    .fees {
+      background-color: #f4f6f9;
+      padding: 40px 10px;
+    }
+    .fee-box {
+      background: linear-gradient(135deg, #bbdefb, #e3f2fd);
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin: 10px auto;
+      max-width: 400px;
+      padding: 20px;
+    }
+    .fee-box h4 {
+      color: #004080;
+      margin-bottom: 8px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      background-color: #0077cc;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+    .btn:hover { background-color: #005fa3; }
+
+    /* Social Media Icons */
+    .social img {
+      width: 35px;
+      margin: 0 8px;
+      vertical-align: middle;
+      border-radius: 50%;
+    }
+
+    /* Slider */
     .slider {
       background: #ffdddd;
       color: #b30000;
@@ -65,18 +120,20 @@
       0% { text-indent: 100%; }
       100% { text-indent: -100%; }
     }
-    .btn {
-      display: inline-block;
+
+    footer {
       background-color: #0077cc;
       color: white;
-      padding: 10px 20px;
-      border-radius: 6px;
-      transition: 0.3s;
+      text-align: center;
+      padding: 15px;
     }
-    .btn:hover { background-color: #005fa3; }
+
+    /* Medicine Search */
     #searchSection input {
-      padding: 10px; width: 60%;
-      border: 1px solid #ccc; border-radius: 8px;
+      padding: 10px;
+      width: 60%;
+      border: 1px solid #ccc;
+      border-radius: 8px;
     }
     .card {
       background: white;
@@ -88,13 +145,18 @@
       width: 250px;
       vertical-align: top;
     }
-    .card img { width: 100%; border-radius: 8px; height: 140px; object-fit: cover; }
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+      height: 140px;
+      object-fit: cover;
+    }
   </style>
 </head>
 <body>
 
 <header>
-  <img src="Pradum.jpg" alt="Pradum Sahani">
+  <img src="Pradum.jpg" alt="Pradum Sahani" />
   <h1>Pradum Sahani</h1>
   <h3>Registered Pharmacist | DHA Qualified</h3>
   <p>📞 +91-9517360291 | ✉️ sahanipradum98@gmail.com</p>
@@ -113,10 +175,10 @@
 <section id="services">
   <h2>Our Services</h2>
   <div class="services">
-    <div class="box"><h3>💊 Medicine Guidance</h3><p>Get expert advice on prescribed medicines & dosage.</p></div>
-    <div class="box"><h3>📋 Prescription Review</h3><p>Upload your prescription and get safe guidance instantly.</p></div>
-    <div class="box"><h3>📦 Order Assistance</h3><p>Get help finding affordable medicine brands and alternatives.</p></div>
-    <div class="box"><h3>💰 Pay via UPI</h3>
+    <div class="box blue"><h3>💊 Medicine Guidance</h3><p>Expert advice on prescribed medicines & dosage.</p></div>
+    <div class="box green"><h3>📋 Prescription Review</h3><p>Upload your prescription and get safe guidance instantly.</p></div>
+    <div class="box orange"><h3>📦 Order Assistance</h3><p>Find affordable medicine brands & alternatives.</p></div>
+    <div class="box purple"><h3>💰 Pay via UPI</h3>
       <a href="upi://pay?pa=sahanipradum98-2@okaxis&pn=Pradum%20Sahani" class="btn">Pay Now</a>
     </div>
   </div>
@@ -124,14 +186,28 @@
 
 <section class="fees">
   <h2>💼 Consultation Fees</h2>
-  <p><b>Basic Consultation / Prescription Review:</b> ₹99 – ₹199 (10–15 min)</p>
-  <p><b>Chronic Disease Guidance (Diabetes, BP, Thyroid):</b> ₹199 – ₹399 per follow-up</p>
-  <p><b>Clinic / Pharmacy Tie-up Consultation:</b> ₹500 – ₹1500 per month</p>
+  <div class="fee-box">
+    <h4>Basic Consultation / Prescription Review</h4>
+    <p>₹99 – ₹199 (10–15 min)</p>
+    <p>Upload prescription → verify → explain medicine, timing, precautions.</p>
+  </div>
+
+  <div class="fee-box">
+    <h4>Follow-up / Chronic Disease Guidance</h4>
+    <p>₹199 – ₹399 per session</p>
+    <p>For Diabetes, BP, Thyroid — dosage monitoring & nutrition tips.</p>
+  </div>
+
+  <div class="fee-box">
+    <h4>Clinic / Pharmacy Tie-up</h4>
+    <p>₹500 – ₹1500 per month</p>
+    <p>Patient counselling, MTM, prescription database management.</p>
+  </div>
 </section>
 
 <section id="upload">
   <h2>📤 Prescription Upload</h2>
-  <p>Upload your prescription securely using the link below.</p>
+  <p>Upload your prescription securely below:</p>
   <a href="https://forms.gle/1hMr6qi3SryqRSpw6" class="btn">Upload Prescription</a>
 </section>
 
