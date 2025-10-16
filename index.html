@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registered Pharmacist | Pradum Sahani</title>
+  <meta name="description" content="Official site of Registered Pharmacist Pradum Sahani for medicine guidance, prescription verification, and pharmacist consultation.">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -16,6 +17,17 @@
       color: white;
       text-align: center;
       padding: 25px 10px;
+      position: relative;
+    }
+    header img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 4px solid white;
+      object-fit: cover;
+      position: absolute;
+      left: 20px;
+      top: 20px;
     }
     nav a {
       color: white;
@@ -23,13 +35,13 @@
       margin: 0 10px;
       font-weight: 500;
     }
-    nav a:hover {
-      text-decoration: underline;
-    }
+    nav a:hover { text-decoration: underline; }
+
     section {
       padding: 40px 20px;
       text-align: center;
     }
+
     .about {
       background: #e3f2fd;
       border-left: 5px solid #007bff;
@@ -38,6 +50,7 @@
       max-width: 800px;
       margin: auto;
     }
+
     .services {
       background: linear-gradient(135deg, #f6d365, #fda085);
       border-radius: 15px;
@@ -51,6 +64,7 @@
       margin: 15px;
       padding: 20px;
     }
+
     .consult-box {
       background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
       border-radius: 15px;
@@ -60,6 +74,7 @@
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       color: #003366;
     }
+
     footer {
       background: #004d40;
       color: white;
@@ -67,6 +82,7 @@
       padding: 20px;
       margin-top: 30px;
     }
+
     .btn {
       background: #007bff;
       color: white;
@@ -76,21 +92,41 @@
       cursor: pointer;
       font-weight: bold;
     }
-    .btn:hover {
-      background: #0056b3;
+
+    .btn:hover { background: #0056b3; }
+
+    .social-icons a {
+      margin: 0 10px;
+      display: inline-block;
+      text-decoration: none;
+      font-size: 22px;
+      color: white;
+    }
+
+    .social-icons a:hover {
+      color: #ffd700;
     }
   </style>
 </head>
 <body>
 
 <header>
+  <img src="Pradum.jpg" alt="Pradum Sahani">
   <h1>👨‍⚕️ Registered Pharmacist – Pradum Sahani</h1>
+  <p>DHA Qualified | Prescription Verification | Medicine Consultation</p>
   <nav>
     <a href="#about">About</a>
     <a href="#services">Our Services</a>
     <a href="#consult">Consultation</a>
     <a href="#contact">Contact</a>
   </nav>
+  <div class="social-icons" style="margin-top:10px;">
+    <a href="https://facebook.com" target="_blank">🌐</a>
+    <a href="https://instagram.com" target="_blank">📸</a>
+    <a href="https://wa.me/919999999999" target="_blank">💬</a>
+    <a href="https://www.linkedin.com/in/pradum-s-3a3791126" target="_blank">💼</a>
+    <a href="https://youtube.com/@pradumsahani019?si=yWanU6WfFOTV97P8" target="_blank">▶️</a>
+  </div>
 </header>
 
 <section id="about">
@@ -112,13 +148,6 @@
   <div class="service-box">
     <h3>Professional Consultation</h3>
     <p>Medicine counselling, dosage explanation, salt-based medicine suggestion, and safety precautions.</p>
-  </div>
-
-  <div class="service-box">
-    <h3>Connect with Me</h3>
-    <p>📺 <a href="https://youtube.com/@pradumsahani019?si=yWanU6WfFOTV97P8" target="_blank">YouTube Channel</a><br>
-       💼 <a href="https://www.linkedin.com/in/pradum-s-3a3791126" target="_blank">LinkedIn Profile</a>
-    </p>
   </div>
 </section>
 
@@ -153,8 +182,7 @@
 <!-- 🔐 Private Diet & Precaution Section -->
 <section id="dietSection" style="display:none; padding:30px; background:#f0fff4;">
   <h2>🍎 Diet & Precaution Guide (Private)</h2>
-  <div id="dietData" style="text-align:left; max-width:800px; margin:auto; background:white; padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1);">
-  </div>
+  <div id="dietData" style="text-align:left; max-width:800px; margin:auto; background:white; padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1);"></div>
 </section>
 
 <script>
@@ -203,6 +231,7 @@ function showDietGuide(){
 </div>
 
 <footer>
+  <p>📧 pradumsahani019@gmail.com | 📞 +91-9999999999</p>
   <p>© 2025 Pradum Sahani | Registered Pharmacist | Online Medicine Guidance</p>
 </footer>
 
