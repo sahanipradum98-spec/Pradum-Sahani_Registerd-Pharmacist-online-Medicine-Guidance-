@@ -4,26 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registered Pharmacist | Pradum Sahani</title>
-  <meta name="description" content="Official site of Registered Pharmacist Pradum Sahani for medicine guidance, prescription verification, and pharmacist consultation.">
+  <meta name="description" content="Official site of Registered Pharmacist Pradum Sahani for online medicine guidance, prescription verification, and health consultation.">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
-      background: #f5f7fa;
+      background: #f4f8fb;
       color: #222;
     }
     header {
       background: linear-gradient(135deg, #007bff, #00bfa5);
       color: white;
       text-align: center;
-      padding: 25px 10px;
+      padding: 30px 10px 60px;
       position: relative;
     }
     header img {
-      width: 130px;
-      height: 130px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
-      border: 4px solid white;
+      border: 3px solid white;
       object-fit: cover;
       position: absolute;
       left: 20px;
@@ -31,23 +31,28 @@
     }
     nav a {
       color: white;
-      text-decoration: none;
       margin: 0 10px;
+      text-decoration: none;
       font-weight: 500;
     }
     nav a:hover { text-decoration: underline; }
 
-    section {
-      padding: 40px 20px;
-      text-align: center;
+    marquee {
+      background: #ffcccc;
+      color: #b30000;
+      padding: 8px;
+      font-weight: 600;
+      font-size: 15px;
     }
+
+    section { padding: 40px 20px; text-align: center; }
 
     .about {
       background: #e3f2fd;
       border-left: 5px solid #007bff;
       border-radius: 10px;
-      padding: 20px;
-      max-width: 800px;
+      padding: 25px;
+      max-width: 850px;
       margin: auto;
     }
 
@@ -75,14 +80,6 @@
       color: #003366;
     }
 
-    footer {
-      background: #004d40;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 30px;
-    }
-
     .btn {
       background: #007bff;
       color: white;
@@ -92,19 +89,43 @@
       cursor: pointer;
       font-weight: bold;
     }
-
     .btn:hover { background: #0056b3; }
 
-    .social-icons a {
-      margin: 0 10px;
-      display: inline-block;
-      text-decoration: none;
-      font-size: 22px;
+    footer {
+      background: #004d40;
       color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
     }
 
-    .social-icons a:hover {
-      color: #ffd700;
+    .social-icons a {
+      margin: 0 8px;
+      display: inline-block;
+      font-size: 22px;
+      color: white;
+      text-decoration: none;
+    }
+    .social-icons a:hover { color: #ffd700; }
+
+    .upi-box {
+      background: #e0f7fa;
+      border: 2px dashed #00796b;
+      border-radius: 10px;
+      padding: 15px;
+      max-width: 500px;
+      margin: 20px auto;
+      color: #004d40;
+    }
+
+    .diet-box {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 15px auto;
+      max-width: 850px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      text-align: left;
     }
   </style>
 </head>
@@ -112,18 +133,20 @@
 
 <header>
   <img src="Pradum.jpg" alt="Pradum Sahani">
-  <h1>👨‍⚕️ Registered Pharmacist – Pradum Sahani</h1>
-  <p>DHA Qualified | Prescription Verification | Medicine Consultation</p>
+  <h1>👨‍⚕️ Pradum Sahani</h1>
+  <p><strong>Registered Pharmacist | DHA Qualified</strong></p>
+  <marquee scrollamount="3">⚠️ सावधान! दवा डॉक्टर या फार्मासिस्ट की सलाह के बिना न लें। Self medication खतरनाक हो सकता है। समय पर Prescription Verify करवाएँ। ⚕️</marquee>
   <nav>
     <a href="#about">About</a>
-    <a href="#services">Our Services</a>
+    <a href="#services">Services</a>
     <a href="#consult">Consultation</a>
+    <a href="#diet">Diet Guide</a>
     <a href="#contact">Contact</a>
   </nav>
   <div class="social-icons" style="margin-top:10px;">
     <a href="https://facebook.com" target="_blank">🌐</a>
     <a href="https://instagram.com" target="_blank">📸</a>
-    <a href="https://wa.me/919999999999" target="_blank">💬</a>
+    <a href="https://wa.me/919517360291" target="_blank">💬</a>
     <a href="https://www.linkedin.com/in/pradum-s-3a3791126" target="_blank">💼</a>
     <a href="https://youtube.com/@pradumsahani019?si=yWanU6WfFOTV97P8" target="_blank">▶️</a>
   </div>
@@ -132,8 +155,8 @@
 <section id="about">
   <div class="about">
     <h2>About Me</h2>
-    <p>Hello! I'm <strong>Pradum Sahani</strong>, a <b>Registered Pharmacist (DHA Qualified)</b> dedicated to providing medicine guidance, prescription verification, and patient education.  
-    With professional experience in medicine consultation and online patient support, my goal is to ensure safe and affordable healthcare access.</p>
+    <p>I'm <strong>Pradum Sahani</strong>, a <b>Registered Pharmacist (DHA Qualified)</b> providing online medicine guidance, prescription verification, and patient consultation.  
+    Helping people understand medicines, avoid self-medication risks, and access affordable healthcare.</p>
   </div>
 </section>
 
@@ -141,97 +164,91 @@
   <h2>💊 Our Services</h2>
   <div class="service-box">
     <h3>Prescription Upload</h3>
-    <p>Upload your prescription for pharmacist review and medicine guidance.</p>
+    <p>Upload your prescription for pharmacist verification and proper guidance.</p>
     <a href="https://forms.gle/1hMr6qi3SryqRSpw6" target="_blank" class="btn">Upload Prescription</a>
   </div>
 
   <div class="service-box">
-    <h3>Professional Consultation</h3>
-    <p>Medicine counselling, dosage explanation, salt-based medicine suggestion, and safety precautions.</p>
+    <h3>Consultation Booking</h3>
+    <p>Chat or call consultation — Know about medicines, usage, salt, and alternatives.</p>
+  </div>
+
+  <div class="upi-box">
+    <h3>💰 UPI Payment</h3>
+    <p>Pay consultation fee directly via UPI:</p>
+    <b>UPI ID:</b> sahanipradum98-1@oksbi
   </div>
 </section>
 
 <section id="consult">
-  <h2>💼 Earn / Monetization Section</h2>
+  <h2>💼 Consultation & Earn Section</h2>
 
   <div class="consult-box">
     <h3>2️⃣ Basic Consultation / Prescription Review</h3>
-    <p>💰 ₹99 – ₹199 per session (10–15 min)</p>
-    <p>Upload prescription → verify → explain medicine, timing, precautions.<br>
-    Suggest better alternatives (same salt, cheaper options).<br>
-    Check for drug interactions.<br>
-    <b>Note:</b> Only advice — no prescribing.</p>
+    <p>₹99 – ₹199 per session (10–15 min)<br>
+    Explain medicine use, timing, precautions, and cheaper alternatives.</p>
   </div>
 
   <div class="consult-box" style="background:linear-gradient(135deg,#fbc2eb,#a6c1ee);">
-    <h3>3️⃣ Follow-up or Chronic Disease Guidance</h3>
-    <p>💰 ₹199 – ₹399 per follow-up</p>
-    <p>Monitor medication adherence, side effects, and refills.<br>
-    Provide nutritional and dosage guidance.</p>
+    <h3>3️⃣ Chronic Disease Guidance</h3>
+    <p>₹199 – ₹399 per follow-up (Diabetes, BP, Thyroid)<br>
+    Side effect & refill monitoring, nutritional guidance.</p>
   </div>
 
   <div class="consult-box" style="background:linear-gradient(135deg,#fdfbfb,#ebedee);">
-    <h3>4️⃣ Clinic / Hospital / Pharmacy Tie-up Consultation</h3>
-    <p>💰 ₹500 – ₹1500 per month (retainer model)</p>
-    <p>Offer regular patient counselling.<br>
-    Manage prescription database.<br>
-    Medication therapy management (MTM).</p>
+    <h3>4️⃣ Pharmacy / Clinic Tie-up</h3>
+    <p>₹500 – ₹1500 monthly<br>Regular counselling, prescription database & MTM support.</p>
   </div>
 </section>
 
-<!-- 🔐 Private Diet & Precaution Section -->
-<section id="dietSection" style="display:none; padding:30px; background:#f0fff4;">
-  <h2>🍎 Diet & Precaution Guide (Private)</h2>
-  <div id="dietData" style="text-align:left; max-width:800px; margin:auto; background:white; padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1);"></div>
+<section id="diet">
+  <h2>🍎 Diet & Precaution Guide</h2>
+
+  <div class="diet-box">
+    <h3>Diabetes</h3>
+    <p><b>Eat:</b> Apple, Guava, Papaya, Orange, Pear<br>
+    <b>Avoid:</b> Mango, Grapes, Sugarcane juice<br>
+    <b>Precaution:</b> Avoid sweets & walk daily.</p>
+  </div>
+
+  <div class="diet-box">
+    <h3>Blood Pressure</h3>
+    <p><b>Eat:</b> Pomegranate, Watermelon, Kiwi<br>
+    <b>Avoid:</b> Too much salt, oily food<br>
+    <b>Precaution:</b> Stay hydrated, control sodium.</p>
+  </div>
+
+  <div class="diet-box">
+    <h3>Thyroid</h3>
+    <p><b>Eat:</b> Berries, Apples, Kiwi<br>
+    <b>Avoid:</b> Raw cabbage, cauliflower<br>
+    <b>Precaution:</b> Take thyroid medicine empty stomach.</p>
+  </div>
+
+  <div class="diet-box">
+    <h3>Loose Motion / Diarrhea</h3>
+    <p><b>Eat:</b> Banana, Rice, Toast, ORS, Coconut water<br>
+    <b>Avoid:</b> Milk, spicy & oily food<br>
+    <b>Precaution:</b> Stay hydrated; consult pharmacist if severe.</p>
+  </div>
+
+  <div class="diet-box">
+    <h3>Vomiting</h3>
+    <p><b>Eat:</b> Small frequent sips of water, Ginger tea<br>
+    <b>Avoid:</b> Junk food, alcohol<br>
+    <b>Precaution:</b> Rest well; hydrate slowly.</p>
+  </div>
+
+  <div class="diet-box">
+    <h3>Kidney Patient</h3>
+    <p><b>Eat:</b> Apple, Pineapple, Berries<br>
+    <b>Avoid:</b> Banana, Tomato, Salt-rich food<br>
+    <b>Precaution:</b> Limit protein and potassium-rich diet.</p>
+  </div>
 </section>
 
-<script>
-function showDietGuide(){
-  const pass = prompt("Enter Admin Password to View Diet Guide:");
-  if(pass === "Pradum@123"){  
-    document.getElementById("dietSection").style.display = "block";
-    const diet = {
-      "Diabetes": {
-        fruits: "Apple, Guava, Papaya, Orange, Pear",
-        avoid: "Banana, Mango, Grapes, Sugarcane Juice",
-        precaution: "Avoid high-sugar foods, walk 30 mins daily."
-      },
-      "Blood Pressure": {
-        fruits: "Pomegranate, Banana, Watermelon, Kiwi",
-        avoid: "Too much salt, fried foods",
-        precaution: "Limit sodium, stay hydrated, exercise regularly."
-      },
-      "Thyroid": {
-        fruits: "Berries, Apples, Kiwi",
-        avoid: "Cabbage, Cauliflower (raw)",
-        precaution: "Take medicine empty stomach; avoid soy products."
-      },
-      "Acidity": {
-        fruits: "Banana, Watermelon, Coconut water",
-        avoid: "Spicy food, tea, coffee",
-        precaution: "Eat small meals, avoid lying down after food."
-      }
-    };
-    let html = "";
-    for(let d in diet){
-      html += `<h3 style='color:#007700;'>${d}</h3>
-      <p><b>✅ Recommended Fruits:</b> ${diet[d].fruits}</p>
-      <p><b>🚫 Avoid:</b> ${diet[d].avoid}</p>
-      <p><b>⚕️ Precaution:</b> ${diet[d].precaution}</p><hr>`;
-    }
-    document.getElementById("dietData").innerHTML = html;
-  } else {
-    alert("❌ Wrong password!");
-  }
-}
-</script>
-
-<div style="text-align:center; margin:30px;">
-  <button class="btn" onclick="showDietGuide()">🔐 Admin Diet Guide</button>
-</div>
-
 <footer>
-  <p>📧 pradumsahani019@gmail.com | 📞 +91-9999999999</p>
+  <p>📞 9517360291 | 📧 sahanipradum98@gmail.com</p>
   <p>© 2025 Pradum Sahani | Registered Pharmacist | Online Medicine Guidance</p>
 </footer>
 
