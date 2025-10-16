@@ -6,6 +6,16 @@
   <title>Registered Pharmacist | Pradum Sahani</title>
   <meta name="description" content="Registered Pharmacist Pradum Sahani | Online Medicine Consultation, Prescription Review, and Health Awareness.">
   <link rel="icon" href="Pradum.jpg">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX'); // Replace G-XXXXXXX with your real Analytics ID
+  </script>
+
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -146,7 +156,7 @@
       padding: 20px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
-    input[type="password"] {
+    input[type="password"], input[type="email"], textarea {
       padding: 10px;
       width: 80%;
       margin: 10px;
@@ -181,6 +191,7 @@
   <div class="about">
     <h2>About Me</h2>
     <p>I’m <b>Pradum Sahani</b>, a <b>Registered Pharmacist (DHA Qualified)</b> providing safe online consultation, prescription review and public medicine awareness.</p>
+    <p><a href="https://www.youtube.com/@pharmacistpradum" target="_blank" class="btn">🎥 Visit My YouTube Channel</a></p>
   </div>
 </section>
 
@@ -235,7 +246,6 @@
 <!-- Diet Chart Section -->
 <section id="diet-section">
   <h2>🍎 Diet & Precaution Plans</h2>
-
   <div class="diet-box"><h3>Dengue</h3><p><b>Diet:</b> Papaya leaf extract, Kiwi, Coconut water<br><span class="precaution">❌ Avoid:</span> Fried foods, Painkillers (NSAIDs)</p></div>
   <div class="diet-box"><h3>Diabetes</h3><p><b>Diet:</b> Papaya, Guava, Oats<br><span class="precaution">❌ Avoid:</span> Sugar, Cold drinks</p></div>
   <div class="diet-box"><h3>BP</h3><p><b>Diet:</b> Pomegranate, Garlic, Oats<br><span class="precaution">❌ Avoid:</span> High salt, Caffeine</p></div>
@@ -250,6 +260,17 @@
   <a href="https://instagram.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"></a>
   <a href="https://wa.me/919517360291" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"></a>
   <a href="https://www.linkedin.com/in/pradum-s-3a3791126" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/145/145807.png"></a>
+  <a href="https://www.youtube.com/@pharmacistpradum" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174883.png"></a>
+</section>
+
+<!-- Contact Form -->
+<section id="contact">
+  <h2>📩 Contact Me</h2>
+  <form action="https://formspree.io/f/your_form_id" method="POST">
+    <input type="email" name="email" placeholder="Your Email" required><br>
+    <textarea name="message" rows="4" placeholder="Your Message..." required></textarea><br>
+    <button class="btn" type="submit">Send Message</button>
+  </form>
 </section>
 
 <footer>
