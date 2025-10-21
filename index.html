@@ -8,7 +8,7 @@
 <meta name="description" content="Registered Pharmacist Pradum Sahani — Online prescription review, medicine guidance & consultation.">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-<!-- Optional Google Analytics (keep if you used earlier) -->
+<!-- Google Analytics (optional, kept from earlier) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8W91YX4SLQ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -19,8 +19,7 @@
 
 <style>
 :root{
-  --blue:#0b76d1; --green:#00bfa5; --peach:#fff3e0; --lav:#f3e5f5; --rose:#fff0f6;
-  --muted:#f5f9ff; --dark:#07243a; --alert:#ffeb3b; --alert-text:#222;
+  --blue:#0b76d1; --green:#00bfa5; --muted:#f5f9ff; --dark:#07243a;
   --card-shadow: 0 6px 20px rgba(10,30,60,0.06);
 }
 *{box-sizing:border-box}
@@ -53,20 +52,20 @@ h2,h3{margin:0 0 12px;text-align:center}
 #social .card{background:linear-gradient(180deg,#eef7ff,#ffffff)}
 #contact .card{background:linear-gradient(180deg,#fffaf0,#ffffff)}
 
-/* Marquee / sliding banner styles (left -> right, slow) */
-.marquee-wrap{overflow:hidden;position:relative;border-radius:8px;padding:10px;background:linear-gradient(90deg,var(--alert),#fff);display:flex;align-items:center}
-.marquee-inner{white-space:nowrap;display:inline-block;padding-left:100%; animation: slideRTLalt 80s linear infinite}
-.marquee-item{display:inline-block;padding:0 48px;font-weight:700;color:var(--alert-text);font-size:16px}
-@keyframes slideRTLalt{
+/* Slow marquee: total animation duration large so messages move very slowly */
+.marquee-wrap{overflow:hidden;position:relative;border-radius:8px;padding:10px;background:linear-gradient(90deg,#fff3a8,#fff);display:flex;align-items:center}
+.marquee-inner{white-space:nowrap;display:inline-block;padding-left:100%; animation: slideSlow 128s linear infinite}
+.marquee-item{display:inline-block;padding:0 48px;font-weight:700;color:#333;font-size:16px}
+@keyframes slideSlow{
   0%{transform:translateX(-100%)}
-  12.5%{transform:translateX(-40%)}
-  37.5%{transform:translateX(-10%)}
-  62.5%{transform:translateX(20%)}
-  87.5%{transform:translateX(60%)}
+  16%{transform:translateX(-40%)}
+  40%{transform:translateX(-10%)}
+  60%{transform:translateX(20%)}
+  80%{transform:translateX(60%)}
   100%{transform:translateX(120%)}
 }
 
-/* medicine card */
+/* medicine cards */
 #medResult{margin-top:18px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
 .med-card{width:260px;background:#fff;border-radius:10px;padding:12px;box-shadow:0 4px 12px rgba(20,40,80,0.06);text-align:left}
 .med-card h4{margin:4px 0 6px;font-size:15px;color:var(--blue)}
@@ -87,7 +86,7 @@ h2,h3{margin:0 0 12px;text-align:center}
 @media(max-width:900px){
   header img{position:static;margin:0 auto 12px;display:block}
   .grid{flex-direction:column}
-  .marquee-inner{animation-duration:100s}
+  .marquee-inner{animation-duration:160s}
 }
 @media(max-width:480px){
   .marquee-item{padding:0 18px;font-size:14px}
@@ -123,9 +122,9 @@ h2,h3{margin:0 0 12px;text-align:center}
   </div>
 </section>
 
-<!-- SELF-MEDICATION DANGER (after About) -->
+<!-- SELF-MEDICATION WARNING (slower) -->
 <section id="selfmed-wrap" class="container section" aria-hidden="false">
-  <div class="marquee-wrap">
+  <div class="marquee-wrap" aria-hidden="false" role="status" aria-live="polite">
     <div class="marquee-inner" id="marqueeInner">
       <span class="marquee-item">⚠️ Self-medication can be harmful — always consult a doctor or pharmacist before taking medicines. | ⚠️ स्व-ऊपचार खतरनाक हो सकता है — दवा लेने से पहले डॉक्टर/फार्मासिस्ट से सलाह लें।</span>
       <span class="marquee-item">💊 Do not mix antibiotics or painkillers yourself — it may damage liver/kidney. | 💊 बिना सलाह के एंटीबायोटिक या पेनकिलर न मिलाएँ — यह लिवर/किडनी को नुकसान पहुँचा सकता है।</span>
@@ -190,7 +189,7 @@ h2,h3{margin:0 0 12px;text-align:center}
     <p style="color:#555;margin-top:6px">Type brand or salt (example: paracetamol, amoxicillin). Results show salt, dose (mg), company and uses. (No prices shown.)</p>
 
     <div style="text-align:center;margin-top:12px">
-      <input id="medInput" class="search" style="padding:10px;border-radius:8px;border:1px solid #ccc;width:60%;max-width:520px" placeholder="Enter brand or salt name..." onkeypress="if(event.key==='Enter'){doSearch()}">
+      <input id="medInput" class="search" style="padding:10px;border-radius:8px;border:1px solid #ccc;width:60%;max-width:520px" placeholder="Enter brand or salt name..." aria-label="Medicine search input">
       <button class="btn" onclick="doSearch()">Search</button>
       <button class="btn secondary" onclick="clearSearch()">Clear</button>
     </div>
@@ -226,7 +225,7 @@ h2,h3{margin:0 0 12px;text-align:center}
   <div class="card" style="text-align:center;max-width:1100px;margin:auto">
     <h3>🔐 Diet & Precaution Plans (Private)</h3>
     <p style="color:#666">This section is password protected. Enter admin password to view comprehensive diet & precautions (chronic & non-chronic, child, pregnancy, gym, exercise & precautions).</p>
-    <input id="dietPass" type="password" placeholder="Enter admin password" style="padding:10px;border-radius:8px;border:1px solid #ccd;width:72%;max-width:420px">
+    <input id="dietPass" type="password" placeholder="Enter admin password" style="padding:10px;border-radius:8px;border:1px solid #ccd;width:72%;max-width:420px" aria-label="Diet password">
     <div style="margin-top:12px"><a class="btn" href="#" onclick="openDiet()">Open Diet Plans</a></div>
     <div id="dietArea" style="display:none;margin-top:18px;text-align:left"></div>
   </div>
@@ -259,12 +258,12 @@ h2,h3{margin:0 0 12px;text-align:center}
   <small>© 2025 Pradum Sahani — Registered Pharmacist. All Rights Reserved.</small>
 </footer>
 
-<!-- =========== Scripts: medicines load / search / diet content =========== -->
+<!-- Scripts: search, diet, load medicines -->
 <script>
-/* ---------- CONFIG ---------- */
+/* ===== CONFIG ===== */
 const ADMIN_PASSWORD = 'Pradum@123';
 
-/* ---------- MEDICINE DB (tries to load medicines.json otherwise uses SAMPLE_DB) ---------- */
+/* ===== MEDICINE DB: attempt load medicines.json otherwise use SAMPLE_DB ===== */
 const SAMPLE_DB = [
   {"brand":"Crocin Advance","salt":"Paracetamol","mg":"500 mg","company":"GSK","uses":"Fever, pain relief"},
   {"brand":"Dolo 650","salt":"Paracetamol","mg":"650 mg","company":"Micro Labs","uses":"Fever, headache"},
@@ -281,7 +280,8 @@ async function loadMedicines(){
     const data = await res.json();
     if(Array.isArray(data) && data.length>0){
       MEDICINES = data;
-      document.getElementById('medNote').innerText = `Loaded ${data.length.toLocaleString()} medicines from medicines.json`;
+      const el = document.getElementById('medNote');
+      if(el) el.innerText = `Loaded ${data.length.toLocaleString()} medicines from medicines.json`;
       return;
     } else throw new Error('invalid json');
   }catch(e){
@@ -292,12 +292,12 @@ async function loadMedicines(){
 }
 loadMedicines();
 
-/* helpers */
+/* ===== helpers ===== */
 function s(x){ return (x||'').toString(); }
 function escapeHtml(s){ return s.replace && s.replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]}) }
 function highlight(text,q){ if(!q) return text; try{ const rx = new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','ig'); return text.replace(rx,'<mark>$1</mark>'); }catch(e){return text;} }
 
-/* Search medicines */
+/* ===== medicine search ===== */
 function doSearch(){
   const q = (document.getElementById('medInput').value||'').trim().toLowerCase();
   const out = document.getElementById('medResult');
@@ -331,11 +331,12 @@ function doSearch(){
 }
 function clearSearch(){ document.getElementById('medInput').value=''; document.getElementById('medResult').innerHTML=''; document.getElementById('medNote').innerText=''; }
 
-/* ------------- Diet (password-protected) ------------- */
+/* ===== diet (password-protected) ===== */
 function openDiet(){
   const passInput = document.getElementById('dietPass');
   const pass = (passInput && passInput.value) ? passInput.value : prompt('Enter admin password:');
   if(pass === ADMIN_PASSWORD){
+    // hide the login card (so public can't see)
     const login = document.getElementById('login-diet');
     if(login) login.style.display = 'none';
     const content = document.getElementById('dietArea');
@@ -347,156 +348,107 @@ function openDiet(){
   }
 }
 
+/* Build diet HTML with tables: Morning | Afternoon | Evening | Exercise | Precautions */
 function buildDietHtml(){
-  // For each condition we show a table: Morning | Afternoon | Evening | Exercise | Precautions
   const conditions = [
-    {
-      title:'Diabetes (Type 2) — Chronic',
-      rows:[
-        {time:'Morning', food:'Oats / millet porridge + 1 boiled egg or 1 cup low-fat curd', exercise:'10–15 min walk after breakfast', precaution:'Monitor blood glucose; avoid sweets & fruit juices'},
-        {time:'Afternoon', food:'1 chapati (multigrain) + vegetable sabzi + salad', exercise:'Light walk 10 min after meal', precaution:'Control portion size'},
-        {time:'Evening', food:'Roasted chana / a small apple', exercise:'Stretching / light walk', precaution:'Avoid fried snacks'},
-        {time:'Night', food:'Small bowl dal + 1 small roti + steamed veggies', exercise:'Avoid heavy exercise after dinner', precaution:'Take meds as prescribed; avoid late heavy meals'}
-      ]
-    },
-    {
-      title:'Hypertension (High BP) — Chronic',
-      rows:[
-        {time:'Morning', food:'Oats/poha with vegetables, 1 fruit (apple/pear)', exercise:'Morning brisk walk 20–30 min', precaution:'Limit salt; avoid pickles & processed foods'},
-        {time:'Afternoon', food:'Brown rice/roti + dal + salad', exercise:'Short walk 10 min', precaution:'Monitor BP regularly'},
-        {time:'Evening', food:'Buttermilk / sprouts salad', exercise:'Breathing & relaxation', precaution:'Avoid excess caffeine & alcohol'},
-        {time:'Night', food:'Vegetable khichdi / light soup', exercise:'Gentle stretching', precaution:'Take BP meds on schedule'}
-      ]
-    },
-    {
-      title:'Thyroid (Hypothyroid) — Chronic',
-      rows:[
-        {time:'Morning', food:'Protein breakfast (eggs/soya-free option) + fruit', exercise:'Light walk 15–20 min', precaution:'Take levothyroxine on empty stomach (30–60 min before food)'},
-        {time:'Afternoon', food:'Roti + sabzi + dal', exercise:'Short walk', precaution:'Avoid calcium/iron supplements close to medication time'},
-        {time:'Evening', food:'Roasted nuts (small portion) + fruit', exercise:'Stretching', precaution:'Limit soya near medication'},
-        {time:'Night', food:'Light dinner with protein & veggies', exercise:'Relax & sleep hygiene', precaution:'Regular TSH monitoring'}
-      ]
-    },
-    {
-      title:'Kidney (General guidance — stage dependent)',
-      rows:[
-        {time:'Morning', food:'Apple or berries + 1 slice whole grain toast', exercise:'Gentle walking', precaution:'Follow nephrologist for protein/potassium limits'},
-        {time:'Afternoon', food:'Controlled protein (eg. 1 bowl dal) + rice/roti + cooked vegetables', exercise:'Light activity', precaution:'Limit salt & processed foods'},
-        {time:'Evening', food:'Light snack: cucumber, carrot sticks', exercise:'Relaxation', precaution:'Avoid high potassium foods if advised'},
-        {time:'Night', food:'Small portion easily digestible food', exercise:'Avoid strenuous activity', precaution:'Fluid intake as per doctor'}
-      ]
-    },
-    {
-      title:'Fatty Liver (NAFLD)',
-      rows:[
-        {time:'Morning', food:'Warm water + lemon, oats or millet porridge, fruit (berries)', exercise:'Brisk walk 30 min', precaution:'Avoid alcohol & high-sugar foods'},
-        {time:'Afternoon', food:'Grilled chicken/fish or dal + salad + brown rice', exercise:'Light walk', precaution:'Avoid fried & processed foods'},
+    { title:'Diabetes (Type 2) — Chronic', rows:[
+        {time:'Morning', food:'Oats/millet porridge + 1 boiled egg or low-fat curd', exercise:'10–15 min walk', precaution:'Monitor blood glucose; avoid sweets & juices'},
+        {time:'Afternoon', food:'Multigrain roti + vegetable sabzi + salad', exercise:'Light walk 10 min', precaution:'Control portion size'},
+        {time:'Evening', food:'Roasted chana / small apple', exercise:'Stretching / light walk', precaution:'Avoid fried snacks'},
+        {time:'Night', food:'Small dal + 1 roti + steamed veggies', exercise:'Avoid heavy exercise', precaution:'Take meds as prescribed'}
+    ]},
+    { title:'Hypertension (High BP) — Chronic', rows:[
+        {time:'Morning', food:'Oats/poha with veggies, 1 fruit', exercise:'Brisk walk 20–30 min', precaution:'Limit salt; avoid pickles'},
+        {time:'Afternoon', food:'Brown rice/roti + dal + salad', exercise:'Short walk', precaution:'Monitor BP regularly'},
+        {time:'Evening', food:'Buttermilk / sprouts salad', exercise:'Breathing exercises', precaution:'Avoid excess caffeine'},
+        {time:'Night', food:'Vegetable khichdi / light soup', exercise:'Gentle stretching', precaution:'Take BP meds on time'}
+    ]},
+    { title:'Thyroid (Hypothyroid)', rows:[
+        {time:'Morning', food:'Protein breakfast (eggs) + fruit', exercise:'Light walk 15–20 min', precaution:'Take levothyroxine on empty stomach (30–60 min before food)'},
+        {time:'Afternoon', food:'Roti + sabzi + dal', exercise:'Short walk', precaution:'Avoid calcium/iron supplements around medicine time'},
+        {time:'Evening', food:'Roasted nuts + fruit', exercise:'Stretching', precaution:'Limit soya close to medication'},
+        {time:'Night', food:'Light dinner', exercise:'Relaxation', precaution:'Regular TSH checks'}
+    ]},
+    { title:'Fatty Liver (NAFLD)', rows:[
+        {time:'Morning', food:'Warm water + lemon, oats/millet porridge, berries', exercise:'Brisk walk 30 min', precaution:'Avoid alcohol & sugary foods'},
+        {time:'Afternoon', food:'Grilled fish/chicken or dal + salad + brown rice', exercise:'Light walk', precaution:'Avoid fried foods'},
         {time:'Evening', food:'Green tea + nuts (small)', exercise:'Stretching', precaution:'Maintain healthy weight'},
-        {time:'Night', food:'Steamed vegetables + small roti', exercise:'Avoid late heavy meals', precaution:'Weight reduction plan if advised'}
-      ]
-    },
-    {
-      title:'Dengue (Acute) — Non-chronic',
-      rows:[
-        {time:'Morning', food:'ORS/clear fluids, banana if appetite', exercise:'Rest', precaution:'Avoid NSAIDs (ibuprofen/aspirin) unless permitted'},
-        {time:'Afternoon', food:'Light soups, khichdi', exercise:'Rest', precaution:'Hydration & platelet monitoring'},
-        {time:'Evening', food:'Diluted fruit juice, coconut water', exercise:'Rest', precaution:'Watch for bleeding signs'},
-        {time:'Night', food:'Light broth', exercise:'Rest', precaution:'Seek care for severe symptoms'}
-      ]
-    },
-    {
-      title:'Malaria (Acute) — Non-chronic',
-      rows:[
-        {time:'Morning', food:'Light porridge or toast + fluids', exercise:'Rest', precaution:'Complete antimalarial course'},
+        {time:'Night', food:'Steamed veggies + small roti', exercise:'Avoid late heavy meals', precaution:'Follow weight plan'}
+    ]},
+    { title:'Kidney (General guidance)', rows:[
+        {time:'Morning', food:'Apple/berries + whole grain toast', exercise:'Gentle walking', precaution:'Follow nephrologist for protein/potassium limits'},
+        {time:'Afternoon', food:'Controlled protein + rice/roti + cooked veggies', exercise:'Light activity', precaution:'Limit salt & processed foods'},
+        {time:'Evening', food:'Cucumber/carrot sticks', exercise:'Relaxation', precaution:'Avoid high potassium if advised'},
+        {time:'Night', food:'Small easy-to-digest food', exercise:'Avoid strenuous activity', precaution:'Fluid as per doctor'}
+    ]},
+    { title:'Dengue (Acute)', rows:[
+        {time:'Morning', food:'ORS/clear fluids, banana if appetite', exercise:'Rest', precaution:'Avoid NSAIDs unless doctor allows'},
+        {time:'Afternoon', food:'Light soups/khichdi', exercise:'Rest', precaution:'Hydrate & monitor platelets'},
+        {time:'Evening', food:'Diluted fruit juice, coconut water', exercise:'Rest', precaution:'Watch for bleeding'},
+        {time:'Night', food:'Light broth', exercise:'Rest', precaution:'Seek care if severe'}
+    ]},
+    { title:'Malaria (Acute)', rows:[
+        {time:'Morning', food:'Light porridge + fluids', exercise:'Rest', precaution:'Complete antimalarial course'},
         {time:'Afternoon', food:'Boiled rice + soup', exercise:'Rest', precaution:'Avoid alcohol'},
         {time:'Evening', food:'Fruits & fluids', exercise:'Rest', precaution:'Hydration important'},
-        {time:'Night', food:'Light khichdi', exercise:'Rest', precaution:'Seek help for complications'}
-      ]
-    },
-    {
-      title:'Typhoid (Acute) — Non-chronic',
-      rows:[
-        {time:'Morning', food:'Boiled rice/khichdi, banana, ORS', exercise:'Rest', precaution:'Avoid street food & raw salads'},
-        {time:'Afternoon', food:'Khichdi, boiled vegetables', exercise:'Rest', precaution:'Complete antibiotics'},
+        {time:'Night', food:'Light khichdi', exercise:'Rest', precaution:'Seek help if complications'}
+    ]},
+    { title:'Typhoid (Acute)', rows:[
+        {time:'Morning', food:'Boiled rice/khichdi + banana', exercise:'Rest', precaution:'Avoid street food & raw salads'},
+        {time:'Afternoon', food:'Khichdi, boiled veggies', exercise:'Rest', precaution:'Finish antibiotics'},
         {time:'Evening', food:'Clear soups', exercise:'Rest', precaution:'Monitor fever & stool'},
-        {time:'Night', food:'Light broth', exercise:'Rest', precaution:'See doctor if worsening'}
-      ]
-    },
-    {
-      title:'Diarrhoea / Loose Motion (Acute)',
-      rows:[
-        {time:'Morning', food:'ORS, banana, toast', exercise:'Rest', precaution:'Avoid dairy if it worsens'},
-        {time:'Afternoon', food:'Boiled rice, clear soup', exercise:'Rest', precaution:'Hydration is key'},
-        {time:'Evening', food:'Banana or apple sauce, ORS', exercise:'Rest', precaution:'Avoid spicy/fried foods'},
-        {time:'Night', food:'Light khichdi', exercise:'Rest', precaution:'Seek care for blood in stool or dehydration'}
-      ]
-    },
-    {
-      title:'Vomiting (Acute)',
-      rows:[
-        {time:'Morning', food:'Small sips ORS/ginger tea', exercise:'Rest', precaution:'Avoid solids until settled'},
+        {time:'Night', food:'Light broth', exercise:'Rest', precaution:'See doctor if worse'}
+    ]},
+    { title:'Diarrhoea / Loose Motion (Acute)', rows:[
+        {time:'Morning', food:'ORS, banana, toast', exercise:'Rest', precaution:'Hydration & avoid dairy if worsens'},
+        {time:'Afternoon', food:'Boiled rice, clear soup', exercise:'Rest', precaution:'Avoid spicy foods'},
+        {time:'Evening', food:'Banana / apple sauce', exercise:'Rest', precaution:'Seek care if dehydrated'},
+        {time:'Night', food:'Light khichdi', exercise:'Rest', precaution:'Monitor stool'}
+    ]},
+    { title:'Vomiting (Acute)', rows:[
+        {time:'Morning', food:'Small sips of ORS/ginger tea', exercise:'Rest', precaution:'Avoid solids until settled'},
         {time:'Afternoon', food:'Clear soup, crackers', exercise:'Rest', precaution:'If persistent, see doctor'},
-        {time:'Evening', food:'Boiled potato / toast', exercise:'Rest', precaution:'Hydration'},
+        {time:'Evening', food:'Boiled potato / toast', exercise:'Rest', precaution:'Hydrate'},
         {time:'Night', food:'Light broth', exercise:'Rest', precaution:'Avoid heavy meals'}
-      ]
-    },
-    {
-      title:'Child Nutrition (Infants & Toddlers)',
-      rows:[
+    ]},
+    { title:'Child Nutrition (Infants & Toddlers)', rows:[
         {time:'Morning', food:'Breastfeed (infants) / porridge + fruit (toddlers)', exercise:'Play & movement', precaution:'No honey <1yr; vaccinations up to date'},
-        {time:'Afternoon', food:'Khichdi/dal + mashed veggies', exercise:'Active play', precaution:'Avoid junk food & sugary drinks'},
-        {time:'Evening', food:'Milk or yoghurt + fruit', exercise:'Play', precaution:'Balanced portions'},
-        {time:'Night', food:'Light dinner (rice/roti + dal)', exercise:'Bedtime routine', precaution:'Monitor growth'}
-      ]
-    },
-    {
-      title:'Pregnancy Diet (Antenatal)',
-      rows:[
+        {time:'Afternoon', food:'Khichdi/dal + mashed veggies', exercise:'Active play', precaution:'Avoid junk food'},
+        {time:'Evening', food:'Milk/yoghurt + fruit', exercise:'Play', precaution:'Balanced portions'},
+        {time:'Night', food:'Light dinner', exercise:'Bedtime routine', precaution:'Monitor growth'}
+    ]},
+    { title:'Pregnancy Diet (Antenatal)', rows:[
         {time:'Morning', food:'Folic acid rich breakfast, milk/curd', exercise:'Light walking', precaution:'Avoid alcohol & raw seafood'},
-        {time:'Afternoon', food:'Protein rich meal (dal/chicken/fish) + veggies', exercise:'Gentle activity', precaution:'Take prenatal vitamins'},
+        {time:'Afternoon', food:'Protein rich meal + veggies', exercise:'Gentle activity', precaution:'Take prenatal vitamins'},
         {time:'Evening', food:'Fruits & nuts', exercise:'Pelvic floor & stretching', precaution:'Avoid heavy lifting'},
-        {time:'Night', food:'Light dinner with iron-rich foods', exercise:'Relaxation', precaution:'Regular ANC visits'}
-      ]
-    },
-    {
-      title:'Post-Delivery / Lactation Diet',
-      rows:[
-        {time:'Morning', food:'Protein breakfast (eggs/dal) + fruits', exercise:'Light walking', precaution:'Hydration & rest'},
-        {time:'Afternoon', food:'Balanced lunch with iron & calcium', exercise:'Light activity', precaution:'Continue iron/folate if prescribed'},
-        {time:'Evening', food:'Milk/curd + dry fruits', exercise:'Short walk', precaution:'Avoid alcohol'},
-        {time:'Night', food:'Protein rich light dinner', exercise:'Rest', precaution:'Adequate sleep & support'}
-      ]
-    },
-    {
-      title:'Gym / Workout Diet (General)',
-      rows:[
-        {time:'Morning', food:'Pre-workout: banana + peanut butter or oats', exercise:'Warm-up & cardio', precaution:'Hydrate well'},
-        {time:'Afternoon', food:'Post-workout: protein + complex carbs (eggs, brown rice)', exercise:'Resistance training', precaution:'Progressive overload; rest muscles'},
-        {time:'Evening', food:'Light protein snack', exercise:'Cool down & stretch', precaution:'Avoid heavy meals pre-workout'},
+        {time:'Night', food:'Light dinner with iron foods', exercise:'Relaxation', precaution:'ANC visits'}
+    ]},
+    { title:'Post-Delivery / Lactation Diet', rows:[
+        {time:'Morning', food:'Protein breakfast + fruits', exercise:'Light walking', precaution:'Hydration & rest'},
+        {time:'Afternoon', food:'Balanced lunch with iron & calcium', exercise:'Light activity', precaution:'Continue supplements if prescribed'},
+        {time:'Evening', food:'Milk/curd & dry fruits', exercise:'Short walk', precaution:'Avoid alcohol'},
+        {time:'Night', food:'Protein rich dinner', exercise:'Rest', precaution:'Support & sleep'}
+    ]},
+    { title:'Gym / Workout Diet (General)', rows:[
+        {time:'Morning', food:'Pre-workout: banana + peanut butter or oats', exercise:'Warm-up & cardio', precaution:'Hydrate'},
+        {time:'Afternoon', food:'Post-workout: protein + complex carbs', exercise:'Resistance training', precaution:'Rest muscles & progressive training'},
+        {time:'Evening', food:'Light protein snack', exercise:'Cool down & stretch', precaution:'Avoid heavy meals before workout'},
         {time:'Night', food:'Light dinner with protein', exercise:'Recovery & sleep', precaution:'Balanced macros'}
-      ]
-    },
-    {
-      title:'Summer Diet (General)',
-      rows:[
-        {time:'Morning', food:'Water + lemon, light porridge', exercise:'Morning walk (early)', precaution:'Hydrate frequently; avoid midday sun'},
-        {time:'Afternoon', food:'Light meals, salads (hygienic)', exercise:'Avoid heavy exertion', precaution:'Avoid risky street foods'},
-        {time:'Evening', food:'Fruits (watermelon) & buttermilk', exercise:'Evening walk', precaution:'Watch for heat stroke'},
-        {time:'Night', food:'Light dinner & hydration', exercise:'Cool down', precaution:'Proper food storage'}
-      ]
-    },
-    {
-      title:'Winter Diet (General)',
-      rows:[
+    ]},
+    { title:'Summer Diet (General)', rows:[
+        {time:'Morning', food:'Water+lemon, light porridge', exercise:'Morning walk', precaution:'Hydrate & avoid midday sun'},
+        {time:'Afternoon', food:'Light meals & hygienic salads', exercise:'Avoid heavy exertion', precaution:'Avoid risky street foods'},
+        {time:'Evening', food:'Watermelon & buttermilk', exercise:'Evening walk', precaution:'Watch for heat stroke'},
+        {time:'Night', food:'Light dinner + fluids', exercise:'Cool down', precaution:'Proper food storage'}
+    ]},
+    { title:'Winter Diet (General)', rows:[
         {time:'Morning', food:'Warm porridge, nuts', exercise:'Morning walk', precaution:'Keep warm & check vitamin D if needed'},
-        {time:'Afternoon', food:'Hearty soups, lentils', exercise:'Stay active indoors', precaution:'Avoid excessive sugary snacks'},
-        {time:'Evening', food:'Warm tea & dry fruits', exercise:'Stretching', precaution:'Hygiene to avoid infections'},
+        {time:'Afternoon', food:'Hearty soups & lentils', exercise:'Stay active indoors', precaution:'Avoid excessive sugar'},
+        {time:'Evening', food:'Warm tea & dry fruits', exercise:'Stretching', precaution:'Hygiene to avoid infection'},
         {time:'Night', food:'Warm dinner with protein', exercise:'Light activity', precaution:'Adequate sleep & fluids'}
-      ]
-    }
+    ]}
   ];
 
-  // Build HTML tables for each
   let html = '';
   conditions.forEach(cond=>{
     html += `<div class="diet-section"><h4 style="margin:6px 0">${cond.title}</h4>`;
@@ -507,20 +459,19 @@ function buildDietHtml(){
     html += `</tbody></table></div>`;
   });
 
-  // Add final notes
-  html += `<div class="diet-box" style="margin-top:12px">
+  html += `<div class="diet-section"><div style="padding:10px;background:#fff;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,0.03)">
     <h4>Important Notes & Precautions</h4>
     <ul>
       <li>These are general guidance. Individual needs vary — tailor per patient’s medical records & lab results.</li>
       <li>Patients on special medicines (warfarin, insulin, dialysis) need individualized diet from treating team.</li>
       <li>Check allergies and drug–food interactions (e.g., grapefruit with some statins).</li>
     </ul>
-  </div>`;
+  </div></div>`;
 
   return html;
 }
 
-/* ---------- simple visit counter stored in localStorage ---------- */
+/* Visitor counter - local only (private) */
 (function trackVisit(){
   try{
     const v = Number(localStorage.getItem('pradum_visits')||0)+1;
@@ -529,72 +480,7 @@ function buildDietHtml(){
   }catch(e){}
 })();
 
-/* ---------- search helpers ---------- */
-function s(x){ return (x||'').toString(); }
-function escapeHtml(s){ return s.replace && s.replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]}) }
-function highlight(text,q){ if(!q) return text; try{ const rx = new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','ig'); return text.replace(rx,'<mark>$1</mark>'); }catch(e){return text;} }
-
-/* ---------- MEDICINES loader & search ---------- */
-let MEDICINES = [];
-async function loadMedicines(){
-  try{
-    const res = await fetch('./medicines.json', {cache:'no-store'});
-    if(!res.ok) throw new Error('no json');
-    const data = await res.json();
-    if(Array.isArray(data) && data.length>0){
-      MEDICINES = data;
-      document.getElementById('medNote').innerText = `Loaded ${data.length.toLocaleString()} medicines from medicines.json`;
-      return;
-    } else throw new Error('invalid json');
-  }catch(e){
-    MEDICINES = SAMPLE_DB;
-    const el = document.getElementById('medNote');
-    if(el) el.innerText = 'Using embedded sample medicine data (replace with medicines.json for full DB).';
-  }
-}
-const SAMPLE_DB = [
-  {"brand":"Crocin Advance","salt":"Paracetamol","mg":"500 mg","company":"GSK","uses":"Fever, pain relief"},
-  {"brand":"Dolo 650","salt":"Paracetamol","mg":"650 mg","company":"Micro Labs","uses":"Fever, headache"},
-  {"brand":"Metformin 500","salt":"Metformin HCl","mg":"500 mg","company":"Lupin","uses":"Type 2 Diabetes"},
-  {"brand":"Amlodipine 5","salt":"Amlodipine","mg":"5 mg","company":"Cipla","uses":"Hypertension"},
-  {"brand":"Pantoprazole 40","salt":"Pantoprazole","mg":"40 mg","company":"Sun Pharma","uses":"Acidity, GERD"}
-];
-loadMedicines();
-
-function doSearch(){
-  const q = (document.getElementById('medInput').value||'').trim().toLowerCase();
-  const out = document.getElementById('medResult');
-  out.innerHTML = '';
-  if(!q){ document.getElementById('medNote').innerText='Please enter a brand or salt to search.'; return; }
-  document.getElementById('medNote').innerText='Searching...';
-  const results = MEDICINES.filter(item=>{
-    return s(item.brand).toLowerCase().includes(q) ||
-           s(item.salt).toLowerCase().includes(q) ||
-           s(item.company).toLowerCase().includes(q) ||
-           s(item.mg).toLowerCase().includes(q) ||
-           s(item.uses).toLowerCase().includes(q);
-  });
-  if(results.length===0){
-    out.innerHTML='<p style="color:#b45309">No results found. Try another brand or salt name.</p>';
-    document.getElementById('medNote').innerText='0 results';
-    return;
-  }
-  const top = results.slice(0,200);
-  document.getElementById('medNote').innerText = `${results.length.toLocaleString()} result(s) — showing ${top.length}`;
-  top.forEach(m=>{
-    const card = document.createElement('div');
-    card.className = 'med-card';
-    card.innerHTML = `<h4>${highlight(escapeHtml(m.brand||'–'), q)}</h4>
-      <div class="meta"><strong>Salt:</strong> ${highlight(escapeHtml(m.salt||'–'), q)}</div>
-      <div class="meta"><strong>Dose:</strong> ${escapeHtml(m.mg||'–')}</div>
-      <div class="meta"><strong>Company:</strong> ${highlight(escapeHtml(m.company||'–'), q)}</div>
-      <div style="margin-top:8px;font-size:13px;color:#333"><strong>Uses:</strong> ${escapeHtml(m.uses||'–')}</div>`;
-    out.appendChild(card);
-  });
-}
-function clearSearch(){ document.getElementById('medInput').value=''; document.getElementById('medResult').innerHTML=''; document.getElementById('medNote').innerText=''; }
-
-/* allow Enter key to search */
+/* Allow Enter key to trigger search */
 document.addEventListener('DOMContentLoaded', function(){
   const input = document.getElementById('medInput');
   if(input) input.addEventListener('keydown', function(e){ if(e.key==='Enter'){ doSearch(); }});
