@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Pradum Sahani — Registered Pharmacist</title>
 <link rel="icon" href="Pradum.jpg">
-<meta name="description" content="Registered Pharmacist Pradum Sahani — Online prescription review, medicine guidance & consultation.">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
@@ -14,7 +13,7 @@
   --muted:#f5f9ff;--pink:#ffebee;--orange:#fff3e0;--purple:#f3e5f5;
 }
 body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(180deg,#f9fcff,#ffffff);color:#222;}
-header{background:linear-gradient(120deg,var(--blue),var(--green));color:#fff;padding:30px 12px 80px;text-align:center;position:relative;}
+header{background:linear-gradient(120deg,var(--blue),var(--green));color:#fff;padding:30px 12px 80px;text-align:center;}
 header img{width:110px;height:110px;border-radius:50%;border:4px solid #fff;object-fit:cover;}
 nav a{color:#fff;margin:0 10px;text-decoration:none;font-weight:600;}
 section{padding:36px 16px;}
@@ -31,7 +30,6 @@ footer{background:var(--dark);color:#fff;padding:16px;text-align:center;}
 #diet .card{background:#e8f5e9;}
 #social .card{background:#e3f2fd;}
 #contact .card{background:#fff8e1;}
-/* self medication warning */
 .danger-box{background:#fff3f3;border-left:5px solid var(--red);padding:18px;border-radius:10px;max-width:900px;margin:16px auto;text-align:center;font-size:15px;font-weight:500;color:#b71c1c;}
 .fade{animation:fade 1s ease;}
 @keyframes fade{from{opacity:0;}to{opacity:1;}}
@@ -123,12 +121,12 @@ footer{background:var(--dark);color:#fff;padding:16px;text-align:center;}
 <footer>© 2025 Pradum Sahani | Registered Pharmacist</footer>
 
 <script>
-// 🔄 Self Medication Warning (20s delay)
+// 🔁 Sliding Warning (slow 20s)
 const msgs=[
- "⚠️ Self-medication is Dangerous! — Don’t take antibiotics or painkillers without a doctor’s advice. ये आपके लिवर और किडनी को नुकसान पहुँचा सकते हैं।",
- "💊 Never mix medicines yourself — Some combinations can cause bleeding or allergies. किसी दवा को बिना सलाह के मिलाकर लेना जानलेवा हो सकता है।",
- "🧠 Painkillers misuse damages liver/kidney. बार-बार दर्द की दवा लेना खतरनाक है।",
- "🚫 Antibiotic misuse causes resistance — फिर दवा असर नहीं करती, कोर्स पूरा करें।"
+ "⚠️ Self-medication is Dangerous! — Don’t take antibiotics or painkillers without advice.",
+ "💊 Never mix medicines yourself — कुछ दवाइयाँ मिलाने से जानलेवा प्रभाव हो सकता है।",
+ "🧠 Painkillers misuse damages liver/kidney — Use only when prescribed.",
+ "🚫 Antibiotic misuse causes resistance — पूरा कोर्स पूरा करें।"
 ];
 let i=0;
 function rotateMsg(){
@@ -139,7 +137,7 @@ function rotateMsg(){
  el.classList.add("fade");
  i=(i+1)%msgs.length;
 }
-setInterval(rotateMsg,20000); // 🔁 every 20s
+setInterval(rotateMsg,20000);
 
 // 🔒 Diet Password
 const ADMIN_PASS="Pradum@123";
@@ -148,18 +146,22 @@ function openDiet(){
  if(p===ADMIN_PASS){
    const d=document.getElementById('dietContent');
    d.style.display='block';
-   d.innerHTML=`<ul>
-   <li><b>Diabetes:</b> Oats, green veg, sugar-free fruits. Avoid sweets.</li>
-   <li><b>Blood Pressure:</b> Low salt, fruits like banana, avoid fried foods.</li>
-   <li><b>Thyroid:</b> Avoid soy, cabbage. Take thyroid meds early morning.</li>
-   <li><b>Pregnancy:</b> Folic acid, milk, fruits, light walk daily.</li>
-   <li><b>Child Diet:</b> Protein-rich food, fruits, hydration.</li>
-   <li><b>Chronic Disease:</b> Balanced veg diet, low oil, frequent small meals.</li>
-   <li><b>Loose Motion/Diarrhea:</b> ORS, banana, curd, avoid spicy food.</li>
-   <li><b>Dengue/Malaria:</b> Papaya leaf extract, hydration, high-protein diet.</li>
-   <li><b>Kidney Patients:</b> Low sodium & potassium foods, avoid junk.</li>
-   <li><b>Gym Diet:</b> Protein, eggs, oats, chicken, fiber.</li>
-   <li><b>Normal Diet:</b> Rice + Dal + Salad + Fruits + Milk daily.</li>
+   d.innerHTML=`
+   <h4>🩺 Full Diet & Exercise Plans</h4>
+   <ul>
+   <li><b>Diabetes Diet:</b> Oats, dalia, vegetables, sugar-free fruits. <br><i>Precautions:</i> Avoid sweets, white rice, cold drinks.</li>
+   <li><b>Hypertension (BP):</b> Low salt, banana, papaya, boiled veg. <br><i>Precautions:</i> No pickles, junk or caffeine.</li>
+   <li><b>Thyroid:</b> Iodine rich salt, milk, eggs. <br><i>Precautions:</i> Avoid soy, cabbage, cauliflower.</li>
+   <li><b>Pregnancy:</b> Milk, fruits, proteins, folic acid tablets. <br><i>Precautions:</i> Avoid papaya, pineapple & excessive caffeine.</li>
+   <li><b>Child Diet:</b> Milk, ghee, nuts, vegetables, fruits. <br><i>Precautions:</i> No cold drinks or junk snacks.</li>
+   <li><b>Chronic Disease:</b> Low oil, fiber rich diet, light walk. <br><i>Precautions:</i> Avoid sugar & fried items.</li>
+   <li><b>Fever Diet:</b> Khichdi, soup, fruits, coconut water. <br><i>Precautions:</i> Avoid oily & spicy foods.</li>
+   <li><b>Dengue/Malaria:</b> Papaya leaf juice, fluid diet, protein rich foods. <br><i>Precautions:</i> No painkillers without doctor’s advice.</li>
+   <li><b>Kidney Disease:</b> Low salt, less potassium diet, drink adequate water. <br><i>Precautions:</i> Avoid banana, tomato, spinach.</li>
+   <li><b>Liver Disease:</b> Soft food, fruits, coconut water, protein. <br><i>Precautions:</i> Avoid alcohol & fried food.</li>
+   <li><b>Diarrhea:</b> ORS, curd, banana, boiled rice. <br><i>Precautions:</i> Avoid milk & spicy food.</li>
+   <li><b>Gym / Exercise Diet:</b> High protein (eggs, oats, chicken), fruits, hydration. <br><i>Precautions:</i> Avoid supplements without consultation.</li>
+   <li><b>Normal Healthy Diet:</b> Rice, dal, roti, salad, fruits, milk daily. <br><i>Precautions:</i> Avoid late-night eating & junk.</li>
    </ul>`;
  } else alert("❌ Wrong Password!");
 }
