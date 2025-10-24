@@ -6,35 +6,87 @@
 <title>Pradum Sahani — Registered Pharmacist</title>
 <link rel="icon" href="Pradum.jpg">
 <meta name="description" content="Registered Pharmacist Pradum Sahani — Online prescription review, medicine guidance & consultation.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-:root{
-  --blue:#0077cc;--dark:#003345;--green:#00bfa5;--red:#e53935;
-  --muted:#f5f9ff;--pink:#ffebee;--orange:#fff3e0;--purple:#f3e5f5;--yellow:#fff8e1;
-}
-body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(180deg,#f9fcff,#ffffff);color:#222;}
-header{background:linear-gradient(120deg,var(--blue),var(--green));color:#fff;padding:30px 12px 80px;text-align:center;position:relative;}
-header img{width:150px;height:150px;border-radius:50%;border:4px solid #fff;object-fit:cover;}
-nav a{color:#fff;margin:0 10px;text-decoration:none;font-weight:600;}
-section{padding:36px 16px;}
-.card{border-radius:12px;padding:22px;max-width:1100px;margin:14px auto;box-shadow:0 4px 14px rgba(0,0,0,0.1);}
-h2,h3{text-align:center;margin-top:0;}
-footer{background:var(--dark);color:#fff;padding:16px;text-align:center;}
-.btn{background:var(--blue);color:#fff;padding:10px 16px;border-radius:8px;text-decoration:none;display:inline-block;margin-top:6px;}
-.btn.secondary{background:#666;}
-/* colorful sections */
-#about .card{background:var(--pink);}
-#services .card{background:var(--muted);}
-#med-search .card{background:var(--orange);}
-#consult .card{background:var(--purple);}
-#diet .card{background:#e8f5e9;}
-#social .card{background:#e3f2fd;}
-#contact .card{background:var(--yellow);}
-.danger-box{background:#fff3f3;border-left:6px solid var(--red);padding:20px;border-radius:10px;max-width:900px;margin:16px auto;text-align:center;font-size:16px;font-weight:500;color:#b71c1c;}
-.fade{animation:fade 1s ease;}
-@keyframes fade{from{opacity:0;}to{opacity:1;}}
+  :root{
+    --g1a: #e6f3ff; --g1b:#f7fbff;
+    --g2a: #fff9e6; --g2b:#fff4e6;
+    --g3a: #f5eefc; --g3b:#f0f3ff;
+    --accent:#0b76d1; --dark:#07364a; --muted:#f6f9ff;
+    --card-shadow: 0 8px 26px rgba(8,30,60,0.07);
+  }
+  *{box-sizing:border-box}
+  body{font-family:'Poppins',system-ui,Arial,sans-serif;margin:0;background:linear-gradient(180deg,#fbfdff,#ffffff);color:#111}
+  header{
+    background:linear-gradient(135deg,var(--accent),#00bfa5);
+    color:#fff;padding:28px 18px 90px;text-align:center;position:relative;
+  }
+  header img{width:150px;height:150px;border-radius:50%;border:4px solid rgba(255,255,255,0.95);object-fit:cover;position:absolute;left:20px;top:18px}
+  header h1{margin:8px 0 0;font-size:28px}
+  header p{margin:6px 0 0;font-size:14px}
+  nav{margin-top:12px}
+  nav a{color:#fff;margin:0 10px;text-decoration:none;font-weight:600;padding:6px 8px;border-radius:6px}
+  nav a:hover{background:rgba(255,255,255,0.06)}
+  .section{padding:36px 16px}
+  .container{max-width:1100px;margin:0 auto}
+  .card{background:#fff;border-radius:12px;padding:20px;box-shadow:var(--card-shadow);margin:18px 0}
+  h2,h3{margin:0 0 12px;text-align:center}
+  .grid{display:flex;flex-wrap:wrap;gap:14px;align-items:stretch;justify-content:center}
+  .box{border-radius:12px;padding:16px;flex:1;min-width:240px}
+  .btn{display:inline-block;background:var(--accent);color:#fff;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600}
+  .btn.secondary{background:#666}
+  footer{background:linear-gradient(90deg,#07364a,#145f7a);color:#fff;padding:18px;text-align:center;margin-top:26px}
+
+  /* gradient sections (soft modern) */
+  #about{background:linear-gradient(180deg,var(--g1a),var(--g1b));padding-top:18px}
+  #services{background:linear-gradient(180deg,var(--g2a),var(--g2b))}
+  #med-search{background:linear-gradient(180deg,var(--g3a),var(--g3b))}
+  #consult{background:linear-gradient(180deg,#fff7f1,#fffdfb)}
+  #diet{background:linear-gradient(180deg,#eef9f3,#f7fffb)}
+  #social{background:linear-gradient(180deg,#eef6ff,#f4f9ff)}
+  #contact{background:linear-gradient(180deg,#fffaf0,#fffdf7)}
+
+  /* marquee slow */
+  .marquee-wrap{overflow:hidden;border-radius:10px;padding:10px;margin:14px auto;max-width:1100px;box-shadow:var(--card-shadow);background:#fff}
+  .marquee-inner{white-space:nowrap;display:inline-block;padding-left:100%;animation:slowSlide 120s linear infinite}
+  .marquee-item{display:inline-block;padding:0 48px;font-weight:700;color:#222}
+  @keyframes slowSlide{
+    0%{transform:translateX(-100%)}
+    100%{transform:translateX(120%)}
+  }
+
+  /* medicine cards */
+  #medResult{margin-top:18px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+  .med-card{width:280px;background:#fff;border-radius:10px;padding:12px;box-shadow:0 6px 18px rgba(20,40,80,0.06);text-align:left}
+  .med-card h4{margin:4px 0 6px;font-size:16px;color:var(--accent)}
+  .meta{font-size:13px;color:#444;margin:6px 0}
+
+  /* diet boxes */
+  .diet-box{border-radius:12px;padding:14px;margin:12px 0;box-shadow:0 6px 24px rgba(10,30,60,0.04);background:linear-gradient(135deg,#ffffff,#f7fffb)}
+  .diet-title{font-weight:700;color:var(--dark);font-size:18px}
+  .precaution{color:#c62828;font-weight:700;margin-top:8px}
+
+  /* services big */
+  .service-large{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+  .service-card{min-width:240px;flex:1;padding:18px;border-radius:14px;color:#053047;box-shadow:0 8px 26px rgba(10,30,60,0.06);background:linear-gradient(135deg,#fff9f0,#fff7ee)}
+  .service-card h4{margin:0 0 6px;color:var(--accent)}
+  .service-pay{margin-top:10px}
+
+  /* social icons */
+  .socials{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;padding:18px 0}
+  .socials a{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;background:#fff;box-shadow:0 6px 18px rgba(10,30,60,0.04);text-decoration:none;color:#111}
+  .socials img{width:28px;height:28px;border-radius:6px}
+
+  /* responsive */
+  @media (max-width:900px){
+    header img{position:static;margin:0 auto 12px;display:block}
+    .grid{flex-direction:column}
+    .med-card{width:100%}
+    .marquee-inner{animation-duration:160s}
+  }
+  @media (max-width:480px){
+    .marquee-item{padding:0 16px;font-size:14px}
+  }
 </style>
 </head>
 <body>
@@ -42,8 +94,8 @@ footer{background:var(--dark);color:#fff;padding:16px;text-align:center;}
 <header>
   <img src="Pradum.jpg" alt="Pradum Sahani">
   <h1>Pradum Sahani</h1>
-  <h3>Registered Pharmacist — DHA Qualified</h3>
-  <p>📞 9517360291 | ✉️ sahanipradum98@gmail.com</p>
+  <p><strong>Registered Pharmacist — DHA Qualified</strong></p>
+  <p>📞 9517360291 &nbsp; | &nbsp; ✉️ sahanipradum98@gmail.com</p>
   <nav>
     <a href="#about">About</a>
     <a href="#services">Services</a>
@@ -54,134 +106,320 @@ footer{background:var(--dark);color:#fff;padding:16px;text-align:center;}
   </nav>
 </header>
 
-<!-- ⚠️ Self Medication Warning -->
-<section id="selfmed">
-  <div class="danger-box" id="dangerText">
-    ⚠️ Self-medication can be harmful. Always consult your doctor or pharmacist before taking any medicine.  
-    ❗स्व-चिकित्सा हानिकारक हो सकती है, बिना सलाह के दवा न लें।
+<!-- slow bilingual marquee -->
+<div class="marquee-wrap container" aria-live="polite">
+  <div class="marquee-inner" id="marqueeInner">
+    <span class="marquee-item">⚠️ Self-medication can be harmful — always consult a doctor or pharmacist before taking medicines. | ⚠️ स्व-चिकित्सा हानिकारक हो सकती है — बिना सलाह के दवा न लें।</span>
+    <span class="marquee-item">💊 Don’t mix antibiotics or painkillers yourself — it may damage liver/kidney. | 💊 एंटीबायोटिक/पेनकिलर बिना सलाह के न मिलाएँ।</span>
+    <span class="marquee-item">🚫 Incorrect antibiotic use causes resistance — finish the full course. | 🚫 एंटीबायोटिक का गलत उपयोग प्रतिरोध बनाता है — कोर्स पूरा करें।</span>
+    <span class="marquee-item">🧠 If in doubt, upload prescription via the form for review. | 🧾 पर्चा अपलोड करें — फार्मासिस्ट जाँच करेगा।</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="container card">
+    <h2>About</h2>
+    <p>I'm <strong>Pradum Sahani</strong>, a Registered Pharmacist (DHA Qualified). I provide online prescription review, medicine guidance, teleconsultation support and personalized diet & precaution plans.</p>
   </div>
 </section>
 
-<script>
-const msgs=[
-"⚠️ Self-medication can cause serious side effects. ❗स्व-चिकित्सा से लिवर, किडनी को नुकसान हो सकता है।",
-"💊 Never mix medicines yourself — Don’t combine drugs without advice. ❌ बिना सलाह के दवा मिलाना खतरनाक है।",
-"🧠 Regular use of painkillers damages liver/kidney. ⚠️ दर्द की दवाओं का बार-बार उपयोग हानिकारक है।",
-"🚫 Antibiotic misuse causes resistance — फिर दवा असर नहीं करती। Take full course as prescribed."
-];
-let i=0;
-function rotateMsg(){
- const el=document.getElementById("dangerText");
- el.classList.remove("fade");
- void el.offsetWidth;
- el.innerHTML=msgs[i];
- el.classList.add("fade");
- i=(i+1)%msgs.length;
-}
-setInterval(rotateMsg,20000); // ⏳ slow 20s rotation
-</script>
-
-<!-- ABOUT -->
-<section id="about"><div class="card">
-<h2>About</h2>
-<p>I’m <strong>Pradum Sahani</strong>, a <strong>Registered Pharmacist (DHA Qualified)</strong> providing online prescription review, medicine guidance and tele-consultation.</p>
-</div></section>
-
 <!-- SERVICES -->
-<section id="services"><div class="card">
-<h3>Services</h3>
-<ul>
-<li style="background:#fff;padding:8px;border-radius:8px;margin:5px 0;">Prescription Review & Medicine Counselling</li>
-<li style="background:#fff;padding:8px;border-radius:8px;margin:5px 0;">OTC Guidance (Salt, Dose, Uses)</li>
-<li style="background:#fff;padding:8px;border-radius:8px;margin:5px 0;">Follow-up for Chronic Patients</li>
-<li style="background:#fff;padding:8px;border-radius:8px;margin:5px 0;">Drug Interaction Check</li>
-</ul>
-<a href="https://forms.gle/1hMr6qi3SryqRSpw6" target="_blank" class="btn">Upload Prescription</a>
-<p style="margin-top:10px;">💰 <strong>UPI:</strong> sahanipradum98-1@oksbi</p>
-<a href="upi://pay?pa=sahanipradum98-1@oksbi&pn=Pradum%20Sahani" class="btn secondary">Pay Now</a>
-</div></section>
+<section id="services" class="section">
+  <div class="container card">
+    <h2>Services</h2>
+    <div class="service-large" role="list">
+      <div class="service-card" role="listitem" style="background:linear-gradient(135deg,#fff6f1,#fff2e8)">
+        <h4>Prescription Review</h4>
+        <p>Upload prescription → pharmacist verifies medicines, doses and interactions.</p>
+        <div class="service-pay"><a class="btn" href="https://forms.gle/1hMr6qi3SryqRSpw6" target="_blank">Upload Prescription</a></div>
+      </div>
 
-<!-- MED SEARCH -->
-<section id="med-search"><div class="card">
-<h3>Medicine Search</h3>
-<input id="medInput" style="padding:8px;width:60%;max-width:400px" placeholder="Enter brand or salt...">
-<a href="#" class="btn" onclick="doSearch()">Search</a>
-<div id="result" style="margin-top:10px;"></div>
-</div></section>
+      <div class="service-card" role="listitem" style="background:linear-gradient(135deg,#f0fbff,#e8f8ff)">
+        <h4>Medicine Guidance (OTC / Salt)</h4>
+        <p>Salt-based guidance, doses, uses, safer/cheaper alternatives.</p>
+        <div class="service-pay"><a class="btn" href="#med-search">Search Medicines</a></div>
+      </div>
+
+      <div class="service-card" role="listitem" style="background:linear-gradient(135deg,#f7f6ff,#f1eeff)">
+        <h4>Basic Consultation</h4>
+        <p>₹99–₹199 per session — prescription review and counseling (no prescribing).</p>
+        <div class="service-pay"><a class="btn" href="upi://pay?pa=sahanipradum98-1@oksbi&pn=Pradum%20Sahani">Pay via UPI</a></div>
+      </div>
+
+      <div class="service-card" role="listitem" style="background:linear-gradient(135deg,#eefaf3,#e8fff3)">
+        <h4>Follow-up / Chronic Guidance</h4>
+        <p>₹199–₹399 per follow-up — diabetes, BP, thyroid monitoring & adherence support.</p>
+        <div class="service-pay"><a class="btn" href="#diet">View Diet Plans</a></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:14px">
+      <a class="btn secondary" href="upi://pay?pa=sahanipradum98-1@oksbi&pn=Pradum%20Sahani">💸 Pay Consultation (UPI)</a>
+    </div>
+  </div>
+</section>
+
+<!-- MEDICINE SEARCH -->
+<section id="med-search" class="section">
+  <div class="container card">
+    <h2>Medicine Search</h2>
+    <p style="color:#444">Search by brand or salt (example: paracetamol, metformin). The page loads a local medicines.json if present (place medicines.json in the same folder) — otherwise a sample DB is used.</p>
+
+    <div style="text-align:center;margin-top:12px">
+      <input id="medInput" style="padding:12px;border-radius:8px;border:1px solid #ccd;width:60%;max-width:520px" placeholder="Enter brand or salt name..." aria-label="Medicine search input">
+      <button class="btn" onclick="doSearch()">Search</button>
+      <button class="btn secondary" onclick="clearSearch()">Clear</button>
+    </div>
+
+    <div id="medResult" aria-live="polite"></div>
+    <p id="medNote" style="text-align:center;color:#666;margin-top:10px;font-size:13px"></p>
+  </div>
+</section>
 
 <!-- CONSULTATION -->
-<section id="consult"><div class="card">
-<h3>Consultation Fees</h3>
-<p>💬 Basic: ₹99–199 | Chronic: ₹199–399 | Clinic tie-up: ₹500–1500/month</p>
-</div></section>
+<section id="consult" class="section">
+  <div class="container card">
+    <h2>Consultation Fees & Packages</h2>
+    <div class="grid" style="margin-top:12px">
+      <div class="box" style="background:linear-gradient(135deg,#fff9f0,#fff4eb)">
+        <h3>Basic Consultation</h3>
+        <p>₹99–₹199 per session (10–15 min) — prescription review & explanation, dose, precautions.</p>
+      </div>
+      <div class="box" style="background:linear-gradient(135deg,#f0fbff,#e6f9ff)">
+        <h3>Follow-up / Chronic</h3>
+        <p>₹199–₹399 per follow-up — diabetes, BP, thyroid monitoring, medication adherence.</p>
+      </div>
+      <div class="box" style="background:linear-gradient(135deg,#f7f0ff,#f2e9ff)">
+        <h3>Clinic/Pharmacy Tie-up</h3>
+        <p>₹500–₹1500 / month — retainer for medication therapy management & counselling.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- DIET -->
-<section id="diet"><div class="card" style="text-align:center">
-<h3>Diet & Nutrition Plans</h3>
-<p>Enter admin password to unlock detailed diet & precautions.</p>
-<input type="password" id="dietPass" placeholder="Password">
-<a href="#" class="btn" onclick="openDiet()">Open</a>
-<div id="dietContent" style="display:none;margin-top:14px;text-align:left;"></div>
-</div></section>
+<!-- DIET (password-protected) -->
+<section id="diet" class="section">
+  <div class="container card" style="text-align:center">
+    <h2>Diet & Precautions — Password Protected</h2>
+    <p style="color:#555">Click below and enter admin password to unlock full diet & exercise plans (chronic, child, pregnancy, seasonal, precautions).</p>
+    <input id="dietPass" type="password" placeholder="Admin password" style="padding:10px;border-radius:8px;border:1px solid #ccd;width:72%;max-width:420px" aria-label="Diet password">
+    <div style="margin-top:12px"><a class="btn" href="#" onclick="openDiet()">Open Diet Plans</a></div>
+
+    <div id="dietArea" style="display:none;margin-top:20px;text-align:left"></div>
+  </div>
+</section>
 
 <!-- SOCIAL -->
-<section id="social"><div class="card" style="text-align:center">
-<h3>Connect With Me</h3>
-<a href="https://facebook.com" target="_blank">Facebook</a> |
-<a href="https://instagram.com/pradumsahani.019" target="_blank">Instagram</a> |
-<a href="https://wa.me/919517360291" target="_blank">WhatsApp</a> |
-<a href="https://youtube.com/@pradumsahani019" target="_blank">YouTube</a> |
-<a href="https://linkedin.com/in/pradum-s-3a3791126" target="_blank">LinkedIn</a>
-</div></section>
+<section id="social" class="section">
+  <div class="container card" style="text-align:center">
+    <h2>Connect / Follow</h2>
+    <div class="socials">
+      <a href="https://www.facebook.com/share/16V3k7o6xE/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"> Facebook</a>
+      <a href="https://www.instagram.com/pradumsahani.019" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"> Instagram</a>
+      <a href="https://wa.me/919517360291" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"> WhatsApp</a>
+      <a href="https://www.linkedin.com/in/pradum-s-3a3791126" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn"> LinkedIn</a>
+      <a href="https://youtube.com/@pradumsahani019" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"> YouTube</a>
+    </div>
+  </div>
+</section>
 
 <!-- CONTACT -->
-<section id="contact"><div class="card" style="text-align:center">
-<h3>Contact</h3>
-<p>📞 9517360291 | ✉️ sahanipradum98@gmail.com</p>
-</div></section>
+<section id="contact" class="section">
+  <div class="container card" style="text-align:center">
+    <h2>Contact</h2>
+    <p>📞 <strong>9517360291</strong> &nbsp; | &nbsp; ✉️ <strong>sahanipradum98@gmail.com</strong></p>
+    <p style="font-size:13px;color:#666">Prescription uploads: Google Form. Payments: UPI ID <strong>sahanipradum98-1@oksbi</strong>.</p>
+  </div>
+</section>
 
-<footer>© 2025 Pradum Sahani | Registered Pharmacist</footer>
+<footer>
+  <small>© 2025 Pradum Sahani — Registered Pharmacist. All Rights Reserved.</small>
+</footer>
 
+<!-- ======= SCRIPTS: medicines load, search, diet unlock ======= -->
 <script>
-const ADMIN_PASS="Pradum@123";
-function openDiet(){
- const p=document.getElementById('dietPass').value;
- if(p===ADMIN_PASS){
-   const d=document.getElementById('dietContent');
-   d.style.display='block';
-   d.innerHTML=`<ul>
-   <li><b>Diabetes Diet:</b> Oats, whole grains, veggies, low sugar foods.<br><i>Precaution:</i> Avoid sweets, fried items, sugary drinks.</li>
-   <li><b>BP Diet:</b> Low salt, green veggies, fruits.<br><i>Precaution:</i> Avoid pickle, papad, and high sodium snacks.</li>
-   <li><b>Thyroid:</b> Avoid soy, cabbage; prefer protein-rich foods.<br><i>Precaution:</i> Take medicine empty stomach, avoid caffeine.</li>
-   <li><b>Pregnancy:</b> Folic acid rich foods, milk, dry fruits.<br><i>Precaution:</i> Avoid papaya, raw meat & caffeine.</li>
-   <li><b>Child Diet:</b> Milk, banana, porridge, dal-rice.<br><i>Precaution:</i> Avoid junk foods, soft drinks.</li>
-   <li><b>Dengue/Malaria:</b> Citrus fruits, papaya leaf juice, fluids.<br><i>Precaution:</i> Avoid oily foods & outside food.</li>
-   <li><b>Kidney:</b> Low sodium, low potassium diet.<br><i>Precaution:</i> Avoid excess protein & salt.</li>
-   <li><b>Loose motion/Vomiting:</b> ORS, banana, rice, curd.<br><i>Precaution:</i> Avoid spicy & oily food.</li>
-   <li><b>Gym Diet:</b> Protein-rich diet, eggs, paneer, oats.<br><i>Precaution:</i> Avoid alcohol & smoking.</li>
-   </ul>`;
- }else alert("❌ Wrong password!");
+/* ===== CONFIG ===== */
+const ADMIN_PASSWORD = 'Pradum@123';
+
+/* ===== MED DB: load medicines.json if present (for large DB). Otherwise sample. ===== */
+const SAMPLE_DB = [
+  {"brand":"Crocin Advance","salt":"Paracetamol","mg":"500 mg","company":"GSK","uses":"Fever, pain relief"},
+  {"brand":"Dolo 650","salt":"Paracetamol","mg":"650 mg","company":"Micro Labs","uses":"Fever, headache, body pain"},
+  {"brand":"Metformin 500","salt":"Metformin HCl","mg":"500 mg","company":"Lupin","uses":"Type 2 Diabetes"},
+  {"brand":"Amlodipine 5","salt":"Amlodipine","mg":"5 mg","company":"Cipla","uses":"Hypertension"},
+  {"brand":"Pantoprazole 40","salt":"Pantoprazole","mg":"40 mg","company":"Sun Pharma","uses":"Acidity, GERD"},
+  {"brand":"Azithral 500","salt":"Azithromycin","mg":"500 mg","company":"Cipla","uses":"Respiratory infections"},
+  {"brand":"Amoxil 500","salt":"Amoxicillin","mg":"500 mg","company":"GSK","uses":"Bacterial infection"},
+  {"brand":"Ibuprofen 400","salt":"Ibuprofen","mg":"400 mg","company":"Abbott","uses":"Pain, inflammation"},
+  {"brand":"Levothyrox 50","salt":"Levothyroxine Sodium","mg":"50 mcg","company":"Abbott","uses":"Hypothyroidism"},
+  {"brand":"Cetirizine 10","salt":"Cetirizine","mg":"10 mg","company":"Zydus","uses":"Allergy relief"}
+];
+
+let MEDICINES = [];
+
+async function loadMedicines(){
+  try{
+    const res = await fetch('./medicines.json', {cache:'no-store'});
+    if(res.ok){
+      const data = await res.json();
+      if(Array.isArray(data) && data.length>0){
+        MEDICINES = data;
+        document.getElementById('medNote').innerText = `Loaded ${data.length.toLocaleString()} medicines from medicines.json`;
+        return;
+      }
+    }
+  }catch(e){}
+  MEDICINES = SAMPLE_DB;
+  document.getElementById('medNote').innerText = 'Using embedded sample medicine data (replace with medicines.json for full DB).';
+}
+loadMedicines();
+
+/* helpers */
+function s(x){ return (x||'').toString(); }
+function escapeHtml(str){ return (str||'').toString().replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+function highlight(text,q){ if(!q) return text; try{ const rx = new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','ig'); return text.replace(rx,'<mark>$1</mark>'); }catch(e){return text;} }
+
+/* search */
+function doSearch(){
+  const q = (document.getElementById('medInput').value||'').trim().toLowerCase();
+  const out = document.getElementById('medResult');
+  out.innerHTML = '';
+  if(!q){ document.getElementById('medNote').innerText='Please enter a brand or salt to search.'; return; }
+  document.getElementById('medNote').innerText='Searching...';
+  const results = MEDICINES.filter(item=>{
+    return s(item.brand).toLowerCase().includes(q) ||
+           s(item.salt).toLowerCase().includes(q) ||
+           s(item.company).toLowerCase().includes(q) ||
+           s(item.mg).toLowerCase().includes(q) ||
+           s(item.uses).toLowerCase().includes(q);
+  });
+  if(results.length===0){
+    out.innerHTML = '<p style="color:#b45309">No results found. Try another brand or salt name.</p>';
+    document.getElementById('medNote').innerText='0 results';
+    return;
+  }
+  const top = results.slice(0,200);
+  document.getElementById('medNote').innerText = `${results.length.toLocaleString()} result(s) — showing ${top.length}`;
+  top.forEach(m=>{
+    const div = document.createElement('div');
+    div.className = 'med-card';
+    div.innerHTML = `<h4>${highlight(escapeHtml(m.brand||'–'), q)}</h4>
+      <div class="meta"><strong>Salt:</strong> ${highlight(escapeHtml(m.salt||'–'), q)}</div>
+      <div class="meta"><strong>Dose:</strong> ${escapeHtml(m.mg||'–')}</div>
+      <div class="meta"><strong>Company:</strong> ${highlight(escapeHtml(m.company||'–'), q)}</div>
+      <div style="margin-top:8px;font-size:13px;color:#333"><strong>Uses:</strong> ${escapeHtml(m.uses||'–')}</div>`;
+    out.appendChild(div);
+  });
+}
+function clearSearch(){ document.getElementById('medInput').value=''; document.getElementById('medResult').innerHTML=''; document.getElementById('medNote').innerText=''; }
+
+/* diet builder (full) */
+function openDiet(e){
+  if(e && e.preventDefault) e.preventDefault();
+  const raw = (document.getElementById('dietPass').value || '').toString().trim();
+  if(!raw){ alert('Please enter the admin password.'); return; }
+  if(raw !== ADMIN_PASSWORD){ alert('Incorrect password'); return; }
+  const area = document.getElementById('dietArea');
+  area.style.display = 'block';
+  area.innerHTML = buildDietHtml();
+  area.scrollIntoView({behavior:'smooth'});
 }
 
-/* Medicine Search */
-const meds=[
-{b:"Dolo 650",s:"Paracetamol",mg:"650mg",u:"Fever, Pain relief"},
-{b:"Amlodipine 5",s:"Amlodipine",mg:"5mg",u:"Blood Pressure"},
-{b:"Pantoprazole 40",s:"Pantoprazole",mg:"40mg",u:"Acidity, GERD"},
-{b:"Azithral 500",s:"Azithromycin",mg:"500mg",u:"Antibiotic, Infection"},
-{b:"Metformin 500",s:"Metformin",mg:"500mg",u:"Diabetes control"}
-];
-function doSearch(){
- const q=document.getElementById('medInput').value.toLowerCase();
- const r=document.getElementById('result');
- if(!q){r.innerHTML='';return;}
- const res=meds.filter(x=>x.b.toLowerCase().includes(q)||x.s.toLowerCase().includes(q));
- if(res.length==0){r.innerHTML='No results';return;}
- r.innerHTML=res.map(x=>`<div style="background:#fff;border-radius:8px;padding:8px;margin:6px 0;box-shadow:0 2px 6px rgba(0,0,0,0.1)">
-   <b>${x.b}</b> — ${x.s} (${x.mg}) <br><small>Uses: ${x.u}</small>
- </div>`).join('');
+function buildDietHtml(){
+  const sections = [
+    {title:'Normal Healthy Diet', items:[
+      {menu:'Breakfast: Milk or curd + fruit + wholegrain toast / porridge', prec:'Avoid processed & fried foods.'},
+      {menu:'Lunch: Rice/roti + dal + sabzi + salad', prec:'Portion control; avoid late heavy meals.'},
+      {menu:'Dinner: Light soup + roti + steamed veggies', prec:'Avoid heavy dinner and alcohol.'}
+    ]},
+    {title:'Diabetes (Type 2)', items:[
+      {menu:'Oats/dalia, multigrain roti, legumes, green vegetables, apple/guava', prec:'Avoid sweets, juices and large portions of white rice.'}
+    ]},
+    {title:'Hypertension (High BP)', items:[
+      {menu:'Oats, vegetables, fruits (banana, pomegranate), low-fat dairy', prec:'Reduce salt intake; avoid pickles & packaged snacks.'}
+    ]},
+    {title:'Thyroid (Hypothyroid)', items:[
+      {menu:'Protein-rich breakfast (eggs), milk, cooked vegetables, whole grains', prec:'Take levothyroxine on empty stomach; avoid calcium/iron close to medicine time.'}
+    ]},
+    {title:'Pregnancy (Antenatal)', items:[
+      {menu:'Folic acid foods (leafy greens, legumes), milk, fruits, protein (dal/eggs)', prec:'Avoid raw fish, alcohol, unpasteurized cheese; take prenatal vitamins as prescribed.'}
+    ]},
+    {title:'Child Nutrition', items:[
+      {menu:'Breastfeed infants (if applicable), toddlers: khichdi, mashed vegetables, fruits, milk', prec:'No honey <1 year; avoid sugary snacks.'}
+    ]},
+    {title:'Gym / Workout (General)', items:[
+      {menu:'Pre-workout: Banana or oats; Post-workout: protein + complex carbs (egg/paneer)', prec:'Hydrate; progressive training and rest.'}
+    ]},
+    {title:'Weight Loss', items:[
+      {menu:'Veg salads, soups, complex carbs (oats), lean protein', prec:'Do not skip meals; moderate caloric deficit & exercise.'}
+    ]},
+    {title:'Fever', items:[
+      {menu:'Khichdi, clear soups, ORS/coconut water, soft fruits', prec:'Avoid oily/spicy foods; rest and hydration.'}
+    ]},
+    {title:'Typhoid', items:[
+      {menu:'Boiled rice/khichdi, boiled vegetables, banana, soups', prec:'Avoid street food, raw salads and spicy heavy meals.'}
+    ]},
+    {title:'Dengue', items:[
+      {menu:'ORS/coconut water, papaya/leaf juice (if advised), protein-rich soft foods', prec:'Monitor platelets and bleeding; avoid NSAIDs unless doctor okays.'}
+    ]},
+    {title:'Malaria', items:[
+      {menu:'Light porridge, soups, fruits, fluids', prec:'Complete antimalarial course as prescribed; avoid alcohol.'}
+    ]},
+    {title:'Diarrhoea / Loose Motion', items:[
+      {menu:'ORS, boiled rice, banana, curd (if tolerated)', prec:'Hydration is key; avoid milk if intolerance worsens.'}
+    ]},
+    {title:'Vomiting (Acute)', items:[
+      {menu:'Small sips of ORS, ginger tea (if tolerated), clear broths', prec:'Avoid solids until vomiting settles; seek care if persistent.'}
+    ]},
+    {title:'Kidney (General guidance)', items:[
+      {menu:'Controlled protein, boiled/steamed vegetables, apples/berries', prec:'Follow nephrologist for potassium & protein restrictions.'}
+    ]},
+    {title:'Liver (Fatty liver / NAFLD)', items:[
+      {menu:'Leafy greens, whole grains, legumes, lean proteins', prec:'Avoid alcohol, sugary & fried foods; weight reduction helps.'}
+    ]},
+    {title:'Heart Disease', items:[
+      {menu:'Oats, nuts (moderation), olive oil, vegetables, fish (if allowed)', prec:'Avoid trans fats, excess salt and red meat.'}
+    ]},
+    {title:'Pediatric Malnutrition (Support)', items:[
+      {menu:'Frequent energy-dense small meals: milk, banana, eggs, khichdi, ghee', prec:'Monitor growth; consider supplements per doctor.'}
+    ]},
+    {title:'Seasonal Diet (Summer / Winter)', items:[
+      {menu:'Summer: coconut water, fruits; Winter: soups, nuts, warm cereals', prec:'Hydration in summer; vitamin D checks in winter if needed.'}
+    ]},
+    {title:'Chronic Disease (General)', items:[
+      {menu:'High fiber, low oil, balanced proteins & controlled carbs', prec:'Individualize per disease, labs & meds.'}
+    ]}
+  ];
+
+  let html = '';
+  sections.forEach(sec=>{
+    html += `<div class="diet-box"><div class="diet-title">${escapeHtml(sec.title)}</div>`;
+    sec.items.forEach(it=>{
+      html += `<div style="margin-top:8px"><strong>Menu:</strong> ${escapeHtml(it.menu)}<div class="precaution"><strong>Precautions:</strong> ${escapeHtml(it.prec)}</div></div>`;
+    });
+    html += `</div>`;
+  });
+
+  html += `<div style="margin-top:12px;padding:12px;background:#fff;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.04)">
+    <strong>Note:</strong> These are general guidance notes. Individual patients (on insulin, warfarin, dialysis or with allergies) must follow personalized advice from the treating physician. For complex cases, request full medical history before tailoring a diet.</div>`;
+
+  return html;
 }
+
+/* simple local visit track (private) */
+(function trackVisit(){
+  try{
+    const v = (Number(localStorage.getItem('pradum_visits')||0) + 1);
+    localStorage.setItem('pradum_visits', v);
+    localStorage.setItem('pradum_last', new Date().toISOString());
+  }catch(e){}
+})();
+
+/* allow Enter key for search */
+document.addEventListener('DOMContentLoaded', function(){
+  const input = document.getElementById('medInput');
+  if(input) input.addEventListener('keydown', function(e){ if(e.key==='Enter') doSearch(); });
+});
 </script>
 </body>
 </html>
-    
