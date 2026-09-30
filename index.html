@@ -5,35 +5,28 @@
 <title>Pradum Sahani - Registered Pharmacist</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-:root{--gold:#d4af37;--bg:#050505} body{margin:0;background:var(--bg);color:#fff;font-family:Segoe UI,sans-serif}
-header{padding:10px 4%;display:flex;justify-content:space-between;align-items:center;background:#000;border-bottom:1px solid #222;position:sticky;top:0;z-index:999}
-.social a{color:var(--gold);margin-left:10px;font-size:18px;text-decoration:none}
-
-/* FACEBOOK STYLE COVER */
-.cover-wrap{position:relative;width:100%;height:260px;background:linear-gradient(135deg,#000 0%,#1a1a1a 50%,#000 100%);border-bottom:2px solid var(--gold);overflow:hidden}
-.cover-wrap .cover-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;opacity:0.15;font-size:80px;color:var(--gold);font-weight:bold;letter-spacing:10px}
-.profile-row{position:relative;padding:0 4%;margin-top:-65px;display:flex;align-items:flex-end;gap:15px}
-.profile-row .pp{width:130px;height:130px;border-radius:50%;border:4px solid var(--gold);object-fit:cover;background:#111;box-shadow:0 4px 20px rgba(0,0,0,0.8)}
-.profile-info h1{margin:0;font-size:30px} .profile-info p{margin:3px 0;color:#aaa;font-size:12px}
-
-.ticker{width:100%;background:#111;border-top:1px solid #222;border-bottom:1px solid var(--gold);overflow:hidden;white-space:nowrap;padding:7px 0;margin-top:15px}
-.ticker-content{display:inline-block;animation:scroll 45s linear infinite;color:#ffcc00;font-size:12px}
-.ticker-content span{margin-right:50px} 
-@keyframes scroll{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
-
-.search-wrap{max-width:800px;margin:20px auto;padding:0 4%}
-.search-wrap input{width:100%;padding:16px;background:#111;border:2px solid var(--gold);color:#fff;border-radius:10px;font-size:17px;box-sizing:border-box}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;padding:20px 4%}
-.card{background:#111;border:1px solid #222;padding:14px;border-radius:10px}
-.tag{font-size:10px;background:#222;padding:3px 7px;border-radius:10px;margin-right:4px;border:1px solid #333}
-.price{color:var(--gold);font-weight:bold;font-size:18px;margin:8px 0}
-.moa-box{margin-top:10px;padding:10px;background:#0e0e0e;border-left:3px solid var(--gold);border-radius:6px;font-size:12px;display:none}
-.btn-gold{background:var(--gold);color:#000;padding:8px 14px;border:none;font-weight:bold;border-radius:6px;cursor:pointer}
-.filters{display:none;gap:8px;justify-content:center;flex-wrap:wrap;margin:15px 4%}
-.filters.show{display:flex}
-.filters button{padding:8px 14px;background:#111;border:1px solid #333;color:#fff;border-radius:20px;cursor:pointer;font-size:13px}
-.filters button.active{background:var(--gold);color:#000}
-#empty-msg{text-align:center;padding:50px 4%;color:#666}
+:root{--gold:#d4af37;--bg:#000} body{margin:0;background:#000;color:#fff;font-family:Segoe UI,sans-serif}
+header{padding:10px 3%;display:flex;justify-content:space-between;background:#000;border-bottom:1px solid #222;position:sticky;top:0;z-index:999}
+.social a{color:var(--gold);margin-left:10px;font-size:18px}
+/* COVER LIKE FB */
+.cover{width:100%;height:200px;background:#111;position:relative;border-bottom:2px solid var(--gold)}
+.cover::after{content:'PHARMACIST';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:60px;color:var(--gold);opacity:0.07;font-weight:bold;letter-spacing:10px}
+.profile-box{padding:0 4%;margin-top:-55px;display:flex;gap:12px;align-items:flex-end}
+.profile-box img{width:120px;height:120px;border-radius:50%;border:4px solid var(--gold);object-fit:cover;background:#222}
+.ticker{overflow:hidden;white-space:nowrap;background:#111;border-top:1px solid #222;border-bottom:1px solid var(--gold);padding:6px 0;margin-top:15px}
+.ticker div{display:inline-block;animation:scroll 40s linear infinite;color:#ffcc00;font-size:12px}
+@keyframes scroll{from{transform:translateX(100%)}to{transform:translateX(-100%)}}
+.search{max-width:700px;margin:20px auto;padding:0 4%}
+.search input{width:100%;padding:14px;background:#111;border:2px solid var(--gold);border-radius:8px;color:#fff;font-size:16px;box-sizing:border-box}
+#filters{display:none;justify-content:center;gap:6px;flex-wrap:wrap;margin:12px 0}
+#filters.show{display:flex}
+#filters button{padding:6px 12px;background:#111;border:1px solid #333;color:#fff;border-radius:20px;font-size:12px}
+#filters button.active{background:var(--gold);color:#000}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;padding:15px 4%}
+.card{background:#111;border:1px solid #222;padding:12px;border-radius:10px}
+.btn-gold{background:var(--gold);color:#000;padding:7px 12px;border:none;border-radius:6px;font-weight:bold;cursor:pointer}
+.moa{display:none;margin-top:8px;padding:8px;background:#0e0e0e;border-left:3px solid var(--gold);font-size:12px}
+#empty{display:none}
 </style>
 </head>
 <body>
@@ -47,22 +40,54 @@ header{padding:10px 4%;display:flex;justify-content:space-between;align-items:ce
 </div>
 </header>
 
-<div class="cover-wrap">
-<div class="cover-text">PHARMACIST</div>
-</div>
-
-<div class="profile-row">
-<img class="pp" src="profile.jpg" onerror="this.src='https://via.placeholder.com/130/d4af37/000?text=PS'">
-<div class="profile-info">
-<h1>PRADUM <span style="color:var(--gold)">SAHANI</span></h1>
-<p style="color:var(--gold)">REGISTERED PHARMACIST | UPI: Sahanipradum98@okaxis | YouTube: @pradumsahani019</p>
-<p>DHA Qualified - Online Medicine Guidance & Prescription Review</p>
+<div class="cover"></div>
+<div class="profile-box">
+<img src="profile.jpg" alt="Pradum">
+<div>
+<h2 style="margin:0">PRADUM <span style="color:var(--gold)">SAHANI</span></h2>
+<p style="margin:2px 0;color:var(--gold);font-size:12px">REGISTERED PHARMACIST | UPI: Sahanipradum98@okaxis | YouTube: @pradumsahani019</p>
+<p style="margin:2px 0;color:#aaa;font-size:11px">DHA Qualified - Online Medicine Guidance & Prescription Review</p>
 </div>
 </div>
 
-<div class="ticker">
-<div class="ticker-content">
-<span>⚠️ Self-medication harmful - Consult doctor/pharmacist ⚠️</span>
-<span>💊 Antibiotics pura course le - beech me band na kare 💊</span>
-<span>👶 Bachho ki dawa doctor ki salah se hi de 👶</span>
-<span>📝 Pur
+<div class="ticker"><div>⚠️ Self-medication harmful - Consult doctor/pharmacist | 💊 Antibiotics pura course le | 👶 Bachho ki dawa doctor ki salah se | 📝 Purani prescription se nayi dawa na le | ❌ Bina prescription Injection / IV na lagwaye</div></div>
+
+<div class="search">
+<input id="q" placeholder="🔍 Search Medicine - Crocin, Paracetamol, Cipla..." onkeyup="doSearch()">
+<div id="filters">
+<button class="active" onclick="setCat('all',this)">All</button><button onclick="setCat('Tablet',this)">Tablet</button><button onclick="setCat('Syrup',this)">Syrup</button><button onclick="setCat('Injection',this)">Injection</button><button onclick="setCat('IV Fluids',this)">IV Fluids</button><button onclick="setCat('Drop',this)">Drop</button><button onclick="setCat('Surgical',this)">Surgical</button>
+</div>
+</div>
+
+<div id="empty"></div>
+<div id="grid" class="grid"></div>
+<div style="text-align:center;padding:15px"><button id="loadMore" class="btn-gold" style="display:none" onclick="loadMore()">Load More</button></div>
+
+<div style="margin:20px 4%;padding:12px;background:#0e0e0e;border:1px dashed var(--gold);border-radius:10px;text-align:center">
+<h4 style="color:var(--gold)">🔒 PRIVATE ADMIN - Only Pradum</h4>
+<input type="password" id="apass" placeholder="pradum123" style="padding:6px"><button class="btn-gold" onclick="unlock()">Unlock</button>
+<div id="adminBox" style="display:none;margin-top:10px"><input id="n_brand" placeholder="Brand"><input id="n_salt" placeholder="Salt"><textarea id="n_moa" placeholder="MOA Protected"></textarea><button class="btn-gold" onclick="addMed()">+ Add</button></div>
+</div>
+
+<script>
+let all=[], filtered=[], shown=0, isAdmin=false, cat='all';
+const sample=[{id:1,brand:"Crocin",salt:"Paracetamol",company:"GSK",category:"Tablet",price:"₹22",price_num:22,use:"Fever",moa:"Inhibits COX in CNS, reduces PGE2."},{id:2,brand:"Dolo 650",salt:"Paracetamol",company:"Micro",category:"Tablet",price:"₹30",price_num:30,use:"High Fever",moa:"Central COX inhibition."},{id:3,brand:"Azithral 500",salt:"Azithromycin",company:"Alembic",category:"Tablet",price:"₹85",price_num:85,use:"Infection",moa:"Binds 50S ribosomal."}];
+fetch('medicines.json').then(r=>r.json()).then(d=>{all=d}).catch(()=>{all=sample; for(let i=4;i<=400;i++){let s=sample[i%3]; all.push({id:i,brand:s.brand+" "+i,salt:s.salt,company:s.company,category:s.category,price:`₹${20+(i%150)}`,price_num:20+(i%150),use:s.use,moa:s.moa})}});
+
+function doSearch(){
+ let q=document.getElementById('q').value.toLowerCase().trim();
+ let grid=document.getElementById('grid'); let f=document.getElementById('filters');
+ if(!q){grid.innerHTML=''; f.classList.remove('show'); document.getElementById('loadMore').style.display='none'; return;}
+ f.classList.add('show');
+ filtered=all.filter(m=>{let mq=m.brand.toLowerCase().includes(q)||m.salt.toLowerCase().includes(q)||m.company.toLowerCase().includes(q); let mc=cat==='all'||m.category===cat; return mq&&mc});
+ shown=0; grid.innerHTML=''; render();
+}
+function render(){let grid=document.getElementById('grid'); let sl=filtered.slice(shown,shown+50); sl.forEach(m=>{let d=document.createElement('div'); d.className='card'; d.innerHTML=`<h4>${m.brand} <small style="color:#888">(${m.company})</small></h4><span style="font-size:10px;background:#222;padding:2px 6px;border-radius:10px">${m.category}</span> <span style="font-size:10px;background:#222;padding:2px 6px;border-radius:10px">${m.salt}</span><p style="font-size:12px">Use: ${m.use}</p><div style="color:var(--gold);font-weight:bold">${m.price}</div><button class="btn-gold" style="margin-top:6px" onclick="viewMOA(${m.id})">View MOA 🔒</button> <a href="https://wa.me/919517360291?text=${m.brand}"><button class="btn-gold" style="background:#25D366">WhatsApp</button></a><div id="moa-${m.id}" class="moa"></div>`; grid.appendChild(d);}); shown+=50; document.getElementById('loadMore').style.display=filtered.length>shown?'inline-block':'none';}
+function loadMore(){render()}
+function setCat(c,el){cat=c; document.querySelectorAll('#filters button').forEach(b=>b.classList.remove('active')); el.classList.add('active'); doSearch();}
+function viewMOA(id){if(!isAdmin){let p=prompt("🔒 Password:"); if(p!=="pradum123")return; isAdmin=true;} let m=all.find(x=>x.id==id); let b=document.getElementById(`moa-${id}`); b.style.display=b.style.display==='block'?'none':'block'; b.innerHTML=`<b>MOA:</b> ${m.moa}`;}
+function unlock(){if(document.getElementById('apass').value!=="pradum123")return; isAdmin=true; document.getElementById('adminBox').style.display='block';}
+function addMed(){let m={id:all.length+1,brand:document.getElementById('n_brand').value,salt:document.getElementById('n_salt').value,company:"Test",category:"Tablet",price:"₹100",price_num:100,use:"Test",moa:document.getElementById('n_moa').value}; all.unshift(m); doSearch();}
+</script>
+</body>
+</html>
