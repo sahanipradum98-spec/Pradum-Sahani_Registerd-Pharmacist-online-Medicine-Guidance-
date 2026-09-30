@@ -2,105 +2,67 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pradum Sahani - Registered Pharmacist | DHA Qualified</title>
+<title>Pradum Sahani - Registered Pharmacist</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 :root{--gold:#d4af37;--bg:#050505} body{margin:0;background:var(--bg);color:#fff;font-family:Segoe UI,sans-serif}
-header{padding:12px 4%;display:flex;justify-content:space-between;align-items:center;background:#000;border-bottom:1px solid #222;position:sticky;top:0;z-index:999}
-.social a{color:var(--gold);margin-left:10px;font-size:20px;text-decoration:none}
-.hero{padding:30px 4%;background:linear-gradient(90deg,#000 60%,#151515);display:flex;gap:20px;align-items:center;flex-wrap:wrap}
-.hero .pp{width:140px;height:140px;border-radius:50%;border:3px solid var(--gold);object-fit:cover;background:#222}
-.btn-gold{background:var(--gold);color:#000;padding:10px 18px;border:none;font-weight:bold;border-radius:6px;cursor:pointer}
+header{padding:10px 4%;display:flex;justify-content:space-between;align-items:center;background:#000;border-bottom:1px solid #222;position:sticky;top:0;z-index:999}
+.social a{color:var(--gold);margin-left:10px;font-size:18px;text-decoration:none}
 
-/* CHALTA HUA WARNING LINE */
-.ticker{width:100%;background:#111;border-top:1px solid #222;border-bottom:1px solid var(--gold);overflow:hidden;white-space:nowrap;padding:8px 0}
-.ticker-content{display:inline-block;animation:scroll 40s linear infinite;color:#ffcc00;font-size:13px}
+/* FACEBOOK STYLE COVER */
+.cover-wrap{position:relative;width:100%;height:260px;background:linear-gradient(135deg,#000 0%,#1a1a1a 50%,#000 100%);border-bottom:2px solid var(--gold);overflow:hidden}
+.cover-wrap .cover-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;opacity:0.15;font-size:80px;color:var(--gold);font-weight:bold;letter-spacing:10px}
+.profile-row{position:relative;padding:0 4%;margin-top:-65px;display:flex;align-items:flex-end;gap:15px}
+.profile-row .pp{width:130px;height:130px;border-radius:50%;border:4px solid var(--gold);object-fit:cover;background:#111;box-shadow:0 4px 20px rgba(0,0,0,0.8)}
+.profile-info h1{margin:0;font-size:30px} .profile-info p{margin:3px 0;color:#aaa;font-size:12px}
+
+.ticker{width:100%;background:#111;border-top:1px solid #222;border-bottom:1px solid var(--gold);overflow:hidden;white-space:nowrap;padding:7px 0;margin-top:15px}
+.ticker-content{display:inline-block;animation:scroll 45s linear infinite;color:#ffcc00;font-size:12px}
 .ticker-content span{margin-right:50px} 
 @keyframes scroll{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
 
-.search-wrap{max-width:800px;margin:25px auto;padding:0 4%}
-.search-wrap input{width:100%;padding:16px;background:#111;border:2px solid var(--gold);color:#fff;border-radius:10px;font-size:17px}
-.filters{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:15px 4%}
-.filters button{padding:8px 14px;background:#111;border:1px solid #333;color:#fff;border-radius:20px;cursor:pointer;font-size:13px}
-.filters button.active{background:var(--gold);color:#000}
+.search-wrap{max-width:800px;margin:20px auto;padding:0 4%}
+.search-wrap input{width:100%;padding:16px;background:#111;border:2px solid var(--gold);color:#fff;border-radius:10px;font-size:17px;box-sizing:border-box}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;padding:20px 4%}
 .card{background:#111;border:1px solid #222;padding:14px;border-radius:10px}
 .tag{font-size:10px;background:#222;padding:3px 7px;border-radius:10px;margin-right:4px;border:1px solid #333}
 .price{color:var(--gold);font-weight:bold;font-size:18px;margin:8px 0}
 .moa-box{margin-top:10px;padding:10px;background:#0e0e0e;border-left:3px solid var(--gold);border-radius:6px;font-size:12px;display:none}
-.private{margin:30px 4%;padding:20px;background:#0e0e0e;border:1px dashed var(--gold);border-radius:12px;text-align:center}
-#empty-msg{text-align:center;padding:60px 4%;color:#777}
-#empty-msg i{font-size:50px;color:var(--gold);margin-bottom:15px}
+.btn-gold{background:var(--gold);color:#000;padding:8px 14px;border:none;font-weight:bold;border-radius:6px;cursor:pointer}
+.filters{display:none;gap:8px;justify-content:center;flex-wrap:wrap;margin:15px 4%}
+.filters.show{display:flex}
+.filters button{padding:8px 14px;background:#111;border:1px solid #333;color:#fff;border-radius:20px;cursor:pointer;font-size:13px}
+.filters button.active{background:var(--gold);color:#000}
+#empty-msg{text-align:center;padding:50px 4%;color:#666}
 </style>
 </head>
 <body>
 <header>
-<div><b style="font-size:20px">PRADUM <span style="color:var(--gold)">SAHANI</span></b><br><small style="color:#aaa">REGISTERED PHARMACIST | DHA | 9517360291 | sahanipradum98@gmail.com</small></div>
+<div><b>PRADUM <span style="color:var(--gold)">SAHANI</span></b><br><small style="color:#aaa;font-size:10px">REGISTERED PHARMACIST | DHA | 9517360291</small></div>
 <div class="social">
-<a href="https://instagram.com/Pradumsahani.019" target="_blank"><i class="fab fa-instagram"></i></a>
-<a href="https://facebook.com/Pradumsahani.019" target="_blank"><i class="fab fa-facebook"></i></a>
-<a href="https://www.youtube.com/@pradumsahani019" target="_blank"><i class="fab fa-youtube"></i></a>
-<a href="https://wa.me/919517360291" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="https://instagram.com/Pradumsahani.019"><i class="fab fa-instagram"></i></a>
+<a href="https://facebook.com/Pradumsahani.019"><i class="fab fa-facebook"></i></a>
+<a href="https://www.youtube.com/@pradumsahani019"><i class="fab fa-youtube"></i></a>
+<a href="https://wa.me/919517360291"><i class="fab fa-whatsapp"></i></a>
 </div>
 </header>
 
-<div class="hero">
-<img class="pp" src="profile.jpg" onerror="this.src='https://i.ibb.co/0jQ3v0d/pharmacist.jpg'">
-<div style="flex:1">
-<h1 style="margin:0;font-size:34px">PRADUM <span style="color:var(--gold)">SAHANI</span></h1>
-<p style="color:var(--gold);margin:5px 0">REGISTERED PHARMACIST | UPI: Sahanipradum98@okaxis | YouTube: @pradumsahani019</p>
-<p style="font-size:13px;color:#ccc">DHA Qualified Pharmacist - Online Medicine Guidance & Prescription Review</p>
+<div class="cover-wrap">
+<div class="cover-text">PHARMACIST</div>
+</div>
+
+<div class="profile-row">
+<img class="pp" src="profile.jpg" onerror="this.src='https://via.placeholder.com/130/d4af37/000?text=PS'">
+<div class="profile-info">
+<h1>PRADUM <span style="color:var(--gold)">SAHANI</span></h1>
+<p style="color:var(--gold)">REGISTERED PHARMACIST | UPI: Sahanipradum98@okaxis | YouTube: @pradumsahani019</p>
+<p>DHA Qualified - Online Medicine Guidance & Prescription Review</p>
 </div>
 </div>
 
-<!-- YE LINE DHEERE DHEERE CHALEGI -->
 <div class="ticker">
 <div class="ticker-content">
-<span>⚠️ Self-medication is harmful - Always consult doctor/pharmacist before taking any medicine ⚠️</span>
-<span>💊 Antibiotics ka pura course pura le - beech me band na kare 💊</span>
-<span>👶 Bachho ki dawa doctor ki salah se hi de - apne se dose na badle 👶</span>
-<span>📝 Purani prescription se nayi dawa na le - har baar consult kare 📝</span>
-<span>❌ Bina prescription ke Injection / IV Fluids na lagwaye - khatarnak ho sakta hai ❌</span>
-<span>🔒 MOA Protected - Only for Registered Pharmacist 🔒</span>
-</div>
-</div>
-
-<div class="search-wrap">
-<input id="q" placeholder="🔍 Search Medicine - Brand / Salt / Company... e.g. Crocin, Paracetamol, Cipla" onkeyup="doSearch()">
-<div style="display:flex;gap:8px;margin-top:10px">
-<select id="catF" onchange="doSearch()"><option value="all">All Category</option><option>Tablet</option><option>Syrup</option><option>Injection</option><option>IV Fluids</option><option>Drop</option><option>Surgical</option></select>
-<select id="sortF" onchange="doSearch()"><option value="">Sort by</option><option value="price_low">Price Low to High</option><option value="price_high">Price High to Low</option></select>
-</div>
-</div>
-
-<div class="filters">
-<button class="active" onclick="setCat('all',this)">All</button><button onclick="setCat('Tablet',this)">Tablet</button><button onclick="setCat('Syrup',this)">Syrup</button><button onclick="setCat('Injection',this)">Injection</button><button onclick="setCat('IV Fluids',this)">IV Fluids</button><button onclick="setCat('Drop',this)">Drop</button><button onclick="setCat('Surgical',this)">Surgical</button>
-</div>
-
-<div id="empty-msg">
-<i class="fas fa-search"></i><br>
-<b>Medicine search karein</b><br>
-Upar search box me brand ya salt likhein - jaise Crocin, Azithromycin<br>
-<small style="color:#555" id="count">Loading database...</small>
-</div>
-
-<div id="grid" class="grid"></div>
-<div style="text-align:center;padding:20px"><button class="btn-gold" id="loadMore" onclick="loadMore()" style="display:none">Load More</button></div>
-
-<div class="private">
-<h2 style="color:var(--gold)">🔒 PRIVATE ADMIN - Protected MOA Editor (Only Pradum)</h2>
-<input type="password" id="apass" placeholder="Admin Password: pradum123" style="max-width:300px"><button class="btn-gold" onclick="unlockAdmin()">Unlock</button>
-<div id="adminBox" style="display:none;text-align:left;margin-top:20px">
-<input id="n_brand" placeholder="Brand"><input id="n_salt" placeholder="Salt"><input id="n_company" placeholder="Company"><input id="n_cat" placeholder="Category"><input id="n_price" placeholder="Price"><input id="n_use" placeholder="Use"><textarea id="n_moa" placeholder="MOA Protected"></textarea>
-<button class="btn-gold" onclick="addMedicine()">+ Add Medicine</button>
-</div>
-</div>
-
-<script>
-let allMeds=[], filtered=[], shown=0, isAdmin=false;
-const sampleMeds=[
-{id:1,brand:"Crocin",salt:"Paracetamol",company:"GSK",category:"Tablet",price:"₹22",price_num:22,use:"Fever, Headache",moa:"Inhibits COX in CNS, reduces PGE2 - Antipyretic & analgesic."},
-{id:2,brand:"Dolo 650",salt:"Paracetamol 650mg",company:"Micro Labs",category:"Tablet",price:"₹30",price_num:30,use:"High Fever",moa:"Central COX inhibition, lowers fever set point."},
-{id:3,brand:"Azithral 500",salt:"Azithromycin",company:"Alembic",category:"Tablet",price:"₹85",price_num:85,use:"Bacterial Infection",moa:"Binds 50S ribosomal subunit, blocks protein synthesis."},
-{id:4,brand:"Augmentin 625",salt:"Amoxicillin+Clav",company:"GSK",category:"Tablet",price:"₹235",price_num:235,use:"Strong Infection",moa:"Amox inhibits cell wall + Clav inhibits beta-lactamase."},
-{id:5,brand:"Pan 40",salt:"Pantoprazole",company:"Alkem",category:"Tablet",price:"₹
+<span>⚠️ Self-medication harmful - Consult doctor/pharmacist ⚠️</span>
+<span>💊 Antibiotics pura course le - beech me band na kare 💊</span>
+<span>👶 Bachho ki dawa doctor ki salah se hi de 👶</span>
+<span>📝 Pur
